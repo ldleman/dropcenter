@@ -1,0 +1,95 @@
+Installation du programme[::->]Install the program
+Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]Admin is undefined, please create an administrator before using program
+Login[::->]Login
+Password[::->]Password
+Avatar[::->]Avatar
+Mail[::->]Mail
+Racine du programme[::->]Program root
+Creer[::->]Create
+Preferences[::->]Preferences
+Profil[::->]Profile
+CopyrightFooter[::->][%%] V[%%] ([%%]) by <a href="[%%]">DropTeam</a> build with jQuery Filedrop plugin. Under licence [%%]. 
+% fichiers disponibles pour un poids total de %[::->]<span class="blue">[%%]</span> file(s) added for a total size of <span class="blue">[%%]</span>
+Flux RSS[::->]RSS Feed
+Abonnez vous au flux rss pour suivre les evenements du DropCenter[::->]Subscribe to RSS Feed in order to follow DropCenter's events
+Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Drop your file(s) here for upload<br /><i>(well, it depends on your browser)</i>
+Connecte en tant que %[::->]Logged as [%%]
+Deconnexion[::->]Logout
+Nouveau dossier[::->]+ Folder 
+Nouveau dossier (%)[::->]New folder
+Nom du dossier[::->]Folder name
+Comptes[::->]Accounts
+Sauvegarde[::->]Backup
+Parametres[::->]Settings
+Administrateur[::->]Administrator
+Utilisateur[::->]User
+Valider[::->]Submit
+Ajouter[::->]Add
+Langue[::->]Language
+Notification par mail ?[::->]Notification by mail ?
+On[::->]On
+Off[::->]Off
+Liste des utilisateurs[::->]Users
+Ajouter un utilisateur[::->]Add user
+Rang[::->]Rank
+Supprimer[::->]Delete
+Etes-vous sur de vouloir supprimer cet utilisateur?[::->]Do you really want remove this user?
+Vous n'avez pas les droits pour supprimer ce fichier[::->]You don't have rights to remove this file
+Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]You couldn't send files because you don't have rights
+Probleme rencontre lors de l'upload[::->]Error occuring while transfert
+Taille maximale : %Mo depassee[::->]Maximal size authorized : [%%]Mo
+Fichier envoye avec succes![::->]File sent with succes
+Erreur, mauvaise methode http [::->]Error, Wrong http method
+Vous n'avez pas les droits pour renommer ce fichier[::->]You don't have rights to rename this file
+Impossible de renommer le fichier, nom incorrect ou fichier inexistant[::->]Error while renaming file : file name is incorrect or file doesn't exist.
+Vous n'avez pas les droits pour ajouter un tag &agrave; ce fichier[::->]You don't have the rights to add a tag to this file
+Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]Error while deleting file : file name is incorrect or file doesn't exist.
+Fichier correctement supprime[::->]File has been correctly removed
+Dossier correctement supprime[::->]Folder has been correctly removed
+aucun fichier[::->]no files
+Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]Error while compressing file : file name is incorrect or file doesn't exist.
+Vous n'avez pas les droits pour zipper ce fichier[::->]You don't have right to compress this file
+a ajoute un fichier[::->]have added a file
+a ajoute un ou plusieurs fichiers[::->]have added one or more files
+Ajout d'un ou plusieurs fichiers par[::->]One or more files added by
+a ajoute % fichier%[::->]have added [%%] file[%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]have added a file <a target="_blank" href="[%%]">[%%]</a> at [%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]have added a file <a target="_blank" href="[%%]">[%%]</a> at [%%]
+a supprime un fichier[::->]have removed a file
+a supprime le fichier % le %[::->]have removed the file [%%] at [%%]
+a supprime un dossier[::->]have removed a folder
+a supprime le dossier % le %[::->]have removed the folder [%%] at [%%]
+a renomme un fichier[::->]have renamed a file
+a renomme un dossier[::->]have renamed a folder
+a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]have renamed the file [%%] to <a target="_blank" href="[%%]">[%%]</a>  at [%%]
+a renomme le dossier % en <a target="_blank" href="%">%</a> le %[::->]have renamed the folder [%%] to <a target="_blank" href="[%%]">[%%]</a>  at [%%]
+a ajoute l'utilisateur[::->]have added the user
+a ajoute l'utilisateur % le %[::->]have added the user [%%] at [%%]
+a installe le dropCenter[::->]have installed the DropCenter
+a installe le dropCenter le %[::->]have installed the DropCenter at [%%]
+a supprime l'utilisateur[::->]have deleted the user
+a supprime l'utilisateur % le %[::->]have deleted the user [%%] at [%%]
+a fait un backup des fichiers[::->]have made a backup of all files
+a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> le %[::->]have made a backup of all files on <a target="_blank" href="[%%]">[%%]</a> at [%%]
+Le fichier % a ete supprime par % le %[::->]The file [%%] was deleted by [%%] at [%%]
+Le fichier % a ete ajoute par % le %[::->]The file [%%] was added by [%%] at [%%]
+Le fichier % a ete renomme en % par % le %[::->]The file [%%] was renamed to [%%] by [%%] at [%%]
+Le dossier % a ete renomme en % par % le %[::->]The folder [%%] was renamed to [%%] by [%%] at [%%]
+Ceci est un message automatique du[::->]This is an automatic message of
+ne pas repondre[::->]don't reply
+Fichier correctement deplace[::->]File correctly moved
+Impossible de deplacer le fichier[::->]Unable to move file
+Impossible de deplacer le fichier, fichier incorrect ou inexistant[::->]Unable to move file,wrong path or missing file
+Impossible de deplacer le fichier, dossier incorrect ou inexistant[::->]Unable to move file, wrong path or missing folder
+Vous n\'avez pas les droits pour deplacer ce fichier[::->]You doesn't have right to move file
+Impossible de renommer l element % en %, l element % existe deja[::->]Unable to rename element [%%] to [%%], element [%%] already exist
+La fonction requise "file_get_contents" est inaccessible sur votre serveur, verifiez votre version de PHP.[::->]The required function "file_get_contents" is unavailable on you're host, please check you're PHP version.
+La fonction requise "file_get_contents" est accessible sur votre serveur[::->]The required function "file_get_contents" is available on you're host
+La fonction requise "file_put_contents" est inaccessible sur votre serveur, verifiez votre version de PHP.[::->]The required function "file_put_contents" is unavailable on you're host, please check you're PHP version.
+La fonction requise "file_put_contents" est accessible sur votre serveur[::->]The required function "file_put_contents" is available on you're host
+Votre version de PHP (%) est trop ancienne, il est possible que certaines fonctionalitees du script comportent des disfonctionnements.[::->]You're PHP version ([%%]) is too old, some fonctionnalities might be disable.
+Votre version de PHP (%) est compatible avec le script[::->]You're PHP version ([%%]) is compatible with the script
+Le dossier de stockage des donnees "%" est inaccessible en ecriture, verifiez que vous avez bien regle les permissions via un chmod777 sur le dossier.[::->]The data folder "[%%]" is unwrittable, please check the chmod permissions are set on 777.
+Le dossier de stockage des donnees "%" est accessible en ecriture[::->]The data folder "[%%]" is writtable
+Champs obligatoires non remplis[::->]Main fields are empty
+ - Taille maximale par fichier : %.[::->] - Max size per file : <span class="blue">[%%]</span>.

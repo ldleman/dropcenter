@@ -1,0 +1,15 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  DropTeam : -Valentin CARRUESCO aka Idleman (contact@dropcenter.fr	-	http://blog.idleman.fr)
+		   -Paul R aka Fox http://fox-photography.net63.net/me-contacter
+  Site: http://dropcenter.fr
+  Twitter: https://twitter.com/#!/DropCenter
+  Location: nowhere ,FRANCE
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: JQuery, jQuery UI
+  Software: Eclipse, Notepad++ , Sublime Text 2  

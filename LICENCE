@@ -1,46 +1,7 @@
-##############
-## A PROPOS ##
-##############
+/*///////////// LICENSE DU PROJET /////////////*/
 
-Programme : Drop Center
-Version : V1.4
-Distribution : BETA
-Auteurs :   -Valentin CARRUESCO aka Idleman (contact@dropcenter.fr	-	http://blog.idleman.fr)
-			-Paul R aka Fox http://fox-photography.net63.net/me-contacter
+@license : Ce projet est sous licence CC BY-NC-ND 2.0 
 
-
-Plugins : -Jquery (www.jquery.com)
-		  -Phpjs (www.phpjs.org)
-		  -PclZip (www.phpconcept.net/pclzip/)
-		  
-Icones : Faenza Icons par tiheum (http://tiheum.deviantart.com/art/Faenza-Icons-173323228)
-
-##################
-## INSTALLATION ##
-##################
-
-1. Décompressez l'archive de dropCenter
-2. Envoyez le tout sur votre ftp
-3. Autorisez l'écriture sur le répertoire /uploads (chmod 775)
-4. Entrez l'adresse du dropCenter dans votre naviguateur, à la première connexion, le login et le mot de passe souhaité pour l'administrateur seront demandés.
-5. Le script est installé !!
-6. Vous pouvez télécharger le programme bureautique DropNews en addition du dropcenter pour être informé par notification sur votre bureau de tous les nouveaux évènements du dropcenter. (voir le site officiel : http://dropcenter.fr)
-
-#########
-## FAQ ##
-#########
-
-Une question ? Un problème? 
-
-Afin d'obtenir une FAQ à jour, merci de vous référer à la foire aux question disponible sur le site officiel à l'adresse :
-http://dropcenter.fr/?page_id=13
-
-#############
-## LICENCE ##
-#############
-
-Ce programme est sous licence : 
-Nom : CC BY-NC-ND 2.0 
 Url : http://creativecommons.org/licenses/by-nc-nd/2.0/fr/
 Version intégrale : http://creativecommons.org/licenses/by-nc-nd/2.0/fr/legalcode
 
@@ -69,4 +30,4 @@ Droits qu'autrui peut avoir soit sur l'oeuvre elle-même soit sur la façon dont
 Remarque — A chaque réutilisation ou distribution de cette oeuvre, vous devez faire apparaître clairement au public la licence selon laquelle elle est mise à disposition.
 
 Merci de respecter également les licences originelles des plugins et du pack d'icone intégré.
-
+/*//////////////////////////////////////////////*/

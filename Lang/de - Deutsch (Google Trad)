@@ -1,0 +1,76 @@
+Installation du programme[::->]Installieren Sie das Programm
+Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]Kein Mitglied des Verwaltungsrats festgelegt ist, ich danke Ihnen für die unten stehenden Informationen zu füllen.
+Login[::->]Login
+Password[::->]Kennwort
+Avatar[::->]Avatar
+Mail[::->]E-Mail
+Racine du programme[::->]Wurzel des Programms
+Creer[::->]Schaffen
+CopyrightFooter[::->][%%] V [%%] ([%%]) erstellt von <a href="[%%]">DropTeam</a> FileDrop mit jQuery-Plugin. Lizenziert [%%].
+% fichiers disponibles pour un poids total de %[::->]<span class="blue"> [%%] </ span> Dateien für ein Gesamtgewicht von <span class="blue"> [%%] </ span>
+Flux RSS[::->]RSS-Feed
+Abonnez vous au flux rss pour suivre les evenements du dropcenter[::->]RSS-Feed abonnieren, um die Ereignisse von dropcenter folgen
+Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez Datei zum Hochladen hier. <br /> <i> (Nun, es hängt von Ihrem Browser) </ i>
+Connecte en tant que %[::->]Verbunden als [%%]
+Deconnexion[::->]Logout
+Nouveau dossier[::->]+ File
+Comptes[::->]Konten
+Sauvegarde[::->]Sichern
+Parametres[::->]Parameter
+Administrateur[::->]Administrator
+Utilisateur[::->]Benutzer
+Valider[::->]Bestätigen
+Ajouter[::->]Hinzufügen
+Langue[::->]Sprache
+Notification par mail ?[::->]Benachrichtigung per E-Mail?
+On[::->]Ein
+Off[::->]Aus
+Liste des utilisateurs[::->]Benutzerliste
+Ajouter un utilisateur[::->]Benutzer hinzufügen
+Rang[::->]Rang
+Supprimer[::->]Entfernen
+Vous n'avez pas les droits pour supprimer ce fichier[::->]Sie haben keine Rechte, um diese Datei zu löschen
+Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]Sie können nicht senden, weil Sie keine Rechte an den dropCenter hinzuzufügen haben
+Probleme rencontre lors de l'upload[::->]Problem gestoßen während des Uploads
+Taille maximale : %Mo depassee[::->]Maximale Größe: [%%] Mo überschritten
+Fichier envoye avec succes![::->]Datei erfolgreich gesendet!
+Erreur, mauvaise methode http [::->]Falsch, falsch Methode http
+Vous n'avez pas les droits pour renommer ce fichier[::->]Sie verfügen nicht über die Rechte, um diese Datei umbenennen
+Impossible de renommer le fichier, nom incorrect ou fichier inexistant[::->]Kann Datei-Namen fehlerhafte oder nicht vorhandene Datei umbenennen
+Vous n'avez pas les droits pour ajouter un tag a ce fichier[::->]Sie haben keine Rechte, um Tags zu dieser Datei hinzufügen
+Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]Kann Datei nicht löschen, ungültige oder nicht vorhandene Datei-Namen
+aucun fichier[::->]keine Datei
+Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]Kann nicht komprimieren Sie die Datei, fehlerhafte oder nicht vorhandene Datei-Name:
+Vous n'avez pas les droits pour zipper ce fichier[::->]Sie haben keine Rechte, um diese Datei zu komprimieren
+a ajoute un fichier[::->]eine Datei hinzugefügt
+a ajoute un ou plusieurs fichiers[::->]wobei eine oder mehrere Dateien
+Ajout d'un ou plusieurs fichiers par[::->]Das Hinzufügen einer oder mehrerer Dateien
+a ajoute % fichier%[::->]hinzugefügt [%%] Datei [%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]fügte die Datei <a target="_blank" href="[%%]"> [%%] </ a> die [%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]fügte die Datei <a target="_blank" href="[%%]"> [%%] </ a> die [%%]
+a supprime un fichier[::->]eine Datei gelöscht
+a supprime le fichier % le %[::->]gelöscht wird die Datei [%%] auf [%%]
+a supprime un dossier[::->]eine Datei gelöscht
+a supprime le dossier % le %[::->]schaffte die [%%] auf [%%]
+a renomme un fichier[::->]Umbenennung einer Datei
+a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]Umbenennung der Datei [%%] von <a target="_blank" href="[%%]"> [%%] </ a> die [%%]
+a ajoute l'utilisateur[::->]der Benutzer hinzugefügt
+a ajoute l'utilisateur % le %[::->]hinzugefügte Benutzer [%%] auf [%%]
+a installe le dropCenter[::->]installiert die dropCenter
+a installe le dropCenter le %[::->]installiert die dropCenter die [%%]
+a supprime l'utilisateur[::->]der Benutzer gelöscht
+a supprime l'utilisateur % le %[::->]deleted user [%%] auf [%%]
+a fait un backup des fichiers[::->]machte ein Backup von Dateien
+a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> le %[::->]ein Backup von Dateien auf <a target="_blank" href="[%%]"> [%%] </ a> die [%%]
+Le fichier % a ete supprime par % le %[::->]Die Datei [%%] wurde von [%%] wurde auf [%%] gelöscht
+Le fichier % a ete ajoute par % le %[::->]Die Datei [%%] wurde von [%%] hinzugefügt am [%%]
+Le fichier % a ete renomme en % par % le %[::->]Die Datei [%%] auf [%%] umbenannt von [%%] auf [%%]
+Ceci est un message automatique du[::->]Dies ist eine automatische Nachricht von
+ne pas repondre[::->]nicht erfüllen
+Fichier correctement deplace[::->]Datei korrekt verschoben
+Impossible de deplacer le fichier[::->]Konnte die Datei verschieben
+Impossible de deplacer le fichier, fichier incorrect ou inexistant[::->]Kann die Datei nicht, falsch oder gar keine Datei
+Impossible de deplacer le fichier, dossier incorrect ou inexistant[::->]Kann nicht verschieben Sie die Datei, Ordner oder keine falschen
+Vous n\'avez pas les droits pour deplacer ce fichier[::->]Sie don \ 't haben die Rechte, um diese Datei zu bewegen
+Impossible de renommer l element % en %, l element % existe deja[::->]Unfähig, die \ item umbenennen [%%] in [%%], die \ item [%%] ist bereits vorhanden
+ - Taille maximale par fichier : %.[::->] - Maximale Größe pro Datei : <span class="blue">[%%]</span>.
