@@ -38,8 +38,6 @@ if(isset($_SESSION['User'])){
 $tpl->assign('currentUser',$currentUser);
 
 
-//Instanciation de l'objet permettant le debug
-$debug = new Debug();
 
 //Récuperation et sécurisation de toutes les variables POST et GET
 $_ = array();
