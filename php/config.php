@@ -33,8 +33,8 @@ define('CHUCKFILE','.chuck.dc.fortune');//Nom du fichier fortune contenant les c
 
 define('SECURE_DELIMITER_BEGIN','<?php /*'); //
 define('SECURE_DELIMITER_END','*/ ?>'); //
-define('DC_VERSION','1.4'); //Version du programme
+define('DC_VERSION','2'); //Version du programme
 define('DC_NAME','Beta');//Nom du programme
-define('DC_VERSION_NUMBER','1.4');//Nom du programme
+define('DC_VERSION_NUMBER','2');//Nom du programme
 define('DC_WEBSITE','http://dropcenter.fr/');//Site du programme
 ?>
