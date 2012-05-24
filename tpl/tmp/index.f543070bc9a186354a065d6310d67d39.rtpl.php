@@ -101,9 +101,9 @@
 							<select name="lang">
 							  	<?php $counter1=-1; if( isset($dir) && is_array($dir) && sizeof($dir) ) foreach( $dir as $key1 => $value1 ){ $counter1++; ?>
 							  		
-							  		<?php if( is_file($DIR_LANG["$value"]) ){ ?>
-										<?php if( strpos($DIR_LANG["$value"], '.')===false ){ ?>
-							  			<option <?php if( $user->lang==$value1 ){ ?>selected="selected"<?php } ?>><?php echo utf8_encode($file); ?></option>
+							  		<?php if( is_file($DIR_LANG.''.$value1) ){ ?>
+										<?php if( strpos($DIR_LANG.''.$value1, '.')===false ){ ?>
+							  				<option <?php if( $user->lang==$value1 ){ ?>selected="selected"<?php } ?>><?php echo utf8_encode($value1); ?></option>
 							  			<?php } ?>
 							  		<?php } ?>
 							  	<?php } ?>

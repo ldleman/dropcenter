@@ -101,9 +101,9 @@
 							<select name="lang">
 							  	{loop="dir"}
 							  		
-							  		{if="is_file($DIR_LANG.$value)"}
-										{if="strpos($DIR_LANG.$value, '.')===false"}
-							  			<option {if="$user->lang==$value"}selected="selected"{/if}>{function="utf8_encode($file)"}</option>
+							  		{if="is_file($DIR_LANG.''.$value)"}
+										{if="strpos($DIR_LANG.''.$value, '.')===false"}
+							  				<option {if="$user->lang==$value"}selected="selected"{/if}>{function="utf8_encode($value)"}</option>
 							  			{/if}
 							  		{/if}
 							  	{/loop}
