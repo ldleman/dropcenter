@@ -1,0 +1,72 @@
+
+
+Programme indépendant
+Se lance avec le programme
+
+Check par http un xml
+compare la version xml avec la version en constante
+si version constante < version xml
+Si constante updater auto ==true Ou si updater auto ==false et user prompt == upgrader :
+	recuperation archive zip par ftp
+	decompression archive zip par ftp dans dossier temp
+	fermeture du programme associé
+	déplacement des fichiers temps dans dossier du programme
+	if constante updater ==true résulats de la maj affichés 
+	if constante updater==true relancement auto du programme
+Sinon fermer
+
+
+
+
+
+/**********/
+/** BUGS **/
+/**********/
+
+
+- J'arrive pas à faire un backup du Drop'.
+--> Erreur 330 (net::ERR_CONTENT_DECODING_FAILED) : Erreur inconnue 
+(message de Chrome)
+Et le lien du backup renvoyé dans le flux est href="" (vide)
+
+
+
+- Impossible de désactiver les notifs mail avec le panel de pref'. Case cochée ou non.
+(celui là ça fait aussi un moment que je le remonte, ce bug)
+
+
+
+
+/*********************/
+/** FONCTIONNALITES **/
+/*********************/
+Unifier revoir la largeur des inputs et les plages de couleurs trop nombreuses
+Version portable
+Miniatures images
+proposer le nommage des dossiers dès la création (avec focus direct sur le champ de saisie, avec tous le texte par défaut de sélectionné)
+Possibilité de streamer les video et musiques via les balises html5
+Possibilité déditer
+backup sera renvoyé directement à l'utilisateur en flux zippé plutot que stocké sur le dropcenter
+Le flux est toujours ultra lent
+Problèmes avec les fichiers accentués
+
+/**********/
+/** FAIT **/
+/**********/
+
+Ecrasement du compte admin si création d'un utilisateur du même nom - OK
+Lors du renomage, les <br> du wordwrap sont pris en compte, pas bien- OK
+gravatar appellé a chaques fois, même quand avatar enregistré - OK
+Bugs renommage puis tooltips avec ancien nom - OK
+Rafraichissement des fichiers (getfiles) apres upload - OK
+Au getFile, mettre un preloader - OK
+A l'installation, verifier les prerequis serveur - OK
+Gravatar : copier en jpg pour tester sur client dropnews
+Mettre l'ouverture au double clic, et la selection sur simple clic
+Le rafraichissement apres upload ramene a la racine
+ajouter la modification de l'email dans les prefs, <!> penser a gerer l'avatar qui est nommé avec le mail
+Mettre les identifiants insensibles a la casse
+Voir pourquoi le flux marque 0 fichiers ajoutés de temps en temps
+- Renommer un dossier, puis cliquer dessus : le fil d'Ariane pointe toujours sur la racine, et rien n'est affiché.
+- copie lien, virer le flash et promptiser le lien.
+-se placer dans un dossier, puis cliquer sur son nom dans le fil d'Ariane. Ensuite, cliquer sur la flèche pour remonter d'un niveau : il faut le faire 2 fois au lieu d'une pour revenir à la racine.

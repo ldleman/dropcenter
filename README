@@ -7,9 +7,11 @@ Version : V1.4
 Distribution : BETA
 Auteurs :   -Valentin CARRUESCO aka Idleman (contact@dropcenter.fr	-	http://blog.idleman.fr)
 			-Paul R aka Fox http://fox-photography.net63.net/me-contacter
+			-Thib R aka H3bus http://h3b.us
 
 
-Plugins : -Jquery (www.jquery.com)
+Plugins : -jQuery Filedrop (Weixi Yen), basé sur la version de Martin Angelov (tutorialzine.com)
+		  -Jquery (www.jquery.com)
 		  -Phpjs (www.phpjs.org)
 		  -PclZip (www.phpconcept.net/pclzip/)
 		  
