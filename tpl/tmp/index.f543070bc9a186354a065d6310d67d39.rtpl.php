@@ -166,10 +166,6 @@
 <?php } ?>
 
 </div>
-	
-
-			
-
 			</ul>
 		</section>
 	</section>
