@@ -4,6 +4,53 @@
 
 		<div id="dropbox">
 		
+		<!--*********************************************-->
+		<!-- [ADMINISTRATION] CREATION D'UN UTILISATEURS -->
+		<!--*********************************************-->
+
+		<section id="usersBloc" <?php if( isset($_GET['openUserPanel']) ){ ?> style="display:block;"<?php } ?>>
+		<form action="php/action.php?action=addUser" method="POST">
+		<h1><?php echo t("Liste des utilisateurs"); ?></h1>
+		<h2 onclick="$('#userCreateBloc').fadeToggle()">(+ <?php echo t("Ajouter un utilisateur"); ?>)</h2>
+		&lt;?php 
+		<?php if( isset($user) && $user->rank=='admin' ){ ?>
+			<?php echo $userList = parseUsers('./');?>
+		<?php } ?>
+		<ul>
+		<li id="userCreateBloc" <?php if( isset($_GET['openUserPanel']) ){ ?>style="display:block;"<?php } ?>>
+			<ul>
+				<li><figure class="avatar"><img src="./tpl/UnderBlack/img/<?php echo $AVATAR_DEFAULT;?>"/></figure></li>
+				<li><span><?php echo t('Login'); ?>: <input required type="text" placeholder="<?php echo t("Login"); ?>" type="text" name="login"/></span></li>
+				<li><span><?php echo t("Password"); ?>: <input required type="password" placeholder="<?php echo t('Password'); ?>" type="password" name="password"/></span></li>
+				<li><span><?php echo t("Rang"); ?>: <select name="rank"><option value="user"><?php echo t('Utilisateur'); ?></option><option value="admin"><?php echo t('Administrateur'); ?></option></select></span></li>
+				<li><span><<?php echo t('Mail'); ?>: <input required pattern="[^ @]*@[^ @]*" placeholder="<?php echo t("Mail"); ?>" type="text" name="mail"/></span></li>
+				<li><input type="submit" value="Ajouter"></li>
+			</ul>
+		</li>
+
+		<!--*****************************************-->
+		<!-- [ADMINISTRATION] LISTE DES UTILISATEURS -->
+		<!--*****************************************-->
+
+		<?php $counter1=-1; if( isset($userList) && is_array($userList) && sizeof($userList) ) foreach( $userList as $key1 => $value1 ){ $counter1++; ?>
+		
+		<li>
+			<ul>
+				<li><figure class="avatar" id="avatar"><img src="./tpl/UnderBlack/<?php echo $value1->avatar;?>"/></figure></li>
+				<li><span><?php echo t('Login'); ?>: <?php echo $value1->login;?></span></li>
+				<li><span><?php echo t('Rang'); ?>: <?php echo $value1->rank;?></span></li>
+				<li><span> <a href="mailto: <?php echo $value1->mail;?>"><?php echo $value1->mail;?></a></span></li>
+				<!-- <li><a onclick="editUser('<?php echo $value1->login;?>');">Modifier</a></li> -->
+				<li><a onclick="deleteUser('<?php echo t('Etes-vous sur de vouloir supprimer cet utilisateur?'); ?>','<?php echo $value1->login;?>');" ><?php echo t('Supprimer'); ?></a></li>
+			</ul>
+		</li>
+		<?php } ?>
+		
+		</ul>
+	
+		</form>
+		</section>
+
 		<!--***************************-->
 		<!-- [PUBLIQUE] IDENTIFICATION -->
 		<!--***************************-->
@@ -20,7 +67,63 @@
 		<?php } ?>
 		</div>
 
+		<!--***************************-->
+		<!-- [UTILISATEUR] PREFERENCES -->
+		<!--***************************-->
 		
+		<form action="php/action.php?action=saveSettings&user=<?php if( isset($user) ){ ?>$user->login<?php } ?>" method="POST">
+		<section id="paramsBloc">
+				<h1><?php echo t('Parametres'); ?></h1>	
+				<ul>
+					<li><?php echo t('Profil'); ?>
+						<ul>
+							<li><span><?php echo t('Password'); ?> : </span><input placeholder="<?php echo t('Password'); ?>" type="password" name="password"></li>
+							<li><span><?php echo t('Mail'); ?> : </span><input required pattern="[^ @]*@[^ @]*" placeholder="<?php echo t('Mail'); ?>" value="<?php echo $user->mail;?>" type="text" name="mail"></li>
+							<li><span><?php echo t('Avatar'); ?> : </span><input placeholder="<?php echo t('Avatar'); ?>" value="<?php echo $user->avatar;?>" type="text" name="avatar"></li>
+						</ul>
+					</li>
+					<li><?php echo t('Preferences'); ?>
+						<ul>
+							<li>
+								<span><?php echo t('Notification par mail ?'); ?> :</span>
+								<input type="checkbox" name="notifMail"
+									<?php if( $user->notifMail == 'true' ){ ?> 
+									checked
+									<?php } ?>
+								> 
+
+								<?php if( $user->notifMail=='true' ){ ?> 
+									<?php echo t('On'); ?> 
+								<?php }else{ ?> 
+									<?php echo t('Off'); ?> 
+								<?php } ?>
+							</li>
+							<li><span><?php echo t('Langue'); ?> :</span>
+
+
+							<select name="lang">
+							  	&lt;?php 
+							  	$dir = scandir(DIR_LANG);
+							  	foreach ($dir as $file){
+							  		
+							  		if(is_file(DIR_LANG.$file) && strpos(DIR_LANG.$file, '.')===false){
+							  			echo '<option '.($user->lang==$file ? 'selected="selected"':'').'>'.utf8_encode($file).'</option>';
+							  		}
+							  	}  
+							  	?&gt;
+							 </select>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<input type="submit" value="{function="t("Valider");?&gt;">
+					</li>
+				</ul>
+		
+		</section>
+			</form>
+
+
 
 		<!--***********************************-->
 		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->

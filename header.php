@@ -52,5 +52,13 @@ $tpl->assign('DC_VERSION_NUMBER',DC_VERSION_NUMBER);//Nom du programme
 $tpl->assign('DC_WEBSITE',DC_WEBSITE);//Site du programme
 
 $_ = getLang();
+
+
+
+if(file_exists('./'.DCFOLDER.USERFILE)){
+		$user = (isset($_SESSION['user']) && trim($_SESSION['user'])!='' && $_SESSION['user']!=null ?@unserialize($_SESSION['user']):null);
+		$user = ($user?$user:null);
+}
+$tpl->assign('user',$user);
 ?>
 
