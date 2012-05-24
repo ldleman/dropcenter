@@ -11,12 +11,12 @@
 		<div class="loginBloc">
 		{if="!isset($user) || $user==null"}
 		<form action="php/action.php?action=login" method="POST">
-			<?php t("Login");?> : <input required type="text" placeholder="<?php t("Login");?>" type="text" name="login">
-			<?php t("Password");?> : <input required type="password" placeholder="<?php t("Password");?>" type="password" name="password">
+			{function="t('Login')"} : <input required type="text" placeholder="{function="t('Login')"}" type="text" name="login">
+			{function="t('Password')"} : <input required type="password" placeholder="{function="t('Password')"}" type="password" name="password">
 			<input type="submit" name="Connect">
 		</form>
 		{else}
-			<figure class="avatar"><img src="'.$user->avatar.'"/></figure><section class="textLogin">'.tt("Connecte en tant que %",array($user->login)).' - <a href="php/action.php?action=logout">'.tt("Deconnexion").'</a></section>
+			<figure class="avatar"><img src="'.$user->avatar.'"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
 		{/if}
 		</div>
 
@@ -29,15 +29,15 @@
 	{if="isset($user) && $user->rank=='admin'"}
 <div class="menuBloc">
 	<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
-		title="<?php t("Nouveau dossier")?>"></a> <a
+		title="{function="t("Nouveau dossier")"}"></a> <a
 		onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
-		title="<?php t("Parametres") ?>"></a> <a
+		title="{function="t("Parametres") "}"></a> <a
 		onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
-		title="<?php t("Comptes")?>"></a> <a
+		title="{function="t("Comptes")"}"></a> <a
 		href="php/action.php?action=backup" class="backup tooltips"
-		title="<?php t("Sauvegarde");?>"></a>
+		title="{function="t("Sauvegarde")"}"></a>
 
-		<div class="folderNameBloc"><input name="folderName" placeholder="<?php t('Nom du dossier'); ?>" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
 </div>
 
 	{/if}
@@ -55,7 +55,7 @@
 		<!--*********************-->
 {if="isset($user)"}
 <div class="fileBloc">
-<span class="message"><?php t("Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>");?>
+<span class="message">{function="t("Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>")"}
 </span>
 <div class="urlFile">
 	<input name="urlFile" type="text" value="http://"><button>Copier l'url</button><br/>

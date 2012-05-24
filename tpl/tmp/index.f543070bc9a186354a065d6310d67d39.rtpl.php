@@ -11,12 +11,12 @@
 		<div class="loginBloc">
 		<?php if( !isset($user) || $user==null ){ ?>
 		<form action="php/action.php?action=login" method="POST">
-			&lt;?php t("Login");?&gt; : <input required type="text" placeholder="&lt;?php t("Login");?&gt;" type="text" name="login">
-			&lt;?php t("Password");?&gt; : <input required type="password" placeholder="&lt;?php t("Password");?&gt;" type="password" name="password">
+			<?php echo t('Login'); ?> : <input required type="text" placeholder="<?php echo t('Login'); ?>" type="text" name="login">
+			<?php echo t('Password'); ?> : <input required type="password" placeholder="<?php echo t('Password'); ?>" type="password" name="password">
 			<input type="submit" name="Connect">
 		</form>
 		<?php }else{ ?>
-			<figure class="avatar"><img src="./tpl/UnderBlack/'.$user->avatar.'"/></figure><section class="textLogin">'.tt("Connecte en tant que %",array($user->login)).' - <a href="php/action.php?action=logout">'.tt("Deconnexion").'</a></section>
+			<figure class="avatar"><img src="./tpl/UnderBlack/'.$user->avatar.'"/></figure><section class="textLogin"><?php echo tt("Connecte en tant que %",array($user->login)); ?> - <a href="php/action.php?action=logout"><?php echo tt("Deconnexion"); ?></a></section>
 		<?php } ?>
 		</div>
 
@@ -29,15 +29,15 @@
 	<?php if( isset($user) && $user->rank=='admin' ){ ?>
 <div class="menuBloc">
 	<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
-		title="&lt;?php t("Nouveau dossier")?&gt;"></a> <a
+		title="<?php echo t("Nouveau dossier"); ?>"></a> <a
 		onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
-		title="&lt;?php t("Parametres") ?&gt;"></a> <a
+		title="<?php echo t("Parametres") ; ?>"></a> <a
 		onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
-		title="&lt;?php t("Comptes")?&gt;"></a> <a
+		title="<?php echo t("Comptes"); ?>"></a> <a
 		href="php/action.php?action=backup" class="backup tooltips"
-		title="&lt;?php t("Sauvegarde");?&gt;"></a>
+		title="<?php echo t("Sauvegarde"); ?>"></a>
 
-		<div class="folderNameBloc"><input name="folderName" placeholder="&lt;?php t('Nom du dossier'); ?&gt;" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
 </div>
 
 	<?php } ?>
@@ -55,7 +55,7 @@
 		<!--*********************-->
 <?php if( isset($user) ){ ?>
 <div class="fileBloc">
-<span class="message">&lt;?php t("Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>");?&gt;
+<span class="message"><?php echo t("Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>"); ?>
 </span>
 <div class="urlFile">
 	<input name="urlFile" type="text" value="http://"><button>Copier l'url</button><br/>

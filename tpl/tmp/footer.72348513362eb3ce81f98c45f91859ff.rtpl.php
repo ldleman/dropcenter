@@ -6,21 +6,19 @@
 <footer>
 <?php echo t( "CopyrightFooter", array(DC_TITLE,DC_VERSION,DC_NAME,DC_WEBSITE,DC_LICENCE) ); ?>
 
-&lt;?php 
+ 	<?php echo t('% fichiers disponibles pour un poids total de %',array($fileNumber,convertSize($totalSize))); ?>
+	</span>
 
-$infoFiles = countFiles();
-$fileNumber = count($infoFiles);
-$totalSize = 0;
+	<?php if( isset($user) ){ ?> 
+		<?php echo t(' - Taille maximale par fichier : %.',array (convertSize(getUploadSize()))); ?>
+	<?php } ?>
 
-foreach($infoFiles as $file){
-	$totalSize += $file['size'];
-}
- t('% fichiers disponibles pour un poids total de %',array($fileNumber,convertSize($totalSize))); ?&gt;
-	</span>&lt;?php if(isset($user)){t(' - Taille maximale par fichier : %.',array (convertSize(getUploadSize())));} ?&gt;<br/><br/>
-	&lt;?php echo (FORTUNE?chuckQuote().'<br/><br/>':'') ?&gt;
+
+	<br/><br/>
+	<?php if( $FORTUNE ){ ?><?php echo chuckQuote(); ?><br/><br/><?php } ?>
 	<a class="rssFeed tooltips" target="_blank"
 		href="php/action.php?action=rss" alt="&lt;?php t("Flux RSS");?&gt;"
-		title="&lt;?php t("Abonnez vous au flux rss pour suivre les evenements du DropCenter");?&gt;"><figure></figure>&lt;?php t("Flux RSS");?&gt;
+		title="<?php echo t("Abonnez vous au flux rss pour suivre les evenements du DropCenter"); ?>"><figure></figure><?php echo t("Flux RSS"); ?>
 	</a>
 </footer>
 
@@ -35,14 +33,14 @@ foreach($infoFiles as $file){
 <script type="text/javascript" src="./tpl/UnderBlack/./js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="./tpl/UnderBlack/./js/main.js"></script>
 <script type="text/javascript" src="./tpl/UnderBlack/./js/tinypop.min.js"></script>
-<span id="scriptRoot" class="hidden">&lt;?php echo getConfig('ROOT'); ?&gt; </span>
-&lt;?php if(isset($user) && $user->rank=='admin' && DISPLAY_UPDATE){ ?&gt;
+<span id="scriptRoot" class="hidden"><?php echo getConfig('ROOT'); ?> </span>
+<?php if( isset($user) && $user->rank=='admin' && $DISPLAY_UPDATE ){ ?>
 <script type="text/javascript" src="http://dropCenter.fr/wp-content/maj/maj.php"></script>
-&lt;?php } ?&gt;
+<?php } ?>
 
-&lt;?php if(isset($_GET['error'])){ ?&gt;
+<?php if( isset($_GET['error']) ){ ?>
 			<script type="text/javascript">  TINYPOP.show("&lt;?php echo $_GET['error'] ?&gt;", {position: 'top-right',timeout: 3000,sticky: false});</script>
-&lt;?php } ?&gt;
+<?php } ?>
 
 </body>
 </html>
