@@ -12,10 +12,7 @@
 		<form action="php/action.php?action=addUser" method="POST">
 		<h1><?php echo t("Liste des utilisateurs"); ?></h1>
 		<h2 onclick="$('#userCreateBloc').fadeToggle()">(+ <?php echo t("Ajouter un utilisateur"); ?>)</h2>
-		&lt;?php 
-		<?php if( isset($user) && $user->rank=='admin' ){ ?>
-			<?php echo $userList = parseUsers('./');?>
-		<?php } ?>
+
 		<ul>
 		<li id="userCreateBloc" <?php if( isset($_GET['openUserPanel']) ){ ?>style="display:block;"<?php } ?>>
 			<ul>
@@ -36,7 +33,7 @@
 		
 		<li>
 			<ul>
-				<li><figure class="avatar" id="avatar"><img src="./tpl/UnderBlack/<?php echo $value1->avatar;?>"/></figure></li>
+				<li><figure class="avatar" id="avatar"><img src="./tpl/UnderBlack/../../<?php echo $value1->avatar;?>"/></figure></li>
 				<li><span><?php echo t('Login'); ?>: <?php echo $value1->login;?></span></li>
 				<li><span><?php echo t('Rang'); ?>: <?php echo $value1->rank;?></span></li>
 				<li><span> <a href="mailto: <?php echo $value1->mail;?>"><?php echo $value1->mail;?></a></span></li>
@@ -63,7 +60,7 @@
 			<input type="submit" name="Connect">
 		</form>
 		<?php }else{ ?>
-			<figure class="avatar"><img src="./tpl/UnderBlack/'.$user->avatar.'"/></figure><section class="textLogin"><?php echo tt("Connecte en tant que %",array($user->login)); ?> - <a href="php/action.php?action=logout"><?php echo tt("Deconnexion"); ?></a></section>
+			<figure class="avatar"><img src="./tpl/UnderBlack/../../<?php echo $user->avatar;?>"/></figure><section class="textLogin"><?php echo tt("Connecte en tant que %",array($user->login)); ?> - <a href="php/action.php?action=logout"><?php echo tt("Deconnexion"); ?></a></section>
 		<?php } ?>
 		</div>
 
@@ -102,21 +99,21 @@
 
 
 							<select name="lang">
-							  	&lt;?php 
-							  	$dir = scandir(DIR_LANG);
-							  	foreach ($dir as $file){
+							  	<?php $counter1=-1; if( isset($dir) && is_array($dir) && sizeof($dir) ) foreach( $dir as $key1 => $value1 ){ $counter1++; ?>
 							  		
-							  		if(is_file(DIR_LANG.$file) && strpos(DIR_LANG.$file, '.')===false){
-							  			echo '<option '.($user->lang==$file ? 'selected="selected"':'').'>'.utf8_encode($file).'</option>';
-							  		}
-							  	}  
+							  		<?php if( is_file($DIR_LANG["$value"]) ){ ?>
+										<?php if( strpos($DIR_LANG["$value"], '.')===false ){ ?>
+							  			<option <?php if( $user->lang==$value1 ){ ?>selected="selected"<?php } ?>><?php echo utf8_encode($file); ?></option>
+							  			<?php } ?>
+							  		<?php } ?>
+							  	<?php } ?>
 							  	?&gt;
 							 </select>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<input type="submit" value="{function="t("Valider");?&gt;">
+						<input type="submit" value="<?php echo t("Valider"); ?>">
 					</li>
 				</ul>
 		
@@ -140,7 +137,7 @@
 		href="php/action.php?action=backup" class="backup tooltips"
 		title="<?php echo t("Sauvegarde"); ?>"></a>
 
-		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		<div class="folderNameBloc"><input name="folderName" placeholder="<?php echo t('Nom du dossier'); ?>" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
 </div>
 
 	<?php } ?>
@@ -162,7 +159,7 @@
 </span>
 <div class="urlFile">
 	<input name="urlFile" type="text" value="http://"><button>Copier l'url</button><br/>
-	<div class="fileInput"><input id="fileInputText" type="text"><button id="fileInputButton"></button><input id="fileInputFile" name="localFile" type="file"></div>
+	<div class="fileInput"><input id="fileInputFile" name="localFile" type="file"></div>
 </div>
 <div class="clear"></div>
 </div>

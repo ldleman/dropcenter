@@ -12,10 +12,7 @@
 		<form action="php/action.php?action=addUser" method="POST">
 		<h1>{function="t("Liste des utilisateurs")"}</h1>
 		<h2 onclick="$('#userCreateBloc').fadeToggle()">(+ {function="t("Ajouter un utilisateur")"})</h2>
-		<?php 
-		{if="isset($user) && $user->rank=='admin'"}
-			{$userList = parseUsers('./')}
-		{/if}
+
 		<ul>
 		<li id="userCreateBloc" {if="isset($_GET['openUserPanel'])"}style="display:block;"{/if}>
 			<ul>
@@ -36,7 +33,7 @@
 		
 		<li>
 			<ul>
-				<li><figure class="avatar" id="avatar"><img src="{$value->avatar}"/></figure></li>
+				<li><figure class="avatar" id="avatar"><img src="../../{$value->avatar}"/></figure></li>
 				<li><span>{function="t('Login')"}: {$value->login}</span></li>
 				<li><span>{function="t('Rang')"}: {$value->rank}</span></li>
 				<li><span> <a href="mailto: {$value->mail}">{$value->mail}</a></span></li>
@@ -63,7 +60,7 @@
 			<input type="submit" name="Connect">
 		</form>
 		{else}
-			<figure class="avatar"><img src="'.$user->avatar.'"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
+			<figure class="avatar"><img src="../../{$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
 		{/if}
 		</div>
 
@@ -102,21 +99,21 @@
 
 
 							<select name="lang">
-							  	<?php 
-							  	$dir = scandir(DIR_LANG);
-							  	foreach ($dir as $file){
+							  	{loop="dir"}
 							  		
-							  		if(is_file(DIR_LANG.$file) && strpos(DIR_LANG.$file, '.')===false){
-							  			echo '<option '.($user->lang==$file ? 'selected="selected"':'').'>'.utf8_encode($file).'</option>';
-							  		}
-							  	}  
+							  		{if="is_file($DIR_LANG.$value)"}
+										{if="strpos($DIR_LANG.$value, '.')===false"}
+							  			<option {if="$user->lang==$value"}selected="selected"{/if}>{function="utf8_encode($file)"}</option>
+							  			{/if}
+							  		{/if}
+							  	{/loop}
 							  	?>
 							 </select>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<input type="submit" value="{function="t("Valider");?>">
+						<input type="submit" value="{function="t("Valider")"}">
 					</li>
 				</ul>
 		
@@ -140,7 +137,7 @@
 		href="php/action.php?action=backup" class="backup tooltips"
 		title="{function="t("Sauvegarde")"}"></a>
 
-		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
 </div>
 
 	{/if}
@@ -162,7 +159,7 @@
 </span>
 <div class="urlFile">
 	<input name="urlFile" type="text" value="http://"><button>Copier l'url</button><br/>
-	<div class="fileInput"><input id="fileInputText" type="text"><button id="fileInputButton"></button><input id="fileInputFile" name="localFile" type="file"></div>
+	<div class="fileInput"><input id="fileInputFile" name="localFile" type="file"></div>
 </div>
 <div class="clear"></div>
 </div>
