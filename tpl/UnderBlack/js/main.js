@@ -27,7 +27,7 @@ $('.tooltips').poshytip({
 	});
 
 	 imageExtension = Array();
-		imageExtensionRoot = 'img/extension/';
+		imageExtensionRoot = 'tpl/UnderBlack/img/extension/';
 		imageExtensionMiniRoot = 'img/extension_mini/';
 		imageExtension['sql']='sql.png';
 		imageExtension['zip']='zip.png';
@@ -251,6 +251,7 @@ function generateBreadCrumb(folder){
 		$('.breadcrumb').html(generateBreadCrumb(response.currentFolder));
 		
 		t= response.status;
+
 		for(i=0;i<t.length;i++){
    			addFile(t[i]);
 		}
