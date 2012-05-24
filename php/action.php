@@ -347,6 +347,8 @@ if(isset($_['action'])){
 			}
 
 			if(mkdir($_SESSION['currentFolder'].$tempName)){
+				@chmod( $_SESSION['currentFolder'].$tempName , 0755);
+				
 				$javascript['succes'] = true;
 				$javascript['tempName'] = $tempName;
 				$javascript['tempNameUrl'] = $_SESSION['currentFolder'].$tempName;
