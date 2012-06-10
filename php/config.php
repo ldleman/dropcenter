@@ -21,6 +21,7 @@ define('MAIL',true);//Autorise les notifications par e-mail
 define('DISPLAY_DOTFILES',false);//Affiche ou non les dossiers/fichiers commençant par un point
 define('DISPLAY_UPDATE',true);//Activer la vérification des mises-à-jour
 define('DISPLAY_AVATAR_FOLDER',false);//Afficher le dossier des avatars
+define('DEFAULT_THEME','AzuraStrike');//Afficher le dossier des avatars
 
 /** A MOINS DE SAVOIR CE QUE VOUS FAITES, NE TOUCHEZ PAS AUX CONFIGURATIONS CI-DESSOUS **/
 define('DCFOLDER',UPLOAD_FOLDER.'.dc/'); //fichier contenant les données d'évènements

@@ -10,7 +10,7 @@ $tpl = new RainTPL();
 
 //Definition des dossiers de template
 raintpl::configure("base_url", null );
-raintpl::configure("tpl_dir", './tpl/UnderBlack/' );
+raintpl::configure("tpl_dir", './tpl/'.DEFAULT_THEME.'/' );
 raintpl::configure("cache_dir", "./tpl/tmp/" );
 
 

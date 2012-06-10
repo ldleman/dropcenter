@@ -1,0 +1,268 @@
+/***********/
+/** RESET **/
+/***********/ 
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dd,dl,dt,li,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin: 0;padding: 0;border: 0;font-weight: normal;font-style: normal;text-align: left;font-family: inherit;}header,footer,section,hgroup,aside,nav,article,figure,figcaption,time,dialog{display: block;}table {border-collapse: collapse;border-spacing: 0;}ol,ul {list-style: none;}q:before,q:after,blockquote:before,blockquote:after {content: "";}body,section {margin: 0px;}
+figure,ul,li{
+	margin:0;
+	padding:0;
+}
+
+/************/
+/** DEFAUT **/
+/************/ 
+
+body {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	background-color: #FFFFFF;
+}
+
+.button,button {
+	cursor: pointer;
+}
+
+a{
+	color:#ffffff;
+}
+
+a:hover{
+	color:#ffffff;
+}
+
+
+.header,.footer{
+	background-color:#4e5253;
+	height:40px;
+	width:100%;
+	margin:auto;
+	padding:5px;
+    -moz-box-shadow:inset 0px -2px 7px #000000;
+    -webkit-box-shadow:inset 0px -2px 7px #000000;
+    box-shadow:inset 0px -2px 7px #000000;
+}
+.footer{
+	height:20px;
+}
+
+.footer .menuRss{
+	float:right;
+	cursor:pointer;
+}
+
+.footer div{
+	color:#ffffff;
+	font-size:11px;
+	float:right;
+	margin-left:5px;
+	margin-top:2px;
+	margin-right:10px;
+}
+.footer blockquote{
+	color:#919191;
+	font-size:10px;
+	float:left;
+	margin-top:2px;
+}
+.header .logo{
+	margin-top:10px;
+	float:left;
+	margin-right:10%;
+}
+
+.header .mainMenu{
+	background-color:#232525;
+	padding:3px;
+	border-radius: 3px;
+	width:80px;
+	float:left;
+	margin-top:4px;
+
+
+
+    -moz-box-shadow:inset -1px -1px 0px #7d7d7d;
+    -webkit-box-shadow:inset -1px -1px 0px #7d7d7d;
+    box-shadow:inset -1px -1px 0px #7d7d7d;
+
+
+
+}
+
+.header .mainMenu ul li{
+	float:left;
+	margin: 1px;
+	cursor:pointer;
+}
+
+.header .loginBloc {
+	float:right;
+	margin-left:5px;
+	margin-top:9px;
+	margin-right:10px;
+}
+
+.header .loginBloc nav{
+	color:#ffffff;
+	font-size:10px;
+	float:left;
+	padding:3px;
+	border-radius: 3px;
+	background-color:#000000;
+	height:16px;
+}
+
+.header .loginBloc nav ul{
+	display:none;
+}
+
+.header .loginBloc figure{
+	float:left;
+	margin-right:5px;
+}
+
+.header .loginBloc figure img{
+	border-radius: 3px;
+}
+
+.header .loginBloc .arrowDown{
+	margin-top:6px;
+	margin-right:3px;
+	margin-left:3px;
+	cursor:pointer;
+}
+
+.fileList nav ul li{
+	float:left;
+	cursor:pointer;
+}
+.fileList nav ul li figure{
+	margin:10px;
+}
+.fileList h1{
+	color:#303030;
+	font-size:12px;
+	font-family:Verdana;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:14px;
+}
+ .fileList figure {
+ 	margin:10px;
+ 	margin-top:12px;
+ }
+ .fileList figure img{
+ 
+ }
+.fileList .fileInfos{
+	color:#2e2e2e;
+	font-size:11px;
+	margin-top:8px;
+	margin-left:5px;
+	margin-right:5px;
+	padding-left:5px;
+	padding-right:5px;
+	border-right:1px solid #cecece;
+	border-left:1px solid #cecece;
+}
+
+
+.fileList nav,.fileList .fileInfos, .fileList figure,.fileList h1{
+	float:left;
+}
+
+
+/***************/
+/** RESPONSVE **/
+/***************/ 
+.smartphone,.tablet,.desktop,.no-smartphone,.no-tablet,.no-desktop{
+	display:none;
+}
+
+
+/* Smartphones */
+@media only screen
+and (max-device-width : 320px) {
+
+	.smartphone{
+		display:block;
+	}
+
+	.no-smartphone{
+		display:none;
+	}
+
+
+}
+
+
+/* tablettes */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+
+	.no-smartphone,.tablet{
+		display:block;
+	}
+
+	.no-tablet{
+		display:none;
+	}
+
+}
+
+/* Desktops */
+@media only screen
+and (min-width : 1224px) {
+
+	.no-smartphone,.desktop{
+		display:block;
+	}
+
+	.no-desktop{
+		display:none;
+	}
+
+}
+
+
+
+/************/
+/** SPRITE **/
+/************/ 
+
+.sprite { background-image: url('../img/sprite.png'); background-color: transparent; background-repeat: no-repeat; }
+.logo { width: 96px; height: 22px; background-position: 0px -46px; }
+.menuAddFolder { width: 24px; height: 24px; background-position: 0px 0px; }
+.menuSetting { width: 24px; height: 24px; background-position: -24px 0px; }
+.menuUsers { width: 24px; height: 24px; background-position: -48px -22px; }
+.avatarDefault { width: 25px; height: 22px; background-position: 0px -24px; }
+.optionDownload { width: 22px; height: 22px; background-position: -72px -22px; }
+.optionEdit { width: 22px; height: 22px; background-position: -70px 0px; }
+.optionMail { width: 22px; height: 22px; background-position: -48px 0px; }
+.optionUrl { width: 22px; height: 22px; background-position: -25px -24px; }
+.menuRss { width: 20px; height: 21px; background-position: -92px 0px; }
+.arrowDown { width: 8px; height: 8px; background-position: -94px -21px; }
+
+/************/
+/** OUTILS **/
+/************/ 
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.hidden {
+	display: none;
+}
+
+.pointer{
+	cursor:pointer;
+}
