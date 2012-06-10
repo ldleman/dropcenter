@@ -1,5 +1,5 @@
 Installation du programme[::->]Installazione del programma
-Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]Nessun regista è impostato, grazie a riempire le informazioni qui di seguito.
+Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]Nessun regista Ã¨ impostato, grazie a riempire le informazioni qui di seguito.
 Login[::->]Accesso
 Password[::->]Password
 Avatar[::->]Avatar
@@ -30,7 +30,7 @@ Ajouter un utilisateur[::->]Aggiungi utente
 Rang[::->]Posizione
 Supprimer[::->]Rimuovere
 Vous n'avez pas les droits pour supprimer ce fichier[::->]Non si dispone dei diritti per cancellare questo file
-Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]Non è possibile inviare perché non hai il diritto di aggiungere il dropCenter
+Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]Non Ã¨ possibile inviare perchÃ© non hai il diritto di aggiungere il dropCenter
 Probleme rencontre lors de l'upload[::->]Problema riscontrato durante il caricamento
 Taille maximale : %Mo depassee[::->]Dimensione massima: [%%] Mo superato
 Fichier envoye avec succes![::->]File inviato con successo!
@@ -43,8 +43,8 @@ aucun fichier[::->]nessun file
 Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]Impossibile comprimere il file, il nome del file non corretto o inesistente:
 Vous n'avez pas les droits pour zipper ce fichier[::->]Non si dispone dei diritti per comprimere questo file
 a ajoute un fichier[::->]aggiunto un file
-a ajoute un ou plusieurs fichiers[::->]detti uno o più file
-Ajout d'un ou plusieurs fichiers par[::->]Aggiungendo uno o più file da
+a ajoute un ou plusieurs fichiers[::->]detti uno o piÃ¹ file
+Ajout d'un ou plusieurs fichiers par[::->]Aggiungendo uno o piÃ¹ file da
 a ajoute % fichier%[::->]aggiunto [%%] file [%%]
 a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]aggiunto il file di <a target="_blank" href="[%%]"> [%%] </ a> del [%%]
 a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]aggiunto il file di <a target="_blank" href="[%%]"> [%%] </ a> del [%%]
@@ -62,15 +62,15 @@ a supprime l'utilisateur[::->]l'utente ha eliminato
 a supprime l'utilisateur % le %[::->]utente cancellato [%%] su [%%]
 a fait un backup des fichiers[::->]fatto un backup dei file
 a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> le %[::->]fatto un backup dei file disponibili sul <a target="_blank" href="[%%]"> [%%] </ a> del [%%]
-Le fichier % a ete supprime par % le %[::->]Il file [%%] è stato eliminato da [%%] su [%%]
-Le fichier % a ete ajoute par % le %[::->]Il file [%%] è stata aggiunta da [%%] su [%%]
-Le fichier % a ete renomme en % par % le %[::->]Il file [%%] è stata rinominata in [%%] by [%%] su [%%]
-Ceci est un message automatique du[::->]Questo è un messaggio automatico dal
+Le fichier % a ete supprime par % le %[::->]Il file [%%] Ã¨ stato eliminato da [%%] su [%%]
+Le fichier % a ete ajoute par % le %[::->]Il file [%%] Ã¨ stata aggiunta da [%%] su [%%]
+Le fichier % a ete renomme en % par % le %[::->]Il file [%%] Ã¨ stata rinominata in [%%] by [%%] su [%%]
+Ceci est un message automatique du[::->]Questo Ã¨ un messaggio automatico dal
 ne pas repondre[::->]non soddisfano
 Fichier correctement deplace[::->]File spostato correttamente
 Impossible de deplacer le fichier[::->]Impossibile spostare il file
 Impossible de deplacer le fichier, fichier incorrect ou inexistant[::->]Impossibile spostare il file, file errato o non
 Impossible de deplacer le fichier, dossier incorrect ou inexistant[::->]Impossibile spostare il file, cartella o non corretto
-Vous n\'avez pas les droits pour deplacer ce fichier[::->]È don \ 't hanno i diritti per spostare questo file
-Impossible de renommer l element % en %, l element % existe deja[::->]Impossibile rinominare la voce \ [%%] in [%%], la voce \ [%%] esiste già
+Vous n\'avez pas les droits pour deplacer ce fichier[::->]Ãˆ don \ 't hanno i diritti per spostare questo file
+Impossible de renommer l element % en %, l element % existe deja[::->]Impossibile rinominare la voce \ [%%] in [%%], la voce \ [%%] esiste giÃ 
  - Taille maximale par fichier : %.[::->] - Dimensione massima per file : <span class="blue">[%%]</span>.

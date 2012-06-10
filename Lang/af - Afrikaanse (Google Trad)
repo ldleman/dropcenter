@@ -7,13 +7,13 @@ Mail[::->]E-pos
 Racine du programme[::->]Wortel van die program
 Creer[::->]Skep
 CopyrightFooter[::->][%] V [%] ([%]) geskep deur <a href="[%%]">DropTeam</a> Drop met jQuery plugin. Gelisensieerde [%].
-% fichiers disponibles pour un poids total de %[::->]<span class="blue"> [%] </ span>-lêers beskikbaar vir 'n totale gewig van <span class="blue"> [%] </ span>
+% fichiers disponibles pour un poids total de %[::->]<span class="blue"> [%] </ span>-lÃªers beskikbaar vir 'n totale gewig van <span class="blue"> [%] </ span>
 Flux RSS[::->]RSS feed
 Abonnez vous au flux rss pour suivre les evenements du dropcenter[::->]Skryf in vir RSS-voer om die gebeure van dropcenter te volg
-Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez lêer oplaai hier. <br /> <i> (Wel, dit hang af van jou 'browser') </ i>
+Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez lÃªer oplaai hier. <br /> <i> (Wel, dit hang af van jou 'browser') </ i>
 Connecte en tant que %[::->]Wat verband hou as [%]
 Deconnexion[::->]Teken uit
-Nouveau dossier[::->]+ Lêer
+Nouveau dossier[::->]+ LÃªer
 Comptes[::->]Rekeninge
 Sauvegarde[::->]Beskerm
 Parametres[::->]Parameters
@@ -29,48 +29,48 @@ Liste des utilisateurs[::->]Gebruikers Lys
 Ajouter un utilisateur[::->]Voeg User
 Rang[::->]Rangskik
 Supprimer[::->]Verwyder
-Vous n'avez pas les droits pour supprimer ce fichier[::->]Jy het nie regte om die lêer te verwyder
+Vous n'avez pas les droits pour supprimer ce fichier[::->]Jy het nie regte om die lÃªer te verwyder
 Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]Jy kan nie stuur nie, want jy het geen regte die dropCenter by te voeg
 Probleme rencontre lors de l'upload[::->]Probleem ondervind tydens die oplaai
 Taille maximale : %Mo depassee[::->]Maksimum grootte: [%] Mo oorskry
-Fichier envoye avec succes![::->]Lêer gestuur!
+Fichier envoye avec succes![::->]LÃªer gestuur!
 Erreur, mauvaise methode http [::->]Verkeerd, verkeerd metode http
-Vous n'avez pas les droits pour renommer ce fichier[::->]Jy hoef nie die regte om die lêer te hernoem
-Impossible de renommer le fichier, nom incorrect ou fichier inexistant[::->]Kon nie lêer naam is verkeerd of nie-bestaande lêer te hernoem
-Vous n'avez pas les droits pour ajouter un tag a ce fichier[::->]Jy hoef nie die regte om tags te voeg tot hierdie lêer
-Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]Kan nie verwyder lêer, ongeldig of nie bestaan &#8203;&#8203;nie lêernaam
-aucun fichier[::->]Geen lêer
-Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]Kan nie die lêer zip, verkeerd of nie bestaan &#8203;&#8203;nie lêernaam:
-Vous n'avez pas les droits pour zipper ce fichier[::->]Jy het nie regte om die lêer te rits
-a ajoute un fichier[::->]bygevoeg 'n lêer
-a ajoute un ou plusieurs fichiers[::->]het gesê een of meer lêers
-Ajout d'un ou plusieurs fichiers par[::->]Byvoeging een of meer lêers
-a ajoute % fichier%[::->]bygevoeg [%%] lêer [%]
-a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]bygevoeg die lêer <a target="_blank" href="[%%]"> [%] </ a> Die [%]
-a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]bygevoeg die lêer <a target="_blank" href="[%%]"> [%] </ a> Die [%]
-a supprime un fichier[::->]'n lêer uitgevee
-a supprime le fichier % le %[::->]verwyder die lêer [%%] op [%]
-a supprime un dossier[::->]'n lêer uitgevee
+Vous n'avez pas les droits pour renommer ce fichier[::->]Jy hoef nie die regte om die lÃªer te hernoem
+Impossible de renommer le fichier, nom incorrect ou fichier inexistant[::->]Kon nie lÃªer naam is verkeerd of nie-bestaande lÃªer te hernoem
+Vous n'avez pas les droits pour ajouter un tag a ce fichier[::->]Jy hoef nie die regte om tags te voeg tot hierdie lÃªer
+Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]Kan nie verwyder lÃªer, ongeldig of nie bestaan &#8203;&#8203;nie lÃªernaam
+aucun fichier[::->]Geen lÃªer
+Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]Kan nie die lÃªer zip, verkeerd of nie bestaan &#8203;&#8203;nie lÃªernaam:
+Vous n'avez pas les droits pour zipper ce fichier[::->]Jy het nie regte om die lÃªer te rits
+a ajoute un fichier[::->]bygevoeg 'n lÃªer
+a ajoute un ou plusieurs fichiers[::->]het gesÃª een of meer lÃªers
+Ajout d'un ou plusieurs fichiers par[::->]Byvoeging een of meer lÃªers
+a ajoute % fichier%[::->]bygevoeg [%%] lÃªer [%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]bygevoeg die lÃªer <a target="_blank" href="[%%]"> [%] </ a> Die [%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]bygevoeg die lÃªer <a target="_blank" href="[%%]"> [%] </ a> Die [%]
+a supprime un fichier[::->]'n lÃªer uitgevee
+a supprime le fichier % le %[::->]verwyder die lÃªer [%%] op [%]
+a supprime un dossier[::->]'n lÃªer uitgevee
 a supprime le dossier % le %[::->]afgeskaf die [%] op [%]
-a renomme un fichier[::->]die naam van 'n lêer
-a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]die naam van die lêer%%] deur <a target="_blank" href="[%%]"> [%] </ a> die [%]
+a renomme un fichier[::->]die naam van 'n lÃªer
+a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]die naam van die lÃªer%%] deur <a target="_blank" href="[%%]"> [%] </ a> die [%]
 a ajoute l'utilisateur[::->]Die gebruiker het bygevoeg
 a ajoute l'utilisateur % le %[::->]bygevoeg gebruiker [%%] op [%]
-a installe le dropCenter[::->]geïnstalleer is die dropCenter
-a installe le dropCenter le %[::->]die dropCenter geïnstalleer die [%]
+a installe le dropCenter[::->]geÃ¯nstalleer is die dropCenter
+a installe le dropCenter le %[::->]die dropCenter geÃ¯nstalleer die [%]
 a supprime l'utilisateur[::->]die gebruiker het weggelaat
 a supprime l'utilisateur % le %[::->]geskrap gebruiker [%%] op [%]
-a fait un backup des fichiers[::->]'n rugsteun van lêers
-a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> le %[::->]'n rugsteun van lêers beskikbaar op <a target="_blank" href="[%%]"> [%] </ a> die [%]
-Le fichier % a ete supprime par % le %[::->]Die lêer%%] is verwyder deur [%] op [%]
-Le fichier % a ete ajoute par % le %[::->]Die lêer%%] bygevoeg is deur [%] op [%]
-Le fichier % a ete renomme en % par % le %[::->]Die lêer [%%] is vernoem na [%] by [%] op [%]
+a fait un backup des fichiers[::->]'n rugsteun van lÃªers
+a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> le %[::->]'n rugsteun van lÃªers beskikbaar op <a target="_blank" href="[%%]"> [%] </ a> die [%]
+Le fichier % a ete supprime par % le %[::->]Die lÃªer%%] is verwyder deur [%] op [%]
+Le fichier % a ete ajoute par % le %[::->]Die lÃªer%%] bygevoeg is deur [%] op [%]
+Le fichier % a ete renomme en % par % le %[::->]Die lÃªer [%%] is vernoem na [%] by [%] op [%]
 Ceci est un message automatique du[::->]Dit is 'n outomatiese boodskap van
 ne pas repondre[::->]nie voldoen aan
 Fichier correctement deplace[::->]File behoorlik verhuis
-Impossible de deplacer le fichier[::->]Kon nie lêer om te beweeg
-Impossible de deplacer le fichier, fichier incorrect ou inexistant[::->]Kan nie beweeg die lêer, verkeerde lêer of geen
-Impossible de deplacer le fichier, dossier incorrect ou inexistant[::->]Kan nie beweeg nie die lêer of nie verkeerd
-Vous n\'avez pas les droits pour deplacer ce fichier[::->]Jy don \ 't het die regte om die lêer te skuif
+Impossible de deplacer le fichier[::->]Kon nie lÃªer om te beweeg
+Impossible de deplacer le fichier, fichier incorrect ou inexistant[::->]Kan nie beweeg die lÃªer, verkeerde lÃªer of geen
+Impossible de deplacer le fichier, dossier incorrect ou inexistant[::->]Kan nie beweeg nie die lÃªer of nie verkeerd
+Vous n\'avez pas les droits pour deplacer ce fichier[::->]Jy don \ 't het die regte om die lÃªer te skuif
 Impossible de renommer l element % en %, l element % existe deja[::->]Kan nie die \ item te hernoem nie [%] in [%], die \ item [%] bestaan &#8203;&#8203;reeds
- - Taille maximale par fichier : %.[::->] - Max grootte per lêer : <span class="blue">[%%]</span>.
+ - Taille maximale par fichier : %.[::->] - Max grootte per lÃªer : <span class="blue">[%%]</span>.

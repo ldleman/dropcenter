@@ -1,60 +1,60 @@
-Installation du programme[::->]Instalación del programa
-Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]Ningún director se encuentra, gracias a llenar la siguiente información.
-Login[::->]Iniciar sesión
-Password[::->]Contraseña
+Installation du programme[::->]InstalaciÃ³n del programa
+Aucun administrateur n'est defini, merci de remplir les informations ci dessous.[::->]NingÃºn director se encuentra, gracias a llenar la siguiente informaciÃ³n.
+Login[::->]Iniciar sesiÃ³n
+Password[::->]ContraseÃ±a
 Avatar[::->]Avatar
 Mail[::->]E-mail
-Racine du programme[::->]Raíz del programa
+Racine du programme[::->]RaÃ­z del programa
 Creer[::->]Crear
 CopyrightFooter[::->][%%] V [%%] ([%%]), creado por FileDrop <a href="[%%]">DropTeam</a> con el plugin de jQuery. Licenciado [%%].
 % fichiers disponibles pour un poids total de %[::->]<span class="blue"> [%%] </ span> los archivos disponibles para un peso total de <span class="blue"> [%%] </ span>
 Flux RSS[::->]Fuente RSS
-Abonnez vous au flux rss pour suivre les evenements du dropcenter[::->]Suscríbete al feed RSS para seguir los acontecimientos de dropcenter
-Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez archivo para la carga aquí. <br /> <i> (Bueno, depende de su navegador) </ i>
+Abonnez vous au flux rss pour suivre les evenements du dropcenter[::->]SuscrÃ­bete al feed RSS para seguir los acontecimientos de dropcenter
+Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez archivo para la carga aquÃ­. <br /> <i> (Bueno, depende de su navegador) </ i>
 Connecte en tant que %[::->]Conectado como [%%]
-Deconnexion[::->]Cerrar sesión
+Deconnexion[::->]Cerrar sesiÃ³n
 Nouveau dossier[::->]+ Archivo
 Comptes[::->]Cuentas
 Sauvegarde[::->]Salvaguardar
-Parametres[::->]Parámetros
+Parametres[::->]ParÃ¡metros
 Administrateur[::->]Administrador
 Utilisateur[::->]Usuario
 Valider[::->]Validar
-Ajouter[::->]Añadir
+Ajouter[::->]AÃ±adir
 Langue[::->]Lengua
-Notification par mail ?[::->]Notificación por email?
+Notification par mail ?[::->]NotificaciÃ³n por email?
 On[::->]On
 Off[::->]Off
 Liste des utilisateurs[::->]Lista de usuarios
 Ajouter un utilisateur[::->]Agregar usuario
-Rang[::->]Posición
+Rang[::->]PosiciÃ³n
 Supprimer[::->]Quitar
 Vous n'avez pas les droits pour supprimer ce fichier[::->]Usted no tiene derechos para eliminar este archivo
 Vous ne pouvez rien envoyer car vous n'avez aucun droits d'ajout sur le dropCenter[::->]No se puede enviar porque no tienes los derechos para agregar el dropCenter
-Probleme rencontre lors de l'upload[::->]Se encontró un problema durante la carga
-Taille maximale : %Mo depassee[::->]El tamaño máximo: [%%] Mo superado
-Fichier envoye avec succes![::->]Archivo enviado con éxito!
-Erreur, mauvaise methode http [::->]Http incorrecto, método equivocado
+Probleme rencontre lors de l'upload[::->]Se encontrÃ³ un problema durante la carga
+Taille maximale : %Mo depassee[::->]El tamaÃ±o mÃ¡ximo: [%%] Mo superado
+Fichier envoye avec succes![::->]Archivo enviado con Ã©xito!
+Erreur, mauvaise methode http [::->]Http incorrecto, mÃ©todo equivocado
 Vous n'avez pas les droits pour renommer ce fichier[::->]Usted no tiene el derecho de cambiar el nombre de este archivo
 Impossible de renommer le fichier, nom incorrect ou fichier inexistant[::->]No se puede renombrar el archivo de nombre de archivo incorrecto o inexistente
 Vous n'avez pas les droits pour ajouter un tag a ce fichier[::->]Usted no tiene derechos para agregar etiquetas para este archivo
-Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]No se puede eliminar el archivo, el nombre de archivo no válido o inexistente
-aucun fichier[::->]no hay ningún archivo
+Impossible de supprimer le fichier, nom incorrect ou fichier inexistant[::->]No se puede eliminar el archivo, el nombre de archivo no vÃ¡lido o inexistente
+aucun fichier[::->]no hay ningÃºn archivo
 Impossible de zipper le fichier, nom incorrect ou fichier inexistant :[::->]No se puede comprimir el archivo, nombre de archivo incorrecto o no existe:
 Vous n'avez pas les droits pour zipper ce fichier[::->]Usted no tiene derechos para comprimir el archivo
-a ajoute un fichier[::->]añadió un archivo
-a ajoute un ou plusieurs fichiers[::->]dichos uno o más archivos
-Ajout d'un ou plusieurs fichiers par[::->]Agregar uno o más archivos de
-a ajoute % fichier%[::->]añadido [%%] archivo [%%]
-a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]agregó el <a target="_blank" href="[%%]"> archivo [%%] </ a> el [%%]
-a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]agregó el <a target="_blank" href="[%%]"> archivo [%%] </ a> el [%%]
+a ajoute un fichier[::->]aÃ±adiÃ³ un archivo
+a ajoute un ou plusieurs fichiers[::->]dichos uno o mÃ¡s archivos
+Ajout d'un ou plusieurs fichiers par[::->]Agregar uno o mÃ¡s archivos de
+a ajoute % fichier%[::->]aÃ±adido [%%] archivo [%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]agregÃ³ el <a target="_blank" href="[%%]"> archivo [%%] </ a> el [%%]
+a ajoute le fichier <a target="_blank" href="%">%</a> le %[::->]agregÃ³ el <a target="_blank" href="[%%]"> archivo [%%] </ a> el [%%]
 a supprime un fichier[::->]eliminar un archivo
 a supprime le fichier % le %[::->]eliminado el archivo [%%] en [%%]
 a supprime un dossier[::->]eliminar un archivo
-a supprime le dossier % le %[::->]abolió el [%%] en [%%]
+a supprime le dossier % le %[::->]aboliÃ³ el [%%] en [%%]
 a renomme un fichier[::->]nombre de un archivo
-a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]cambió el nombre del archivo [%%] por <a target="_blank" href="[%%]"> [%%] </ a> el [%%]
-a ajoute l'utilisateur[::->]el usuario ha añadido
+a renomme le fichier % en <a target="_blank" href="%">%</a> le %[::->]cambiÃ³ el nombre del archivo [%%] por <a target="_blank" href="[%%]"> [%%] </ a> el [%%]
+a ajoute l'utilisateur[::->]el usuario ha aÃ±adido
 a ajoute l'utilisateur % le %[::->]agregados por el usuario [%%] en [%%]
 a installe le dropCenter[::->]instalado el dropCenter
 a installe le dropCenter le %[::->]instalado el dropCenter el [%%]
@@ -65,7 +65,7 @@ a fait un backup des fichiers disponible sur <a target="_blank" href="%">%</a> l
 Le fichier % a ete supprime par % le %[::->]El archivo [%%], ha sido eliminado por [%%] en [%%]
 Le fichier % a ete ajoute par % le %[::->]El archivo [%%] fue agregado por [%%] en [%%]
 Le fichier % a ete renomme en % par % le %[::->]El archivo [%%], ha sido renombrado a [%%] por [%%] en [%%]
-Ceci est un message automatique du[::->]Este es un mensaje automático de
+Ceci est un message automatique du[::->]Este es un mensaje automÃ¡tico de
 ne pas repondre[::->]no cumple
 Fichier correctement deplace[::->]Archivo correctamente movida
 Impossible de deplacer le fichier[::->]No se ha podido mover el archivo
