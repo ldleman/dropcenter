@@ -13,20 +13,28 @@
 			<a href="index.php"><figure class="sprite logo"></figure></a>
 			<nav class="mainMenu">
 				<ul>
-					<li class="sprite menuAddFolder pointer" alt="Nouveau dossier" title="Nouveau dossier"></li>
-					<li class="sprite menuSetting pointer" alt="Réglages" title="Réglages"></li>
-					<li class="sprite menuUsers pointer" alt="A propos" title="A propos"></li>
+					<li onclick="openView('.panelFolder');" class="sprite menuAddFolder pointer" alt="Nouveau dossier" title="Nouveau dossier"></li>
+					<li onclick="openView('.panelSetting');" class="sprite menuSetting pointer" alt="Réglages" title="Réglages"></li>
+					<li onclick="openView('.panelAbout');" class="sprite menuUsers pointer" alt="A propos" title="A propos"></li>
 					<div class="clear"></div>
 				</ul>
 			</nav>
 			<section class="loginBloc">
 				<figure><img class="sprite avatarDefault"></figure>
 				<nav>
+					<?php if( isset($user) ){ ?>
 					<div class="left">Idleman</div><div class="sprite arrowDown left"></div>
 					<ul>
 						<li>Preferences</li>
 						<li>D&eacute;connexion</li>
 					</ul>
+					<?php }else{ ?>
+					<form action="php/action.php?action=login" method="POST">
+						<input required placeholder="<?php echo t('Login'); ?>" type="text" name="login">
+						<input required type="password" placeholder="<?php echo t('Password'); ?>" name="password">
+						<button type="submit">Connexion</button>
+					</form>
+					<?php } ?>
 
 				</nav>
 
