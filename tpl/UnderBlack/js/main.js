@@ -439,10 +439,9 @@ function tell(message,time){
 
 
 function openFile(element){
-
 	var parent = $(element).parent().parent();
 	var file = str_replace('&amp;','&',$('.fileUrl',parent).html());
-	window.open(file);
+	window.location='./PHP/action.php?action=openFile&file='+file;
 }
 
 function focusFile(element){

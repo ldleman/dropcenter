@@ -234,6 +234,16 @@ a:hover{
 	font-size:12px;
 
 }
+
+.loginBloc nav input{
+	border-radius: 3px;
+	background-color:#0f0f0f;
+	box-shadow: 0px -1px 0 #7D7D7D inset;
+	color:#cecece;
+	border:0px;
+	padding:10px;
+	font-size:12px;
+}
 .urlZone input{
 	width:50%;
 	max-width:300px;

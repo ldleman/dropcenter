@@ -77,6 +77,24 @@ if(isset($_['action'])){
 
 			break;
 
+		case 'openFile':
+			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
+				$file = '../'.$_['file'];
+				header('Content-Description: File Transfer');
+	    		header('Content-Type: application/octet-stream');
+	    		header('Content-Disposition: attachment; filename='.basename($file));
+	    		header('Content-Transfer-Encoding: binary');
+	    		header('Expires: 0');
+	   	 		header('Cache-Control: must-revalidate');
+	    		header('Pragma: public');
+	    		header('Content-Length: ' . $file);
+	    		ob_clean();
+	    		flush();
+				readfile($file);
+				exit();
+			}
+		break;
+
 		case 'getFiles':
 			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
 				
