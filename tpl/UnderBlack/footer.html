@@ -16,10 +16,15 @@
 
 	<br/><br/>
 	{if="$FORTUNE"}{function="chuckQuote()"}<br/><br/>{/if}
+	
+
+	{if="isset($user)"}
 	<a class="rssFeed tooltips" target="_blank"
-		href="php/action.php?action=rss" alt="<?php t("Flux RSS");?>"
+		href="php/action.php?action=login&token={function="getToken($user)"}" alt="<?php t("Flux RSS");?>"
 		title="{function="t("Abonnez vous au flux rss pour suivre les evenements du DropCenter")"}"><figure></figure>{function="t("Flux RSS")"}
 	</a>
+	{/if}
+
 </footer>
 
 

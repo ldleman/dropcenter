@@ -180,11 +180,31 @@ function encode($str){
  * @param string $login
  * @param string $password
  * @author Idleman
- * @return boolean vrai ou faux
+ * @return si l'utilisateur existe, il le retourne dans le cas contraire : boolean faux
  */
 function exist($login,$password){
 	$user = getUser($login);
 	return ($user!=false && $user->password==encode($password)?$user:false);
+}
+
+/**
+ *
+ * Teste l'existence d'un compte utilisateur dans la base en fonction de son authToken.
+ * @param string $token
+ * @author Idleman
+ * @return boolean vrai ou faux
+ */
+function existToken($token){
+	$users = parseUsers();
+	$target = false;
+	foreach($users as $user){
+		if(strcasecmp(getToken($user),$token)==0)$target=$user;
+	}
+	return ($target!=false?$target:false);
+}
+
+function getToken($user){
+	return sha1(LEFT_HASH.$user->login.$user->password.RIGHT_HASH);
 }
 
 function existLogin($login){
@@ -411,7 +431,7 @@ function describeEvent($event,$root){
 	$describedEvent['user'] = $user;
 	$describedEvent['date'] = $event->date;
 	$describedEvent['action'] = $event->action;
-	$avatar = $root.$user->avatar;
+	$avatar = $root.'PHP/action.php?action=openFile&file='.$user->avatar;
 	switch($event->action){
 
 		case 'addEventForUpload':

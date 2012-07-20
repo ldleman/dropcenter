@@ -14,7 +14,7 @@ define('AVATAR_DEFAULT','defaultAvatar.png'); //chemin de l'avatar par défaut
 define('AVATARFOLDER',UPLOAD_FOLDER.'avatars/'); //dossier contenant les avatars
 define('FORTUNE',true);//Affiche une citation aléatoire Chuck Norris Facts (mettre à false pour ne pas afficher)
 define('RSS_MAIL','rss@mail.com');
-define('READ_FOR_ANONYMOUS',true);// Définit si les visiteurs non authentifiés peuvent lire le contenu du dropCenter (true = lecture possible, false = lecture interdite)
+define('READ_FOR_ANONYMOUS',false);// Définit si les visiteurs non authentifiés peuvent lire le contenu du dropCenter (true = lecture possible, false = lecture interdite)
 define('DC_LANG','fr - Francais');//Définit la langue par défaut
 define('DIR_LANG','lang/');//Dossier des fichiers de langue
 define('MAIL',true);//Autorise les notifications par e-mail
@@ -34,6 +34,8 @@ define('CHUCKFILE','.chuck.dc.fortune');//Nom du fichier fortune contenant les c
 
 define('SECURE_DELIMITER_BEGIN','<?php /*'); //
 define('SECURE_DELIMITER_END','*/ ?>'); //
+define('LEFT_HASH','-1é&@shs--'); //
+define('RIGHT_HASH','$^^/!+£'); //
 define('DC_VERSION','2'); //Version du programme
 define('DC_NAME','Beta');//Nom du programme
 define('DC_VERSION_NUMBER','2');//Nom du programme

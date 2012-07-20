@@ -16,10 +16,15 @@
 
 	<br/><br/>
 	<?php if( $FORTUNE ){ ?><?php echo chuckQuote(); ?><br/><br/><?php } ?>
+	
+
+	<?php if( isset($user) ){ ?>
 	<a class="rssFeed tooltips" target="_blank"
-		href="php/action.php?action=rss" alt="&lt;?php t("Flux RSS");?&gt;"
+		href="php/action.php?action=login&token=<?php echo getToken($user); ?>" alt="&lt;?php t("Flux RSS");?&gt;"
 		title="<?php echo t("Abonnez vous au flux rss pour suivre les evenements du DropCenter"); ?>"><figure></figure><?php echo t("Flux RSS"); ?>
 	</a>
+	<?php } ?>
+
 </footer>
 
 

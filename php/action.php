@@ -268,11 +268,22 @@ if(isset($_['action'])){
 			break;
 		
 		case 'login':
-			$user = exist($_['login'],$_['password']);
-			$_SESSION['user'] = (!$user?null:serialize($user));
-			//$_SESSION['traductions'] = getUserLang($_POST['login']);
-			header('location: ../index.php'.(!$user?'?error=Mauvais identifiant ou mot de passe':''));
-			break;
+			if(isset($_['token'])){
+				$user = existToken($_['token']);
+				$_SESSION['user'] = (!$user?null:serialize($user));
+				if(!$user){
+					header('location: ../index.php?error=Mauvais identifiant ou mot de passe');
+				}else{
+					header('location: ../PHP/action.php?action=rss');
+				}
+				
+			}else{
+				$user = exist($_['login'],$_['password']);
+				$_SESSION['user'] = (!$user?null:serialize($user));
+				header('location: ../index.php'.(!$user?'?error=Mauvais identifiant ou mot de passe':''));
+			}
+			
+		break;
 
 		case 'logout':
 			$_SESSION = array();
@@ -335,25 +346,22 @@ if(isset($_['action'])){
 		break;
 			
 		case 'rss':
-			header('Content-Type: text/xml; charset=utf-8');
-
-	
-			echo  rssHeader('http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?action=rss');
-			$allEvents = array_reverse(parseEvents());
-			$root = getConfig('ROOT');
-
-
-			if(isset($allEvents) && count($allEvents)!=0){
-				foreach($allEvents as $event){
-					$event = describeEvent($event,$root);
-					$user = $event['user'];
-					echo rssItem($event['title'],$event['lien'],$event['date'],$event['description'],$event['action'],$user->login,$root.$user->avatar);
+			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
+				header('Content-Type: text/xml; charset=utf-8');
+				echo  rssHeader('http://'.$_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF'].'?action=rss');
+				$allEvents = array_reverse(parseEvents());
+				$root = getConfig('ROOT');
+				if(isset($allEvents) && count($allEvents)!=0){
+					foreach($allEvents as $event){
+						$event = describeEvent($event,$root);
+						$user = $event['user'];
+						echo rssItem($event['title'],$event['lien'],$event['date'],$event['description'],$event['action'],$user->login,$root.$user->avatar);
+					}
 				}
+				echo rssFooter();
+				$javascript = null;
 			}
-
-			echo rssFooter();
-			$javascript = null;
-			break;
+		break;
 
 		case 'addFolder':
 		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
