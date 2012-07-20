@@ -79,7 +79,7 @@ if(isset($_['action'])){
 
 		case 'openFile':
 			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
-				$file = '../'.$_['file'];
+				$file = stripslashes(utf8_decode(html_entity_decode('../'.$_['file'])));
 				header('Content-Description: File Transfer');
 	    		header('Content-Type: application/octet-stream');
 	    		header('Content-Disposition: attachment; filename='.basename($file));
@@ -218,12 +218,10 @@ if(isset($_['action'])){
 		case 'deleteUser':
 			if(isset($user) && $user->rank=='admin'){
 				deleteUser($_['user']);
-
 				$event['user']=$user->login;
 				$event['result'] = true;
 				$event['deletedUser'] = $_['user'];
 				addEvent($event);
-
 				if($_['user']==$user->login){
 					header('location: ./action.php?action=logout');
 				}else{
@@ -246,8 +244,6 @@ if(isset($_['action'])){
 				$_SESSION['backup']= file_get_contents($zipName);
 				$fileSize = filesize($zipName);
 				unlink($zipName);
-
-				
 
 				header('Content-Description: File Transfer');
 	    		header('Content-Type: application/octet-stream');

@@ -440,7 +440,8 @@ function tell(message,time){
 
 function openFile(element){
 	var parent = $(element).parent().parent();
-	var file = str_replace('&amp;','&',$('.fileUrl',parent).html());
+	//var file = str_replace('&amp;','&',$('.fileUrl',parent).html());
+	var file = $('.fileUrl',parent).html();
 	window.location='./PHP/action.php?action=openFile&file='+file;
 }
 
@@ -458,7 +459,7 @@ function deleteFile(element){
 
 	var parent = $(element).parent().parent();
 	var file =$('.fileUrl',parent).html();
-	 file = html_entity_decode(file);
+	 file = file;
 		$.ajax({
   url: "php/action.php?action=deleteFiles",
   data:{file:file},
@@ -578,6 +579,8 @@ return sa?s:s[0];}
 function addslashes(str){return(str+'').replace(/[\\"']/g,'\\$&').replace(/\u0000/g,'\\0');}
 function stripslashes(str){return(str+'').replace(/\\(.?)/g,function(s,n1){switch(n1){case'\\':return'\\';case'0':return'\u0000';case'':return'';default:return n1;}});}
 
+
+/*
 function html_entity_decode (string, quote_style) {
     var hash_map = {},
         symbol = '',
@@ -708,6 +711,8 @@ function get_html_translation_table (table, quote_style) {
  
     return hash_map;
 }
+
+*/
 
 function array2json(arr) {
     var parts = [];
