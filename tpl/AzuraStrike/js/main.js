@@ -524,7 +524,7 @@ function deleteFile(element){
 	}
 	
 	function renameFile(element){
-		parent = $(element).parent();
+		var parent = $(element).parent();
 		file = $('.fileUrl',parent.parent()).html();
 		value = $('.fileName',parent).attr("title");
 		$('.fileName',parent).html('');
