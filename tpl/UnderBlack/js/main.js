@@ -96,50 +96,29 @@ $('.tooltips').poshytip({
 		imageExtension['fla']='makefile.png';
 		imageExtension['swf']='makefile.png';
 	
-	var dropbox = $('.message'),
-		message = $('.message', dropbox);
-	
-	dropbox.filedrop({
-		// The name of the $_FILES entry:
-		paramname:'pic',
-		
-		maxfiles: 10000000000,
-    	maxfilesize: 10000000,
-		url: 'php/action.php?action=upload',
-		
-		uploadFinished:function(i,file,response){
-			$.data(file).addClass('done');
-			/*alert(response.filePath);
-			alert(response.file);*/
-			addedFiles.push(response);
-			if(!response.succes)tell(response.status);
-			// response is the JSON object that post_file.php returns
-		},
-		
-    	error: function(err, file) {
-			switch(err) {
-				case 'BrowserNotSupported':
-					tell('Vous avez essay&eacute; d\'envoyer autre chose qu\'un fichier ou votre naviguateur ne supporte pas l\'upload en HTML5! (ps : DropCenter fonctionne tr&egrave;s bien sur des navigateurs s&eacute;rieux tels que google chrome ou firefox.)');
-					break;
-				case 'TooManyFiles':
-					tell('Trops de fichiers envoy&eacute;s en m&ecirc;me temps');
-					break;
-				case 'FileTooLarge':
-					tell(file.name+' est trop gros! ');
-					break;
-				default:
-					break;
-			}
-		},
-		
-		afterAll: function() {
-			var events = Array();
+	// var dropbox = $('.message'),
+	// 	message = $('.message', dropbox);
+
+
+
+
+	$(function () {
+    $('#uploadButton').fileupload({
+        dataType: 'json',
+        autoUpload: true,
+        dropZone : '#uploadButton',
+        maxFileSize: 5000000,
+        sequentialUploads: true,
+        add: function (e, data) {
+        	createImage(data.files[0]);
+			pendingTask = true;
+        	data.submit();
+        },
+        done: function (e, data) {
+    		var events = Array();
 			for(i=0;i<addedFiles.length;i++){
 				events.push([addedFiles[i]['file'],addedFiles[i]['filePath']]);
 			}
-
-			//rafraichissement du bousin
-			getFiles(null,'//CURRENT');
 
 			//enregistrement de l'evenement
 			$.ajax({
@@ -147,24 +126,21 @@ $('.tooltips').poshytip({
 				  data:{files:array2json(events)}
 			});
 			pendingTask = false;
-
-		},
-
-		// Called before each upload is started
-		beforeEach: function(file){
-		},
-		
-		uploadStarted:function(i, file, len){
-			createImage(file);
-			pendingTask = true;
-		
-		},
-		
-		progressUpdated: function(i, file, progress) {
-			$.data(file).find('.progress').width(progress);
-		}
-    	 
+        },
+       	stop: function (e, data) {
+			//rafraichissement du bousin
+			getFiles(null,'//CURRENT');
+       	},
+        progressall: function (e, data) {
+	        // var progress = parseInt(data.loaded / data.total * 100, 10);
+	        // $('#progress .bar').css('width', progress + '%');
+	        $.data(file).find('.progress').width(progress);
+    	}
+    });
 	});
+
+
+	
 
 	
 	var template = '<div class="preview">'+

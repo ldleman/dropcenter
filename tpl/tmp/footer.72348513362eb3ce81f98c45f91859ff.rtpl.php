@@ -33,9 +33,13 @@
 		<!--*******************-->
 
 <script type="text/javascript" src="./tpl/UnderBlack/./js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.filedrop.min.js"></script>
-<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.poshytip.min.js"></script>
 <script type="text/javascript" src="./tpl/UnderBlack/./js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.iframe-transport.js"></script>
+
+<script type="text/javascript" src="./tpl/UnderBlack/./js/jquery.poshytip.min.js"></script>
+
 <script type="text/javascript" src="./tpl/UnderBlack/./js/main.js"></script>
 <script type="text/javascript" src="./tpl/UnderBlack/./js/tinypop.min.js"></script>
 <span id="scriptRoot" class="hidden"><?php echo getConfig('ROOT'); ?> </span>

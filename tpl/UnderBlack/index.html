@@ -154,12 +154,9 @@
 		<!-- [TOUS] ZONE DE DROP -->
 		<!--*********************-->
 {if="isset($user)"}
-<div class="fileBloc">
-<span class="message">{function="t("Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>")"}
-</span>
-<div class="urlFile">
-	<input name="urlFile" type="text" value="http://"><button>Copier l'url</button><br/>
-	<div class="fileInput"><input id="fileInputFile" name="localFile" type="file"></div>
+<div class="fileBloc tooltips" title="Faites glisser des fichiers sur la zone ou cliquez sur celle ci pour evoyer des fichiers">
+<div id="dropZone">
+<input id="uploadButton" type="file" size="1" name="files[]" data-url="./php/action.php?action=upload" multiple>
 </div>
 <div class="clear"></div>
 </div>

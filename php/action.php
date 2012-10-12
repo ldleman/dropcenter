@@ -420,8 +420,11 @@ if(isset($_['action'])){
 				if(strtolower($_SERVER['REQUEST_METHOD']) != 'post'){
 					$javascript['status'] = tt('Erreur, mauvaise m&eacute;thode http');
 				}
-				if(array_key_exists('pic',$_FILES) && $_FILES['pic']['error'] == 0 ){
-					$pic = $_FILES['pic'];
+
+				if(array_key_exists('files',$_FILES) && $_FILES['files']['error'][0] == 0 ){
+					$pic = $_FILES['files'];
+					$pic['name'] = $pic['name'][0];
+					$pic['tmp_name'] = $pic['tmp_name'][0];
 					$forbidenFormats = explode(',',FORBIDEN_FORMAT);
 					$pic['name'] = stripslashes($pic['name']);
 					if(in_array(get_extension($pic['name']),$forbidenFormats)){

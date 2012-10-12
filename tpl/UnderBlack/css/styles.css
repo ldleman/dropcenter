@@ -418,52 +418,26 @@ footer{
     float:left;
 }
 
-.fileBloc .urlFile{
-	font-size: 11px;
-    text-align: center;
-    padding:10px;
-    display: block;
-    width:220px;
-    height:60px;
-    margin:auto;
-    background-color: #161616;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    float:left;
-    margin-left:10px;
-   	background-color:#2A2A2C;
-}
 
-.fileBloc .urlFile input,.fileBloc .urlFile button{
-	background-color: #0F0F0F;
-    border: none;
-    box-shadow: 0 0 2px #000000;
-    color: #FFFFFF;
-    font-size: 10px;
-    margin: 7px 3px 3px;
-    padding: 3px;
-}
 
-.fileBloc .urlFile button{
-	cursor:pointer;
-	width: 70px;
-}
 
 .fileBloc{
 	font-size: 11px;
     text-align: center;
     padding:10px;
     display: block;
-    width:380px;
+    width: 90px;
     margin-top:10px;
     margin:auto;
     background-color: #161616;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    cursor: normal;
     clear:both;
+}
 
+.fileBloc input,.fileBloc div,.fileBloc span{
+	cursor:pointer;
 }
 
 
@@ -815,5 +789,31 @@ footer{
 	height:9px;
 	background:url(../img/toolTips.gif) no-repeat -27px 0;
 }
+
+
+
+#dropZone{
+    width:90px;
+    height:90px;
+    cursor:pointer;
+    overflow: hidden;
+    float:left;
+    background: url("../img/uploadButton.png") no-repeat scroll 0 0 transparent;
+}
+
+#uploadButton{
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    height: 90px;
+    width:90px;
+    font-size:110px;
+    background-color: transparent;
+    border:none;
+}
+
+
+
+
 
 body >div.popwrap{position:fixed;padding:10px}.top-right{top:0;right:0}.popup{width:200px;min-height:50px;-moz-border-radius:7px;-webkit-border-radius:7px;background-color:#161616;padding:3px 5px 10px 10px;display:block;margin-bottom:5px}.close{float:right;cursor:pointer;color:#EFEFEF;font:bold 12px Tahoma,Arial,Helvetica,sans-serif}.poptext{clear:both;font:12px Lucida Grande,Lucida Sans Unicode,Geneva,Verdana,sans-serif;word-wrap:break-word;color:#FEFEFE;line-height:120%}
