@@ -78,8 +78,13 @@ if(isset($_['action'])){
 			break;
 
 		case 'openFile':
-			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
-				$file = stripslashes(utf8_decode(html_entity_decode('../'.$_['file'])));
+			
+			if(
+				(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user')))
+				|| (isPublished($_['file']))
+
+				){
+				$file = stripslashes(utf8_decode(html_entity_decode($_['file'])));
 				header('Content-Description: File Transfer');
 	    		header('Content-Type: application/octet-stream');
 	    		header('Content-Disposition: attachment; filename='.basename($file));
@@ -92,6 +97,37 @@ if(isset($_['action'])){
 	    		flush();
 				readfile($file);
 				exit();
+			}
+		break;
+
+
+		case 'publishFile':
+		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
+					
+				$file = stripslashes(utf8_decode(html_entity_decode("../".$_['file'])));
+
+				addPublish($file);
+				$javascript['succes'] = true;
+				$javascript['status'] =  'Fichier rendu public';
+				
+				
+			}else{
+				$javascript['status'] = tt('Vous n\'avez pas les droits pour publier ce fichier');
+			}
+		break;
+
+		case 'unpublishFile':
+		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
+					
+				$file = stripslashes(utf8_decode(html_entity_decode("../".$_['file'])));
+
+				deletePublish($file);
+				$javascript['succes'] = true;
+				$javascript['status'] =  'Fichier rendu privé';
+				
+				
+			}else{
+				$javascript['status'] = tt('Vous n\'avez pas les droits pour publier ce fichier');
 			}
 		break;
 
@@ -126,6 +162,9 @@ if(isset($_['action'])){
 			header('location: ../index.php');	
 		}	
 		break;
+
+
+
 		
 		case 'zipFile':
 			if(isset($user) && $user->rank=='admin'){

@@ -44,8 +44,9 @@ function scanFolder($folder){
 				$fileArray['shortname'] =utf8_encode(short($file,NAME_LIMIT,get_extension($file)));
 				$fileArray['extension'] =get_extension($file);
 				$fileArray['url'] = utf8_encode(str_replace('../','',$folder).$file);
-				$fileArray['absoluteUrl'] = $root.$fileArray['url'];
+				$fileArray['absoluteUrl'] = $root.'/php/action.php?action=openFile&file=../'.$fileArray['url'];
 				$fileArray['size'] = getSize($folder.$file);
+				$fileArray['published'] = isPublished($folder.$file);
 				$mtime = filemtime ($folder.$file);
 				$fileArray['mtimeDate'] = date('d/m/Y',$mtime);
 				$fileArray['mtimeHour'] = date('h\hi\m',$mtime);
@@ -152,16 +153,7 @@ function addConfig($key,$value){
 }
 
 
-/**
- *
- * Ajoute un utilisateur au fichier securise JSON de stockage des utilisateurs
- * @author Idleman
- * @param array<> $user
- */
-function addUser($user,$encodePassword = true){
-	if($encodePassword) $user['password'] = encode($user['password']);
-	file_put_contents('../'.DCFOLDER.USERFILE,SECURE_DELIMITER_BEGIN.json_encode($user).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
-}
+
 
 /**
  *
@@ -232,6 +224,21 @@ function getConfig($key){
 		}
 	}
 	return $target;
+}
+
+
+
+
+
+/**
+ *
+ * Ajoute un utilisateur au fichier securise JSON de stockage des utilisateurs
+ * @author Idleman
+ * @param array<> $user
+ */
+function addUser($user,$encodePassword = true){
+	if($encodePassword) $user['password'] = encode($user['password']);
+	file_put_contents('../'.DCFOLDER.USERFILE,SECURE_DELIMITER_BEGIN.json_encode($user).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
 }
 
 /**
@@ -318,11 +325,62 @@ function parseUsers($dir = '../'){
 }
 
 
+function deletePublish($file){
+	$publishes = parsePublishes();
+	$targets = array();
+	unlink('../'.DCFOLDER.PUBLISHFILE);
+	foreach($publishes as $publish){
+		if($publish!=$file){
+			file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode($publish).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
+		}
+	}
+}
 
+/**
+ *
+ * Ajoute un fichier publié au fichier des publications
+ * @author Idleman
+ * @param <string> file
+ */
+function addPublish($file){
+	if(!isPublished($file))
+	file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode($file).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
+}
 
+/**
+ *
+ * Questionne le fichier des publications pour voir si le fichier est publié.
+ * @param <string> $file chemin du fichier
+ * @return true ou false
+ * @author Idleman
+ */
 
+function isPublished($file){
+	$publishes = parsePublishes();
+	$target = false;
+	foreach($publishes as $publish){
+		if(strcasecmp($publish,$file)==0)$target = true;
+	}
+	return $target;
+}
 
-
+/**
+ * Parse le fichiers des publication et les retourne sous forme d'une liste d'objets JSON
+ * @param [OPTIONNAL] string $dir
+ * @author Idleman
+ * @return array<JSONOBject> $publishes
+ */
+function parsePublishes($dir = '../'){
+	if(!file_exists($dir.DCFOLDER.PUBLISHFILE)) touch($dir.DCFOLDER.PUBLISHFILE);
+	$publishesLines = file($dir.DCFOLDER.PUBLISHFILE);
+	$publishes = array();
+	foreach($publishesLines as $publishLine){
+		if(trim($publishLine)!=''){
+			$publishes [] = json_decode(str_replace(array(SECURE_DELIMITER_BEGIN,SECURE_DELIMITER_END),'',$publishLine));
+		}
+	}
+	return $publishes;
+}
 
 
 /**

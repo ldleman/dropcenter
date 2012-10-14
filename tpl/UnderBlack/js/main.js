@@ -131,10 +131,9 @@ $('.tooltips').poshytip({
 			//rafraichissement du bousin
 			getFiles(null,'//CURRENT');
        	},
-        progressall: function (e, data) {
-	        // var progress = parseInt(data.loaded / data.total * 100, 10);
-	        // $('#progress .bar').css('width', progress + '%');
-	        $.data(file).find('.progress').width(progress);
+        progress: function (e, data) {
+	         var progress = parseInt(data.loaded / data.total * 100, 10);
+	        $.data(data.files[0]).find('.progress').width(progress+'%');
     	}
     });
 	});
@@ -299,7 +298,7 @@ function generateBreadCrumb(folder){
 
 	var tpl = '<div  class="preview filePreview" >'+
 						'<div class="fileUrl">'+stripslashes(file.url)+'</div>'+
-						'<span title="'+stripslashes(file.toolTipName)+'" class="imageHolder"><div onclick="deleteFile(this)" class="deleteFile">x</div>'+
+						'<span title="'+stripslashes(file.toolTipName)+''+(file.published?' [Publique]':'')+'" class="imageHolder'+(file.published?' filePublished':'')+'"><div onclick="deleteFile(this)" class="deleteFile">x</div>'+
 							
 							'<div onclick="focusFile(this)"  ondblclick="openFile(this)">'+
 
@@ -320,8 +319,8 @@ function generateBreadCrumb(folder){
 						'<li onclick="$(\'.directLink\',$(this).parent().parent().parent()).fadeToggle(200).select();" alt="Copier le lien direct" title="Copier le lien direct" class="optionUrl"></li>'+
 						//'<li alt="Envoyer par mail" title="Envoyer par mail" class="optionShare"></li>'+
 						//'<li alt="Editer la source" title="Editer la source" class="optionEdit"></li>'+
-						'<li onclick="zipFile(this)" alt="T&eacute;l&eacute;charger le fichier" title="T&eacute;l&eacute;charger le fichier" class="optionZip"></li>'+
-						//'<li alt="Envoyer sur dropbox" title="Envoyer sur dropbox" class="optionDropbox"></li>'+
+						'<li onclick="zipFile(this)" alt="T&eacute;l&eacute;charger le fichier compressé" title="T&eacute;l&eacute;charger le fichier" class="optionZip"></li>'+
+						'<li onclick="'+(file.published?'un':'')+'publishFile(this)" title="Rendre '+(file.published?'privé':'public')+'" class="optionDropbox"></li>'+
 						'</ul><div class="clear"></div></div>'+
 						'<textarea type="text" class="directLink">'+stripslashes(file.absoluteUrl)+'</textarea>'+
 						'</span>'+
@@ -364,6 +363,42 @@ function zipFile(element){
 });
 }
 
+
+function publishFile(element){
+	var parent = $(element).parent().parent().parent().parent();
+	var file =$('.fileUrl',parent).html();
+	
+		$.ajax({
+  url: "php/action.php?action=publishFile",
+  data:{file:file},
+  success: function(response){
+	var response = $.parseJSON(response);
+	if(response.succes==true){
+		tell(response.status);
+	}else{
+		tell(response.status);
+	}
+  }
+});
+}
+
+function unpublishFile(element){
+	var parent = $(element).parent().parent().parent().parent();
+	var file =$('.fileUrl',parent).html();
+	
+		$.ajax({
+  url: "php/action.php?action=unpublishFile",
+  data:{file:file},
+  success: function(response){
+	var response = $.parseJSON(response);
+	if(response.succes==true){
+		tell(response.status);
+	}else{
+		tell(response.status);
+	}
+  }
+});
+}
 
 
 

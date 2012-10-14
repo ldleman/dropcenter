@@ -28,6 +28,8 @@ define('DCFOLDER',UPLOAD_FOLDER.'.dc/'); //fichier contenant les données d'év�
 define('LANGFOLDER','lang/'); //dossier contenant les fichiers données de traductions
 define('EVENTFILE','.event.dc'); //fichier contenant les données d'évènements
 define('USERFILE','.user.dc.php'); //fichier contenant les données utilisateurs
+define('PUBLISHFILE','.publish.dc.php');//fichier contenant les données publiées
+
 define('CONFIGFILE','.config.dc.php'); //fichier contenant les données utilisateurs
 define('TAGSFILE','.tags.dc'); //fichier contenant les tags des fichiers envoyés
 define('CHUCKFILE','.chuck.dc.fortune');//Nom du fichier fortune contenant les citations de Chuck Norris

@@ -473,6 +473,10 @@ footer{
 	text-align: center;
 }
 
+.filePublished .fileName{
+	color: #62D827;
+}
+
 #dropbox .preview .deleteFile{
 	float:right;
 	width:12px;
