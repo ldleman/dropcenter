@@ -84,10 +84,13 @@ if(isset($_['action'])){
 				|| (isPublished($_['file']))
 
 				){
+
 				$file = stripslashes(utf8_decode(html_entity_decode($_['file'])));
+				$file ='../'.UPLOAD_FOLDER.str_replace(UPLOAD_FOLDER,'',$file);
+
 				header('Content-Description: File Transfer');
 	    		header('Content-Type: application/octet-stream');
-	    		header('Content-Disposition: attachment; filename='.basename($file));
+	    		header('Content-Disposition: attachment; filename='.str_replace(' ','-',basename($file)));
 	    		header('Content-Transfer-Encoding: binary');
 	    		header('Expires: 0');
 	   	 		header('Cache-Control: must-revalidate');
@@ -406,8 +409,8 @@ if(isset($_['action'])){
 			}else{
 				$tempName = makeName($_SESSION['currentFolder'],str_replace(array("\r","\n"),'',tt('Nouveau dossier (%)')));
 			}
-
-			if(mkdir($_SESSION['currentFolder'].$tempName)){
+			
+			if(mkdir($tempName)){
 				@chmod( $_SESSION['currentFolder'].$tempName , 0755);
 				
 				$javascript['succes'] = true;

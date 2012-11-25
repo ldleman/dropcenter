@@ -451,7 +451,6 @@ function tell(message,time){
 
 function openFile(element){
 	var parent = $(element).parent().parent();
-	//var file = str_replace('&amp;','&',$('.fileUrl',parent).html());
 	var file = $('.fileUrl',parent).html();
 	window.location='./PHP/action.php?action=openFile&file='+file;
 }

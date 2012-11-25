@@ -12,7 +12,7 @@ define('MAX_SIZE',1000);//Taille maximale authorisée par fichier en Mo (Pensez 
 define('FORBIDEN_FORMAT','exe,php,sh,bin,htaccess,htm,html,asp');//Les extensions interdites à l'exécution séparées par des virgules (les fichiers seront bien envoyés mais un .txt sera rajouté à l'extension afin d'empêcher les utilisateurs d'exécuter leurs fichiers sur le serveur
 define('AVATAR_DEFAULT','defaultAvatar.png'); //chemin de l'avatar par défaut
 define('AVATARFOLDER',UPLOAD_FOLDER.'avatars/'); //dossier contenant les avatars
-define('FORTUNE',true);//Affiche une citation aléatoire Chuck Norris Facts (mettre à false pour ne pas afficher)
+define('FORTUNE',false);//Affiche une citation aléatoire Chuck Norris Facts (mettre à false pour ne pas afficher)
 define('RSS_MAIL','rss@mail.com');
 define('READ_FOR_ANONYMOUS',false);// Définit si les visiteurs non authentifiés peuvent lire le contenu du dropCenter (true = lecture possible, false = lecture interdite)
 define('DC_LANG','fr - Francais');//Définit la langue par défaut
