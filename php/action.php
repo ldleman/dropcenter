@@ -79,15 +79,17 @@ if(isset($_['action'])){
 
 		case 'openFile':
 			
+
+			$file = stripslashes(utf8_decode(html_entity_decode($_['file'])));
+			$file ='../'.UPLOAD_FOLDER.str_replace(array('../'.UPLOAD_FOLDER,UPLOAD_FOLDER),'',$file);
+
 			if(
 				(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user')))
 				|| (isPublished($_['file']))
 
 				){
 
-				$file = stripslashes(utf8_decode(html_entity_decode($_['file'])));
-				$file ='../'.UPLOAD_FOLDER.str_replace(UPLOAD_FOLDER,'',$file);
-
+				
 				header('Content-Description: File Transfer');
 	    		header('Content-Type: application/octet-stream');
 	    		header('Content-Disposition: attachment; filename='.str_replace(' ','-',basename($file)));
@@ -100,6 +102,8 @@ if(isset($_['action'])){
 	    		flush();
 				readfile($file);
 				exit();
+			}else{
+				exit('Fichier priv&eacute;, acc&egrave;s interdit');
 			}
 		break;
 
@@ -186,7 +190,8 @@ if(isset($_['action'])){
 				$v_list = $archive->create($file, PCLZIP_OPT_REMOVE_PATH,'..\\'.DCFOLDER);
 				if ($v_list != 0){
 					$javascript['succes'] = true;
-					$javascript['status'] =  str_replace('../','',$zipName);
+
+					$javascript['status'] =  str_replace('../','','./PHP/action.php?action=openFile&file='.$zipName);
 				}else{
 					$javascript['status'] = tt('Impossible de zipper le fichier, nom incorrect ou fichier inexistant :').$archive->errorInfo(true);
 				}

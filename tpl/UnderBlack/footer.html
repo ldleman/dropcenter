@@ -32,9 +32,10 @@
 		<!-- [TOUS] JAVASCRIPT -->
 		<!--*******************-->
 
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.0.0.js"></script>
+
 <script type="text/javascript" src="js/jquery.fileupload.js"></script>
 <script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
 
@@ -48,7 +49,7 @@
 {/if}
 
 {if="isset($_GET['error'])"}
-			<script type="text/javascript">  TINYPOP.show("<?php echo $_GET['error'] ?>", {position: 'top-right',timeout: 3000,sticky: false});</script>
+			<script type="text/javascript">  TINYPOP.show("{$_GET['error']}", {position: 'top-right',timeout: 3000,sticky: false});</script>
 {/if}
 
 </body>

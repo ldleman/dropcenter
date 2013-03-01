@@ -298,7 +298,7 @@ function generateBreadCrumb(folder){
 
 	var tpl = '<div  class="preview filePreview" >'+
 						'<div class="fileUrl">'+stripslashes(file.url)+'</div>'+
-						'<span title="'+stripslashes(file.toolTipName)+''+(file.published?' [Publique]':'')+'" class="imageHolder'+(file.published?' filePublished':'')+'"><div onclick="deleteFile(this)" class="deleteFile">x</div>'+
+						'<span title="'+stripslashes(file.toolTipName)+'" class="imageHolder'+(file.published?' filePublished':'')+'"><div onclick="deleteFile(this)" class="deleteFile">x</div>'+
 							
 							'<div onclick="focusFile(this)"  ondblclick="openFile(this)">'+
 
@@ -320,7 +320,7 @@ function generateBreadCrumb(folder){
 						//'<li alt="Envoyer par mail" title="Envoyer par mail" class="optionShare"></li>'+
 						//'<li alt="Editer la source" title="Editer la source" class="optionEdit"></li>'+
 						'<li onclick="zipFile(this)" alt="T&eacute;l&eacute;charger le fichier compressé" title="T&eacute;l&eacute;charger le fichier" class="optionZip"></li>'+
-						'<li onclick="'+(file.published?'un':'')+'publishFile(this)" title="Rendre '+(file.published?'privé':'public')+'" class="optionDropbox"></li>'+
+						'<li onclick="'+(file.published?'un':'')+'publishFile(this)" title="Public/Privé" class="optionDropbox"></li>'+
 						'</ul><div class="clear"></div></div>'+
 						'<textarea type="text" class="directLink">'+stripslashes(file.absoluteUrl)+'</textarea>'+
 						'</span>'+
@@ -348,7 +348,7 @@ function generateBreadCrumb(folder){
 function zipFile(element){
 	var parent = $(element).parent().parent().parent().parent();
 	var file =$('.fileUrl',parent).html();
-	 file = html_entity_decode(file);
+
 		$.ajax({
   url: "php/action.php?action=zipFile",
   data:{file:file},
@@ -374,6 +374,10 @@ function publishFile(element){
   success: function(response){
 	var response = $.parseJSON(response);
 	if(response.succes==true){
+
+		$(element).attr('onclick','unpublishFile(this);');
+		$(element).parent().parent().parent().addClass('filePublished');
+
 		tell(response.status);
 	}else{
 		tell(response.status);
@@ -392,6 +396,8 @@ function unpublishFile(element){
   success: function(response){
 	var response = $.parseJSON(response);
 	if(response.succes==true){
+		$(element).parent().parent().parent().removeClass('filePublished');
+		$(element).attr('onclick','publishFile(this);');
 		tell(response.status);
 	}else{
 		tell(response.status);
@@ -452,6 +458,7 @@ function tell(message,time){
 function openFile(element){
 	var parent = $(element).parent().parent();
 	var file = $('.fileUrl',parent).html();
+
 	window.location='./PHP/action.php?action=openFile&file='+file;
 }
 
@@ -573,7 +580,7 @@ var  testTextBox = $(input);
 }  
 
 function getFileOption(elem){
-	$(elem+":parent .addOptions").fadeToggle();
+	$(".addOptions",$(elem).parent().parent()).fadeToggle();
 }
 
 function explode(delimiter,string,limit){var emptyArray={0:''};if(arguments.length<2||typeof arguments[0]=='undefined'||typeof arguments[1]=='undefined'){return null;}
