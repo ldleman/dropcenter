@@ -1,8 +1,0 @@
-* J’aimerais que les user n’aient pas à avoir de compte : un simple captcha, ce serait parfait.
-* Nom de compte avec accent : Invité –> InvitÃ© (Et du coup impossible de se connecter par la suite)
-* Pourquoi rendre l’ajout d’un mail obligatoire à la création de compte..?
-* Tentative d’upload d’un fichier (le README était sous la main) : Double clic sur le fichier : affichage correct du contenu. OK. Essaie de récupération du lien direct : le lien ne semble pas se mettre dans le clipboard… Téléchargement : on me propose par défaut une archive zip. Je télécharge, ouverture de l’archive directement sous w7… archive vide. Ouverture avec 7zip : on retrouve un sous dossier « .. », contenant encore un sous dossier « upload », et enfin le fichier. Soit le chemin dropFile-07-06-2012 05h40m19.zip\..\uploads\README
-* Dans le footer, il y a déja des fichiers aprés l’install (6 dans mon cas), alors qu’il n’y a pour le moment aucun fichier d’uploadé… C’est un peu déroutant. (Aprés vérif, ce compteur prend en compte les fichiers dans /avatars et /.dc)
-
-Client :FF à jour, Win7_64
-Serveur : PHP 5.3, Apache 2.4
