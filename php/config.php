@@ -4,7 +4,7 @@
 define('DC_TITLE','DropCenter');//Titre du dropCenter
 define('DC_DESCRIPTION','File drop center kiss n\'fun');//description du dropCenter
 define('DC_LOGO','');//logo central du dropCenter (Si rien n'est mis, le logo par défaut apparaît)
-define('DC_LICENCE','CC BY 3.0');//License de votre dropCenter
+define('DC_LICENCE','CC BY NC SA');//License de votre dropCenter
 define('UPLOAD_FOLDER','uploads/');//chemin vers le dossier d'upload (ne pas oublier de mettre les droits d'écriture sur ce dossier)
 define('NAME_LIMIT',25);//Nombre maximal de caractères affichés pour les fichiers
 define('NAME_LIMIT_BORDER','..');//Les caractères qui s'afficheront pour signifier qu'un nom est raccourci

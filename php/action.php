@@ -317,7 +317,7 @@ if(isset($_['action'])){
 				if(!$user){
 					header('location: ../index.php?error=Mauvais identifiant ou mot de passe');
 				}else{
-					header('location: ../PHP/action.php?action=rss');
+					header('location: ../php/action.php?action=rss');
 				}
 				
 			}else{
