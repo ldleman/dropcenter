@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once('config.php');
 
@@ -808,4 +808,7 @@ function rssFooter(){
 }
 
 
+function unicode2utf8($string){
+	return html_entity_decode(preg_replace("/U\+([0-9A-F]{4})/", "&#x\\1;", $string), ENT_NOQUOTES, 'UTF-8');
+}
 ?>

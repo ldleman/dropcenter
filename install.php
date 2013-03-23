@@ -1,6 +1,6 @@
-<?php 
+﻿<?php 
 require_once('header.php') ;
-
+ 
 
 		$tests = array();
 		if (!@function_exists('file_get_contents')){

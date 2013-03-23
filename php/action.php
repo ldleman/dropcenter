@@ -470,7 +470,7 @@ if(isset($_['action'])){
 
 				if(array_key_exists('files',$_FILES) && $_FILES['files']['error'][0] == 0 ){
 					$pic = $_FILES['files'];
-					$pic['name'] = $pic['name'][0];
+					$pic['name'] = utf8_decode($pic['name'][0]);
 					$pic['tmp_name'] = $pic['tmp_name'][0];
 					$forbidenFormats = explode(',',FORBIDEN_FORMAT);
 					$pic['name'] = stripslashes($pic['name']);
@@ -479,9 +479,9 @@ if(isset($_['action'])){
 					}
 					$size = filesize($pic['tmp_name']);
 					if($size<=(MAX_SIZE*1048576)){
-
+						
 						$destination = (isset($_SESSION['currentFolder'])?$_SESSION['currentFolder']:'../'.UPLOAD_FOLDER).$pic['name'];
-
+						
 						if(move_uploaded_file($pic['tmp_name'], $destination)){
 		
 							$javascript['status'] = tt('Fichier envoy&eacute; avec succ&egrave;s!');
