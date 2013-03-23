@@ -97,7 +97,7 @@ if(isset($_['action'])){
 	    		header('Expires: 0');
 	   	 		header('Cache-Control: must-revalidate');
 	    		header('Pragma: public');
-	    		header('Content-Length: ' . $file);
+	    		//header('Content-Length: ' . $file);
 	    		ob_clean();
 	    		flush();
 				readfile($file);

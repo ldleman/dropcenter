@@ -4,3 +4,7 @@
 /tpl/AzuraStrike
 /tpl/tmp/*.php
 /tpl/AzuraStrike
+/uploads/.dc/.config.dc.php
+/uploads/.dc/.publish.dc.php
+/uploads/.dc/.user.dc.php
+/uploads/.dc/.event.dc
