@@ -460,7 +460,7 @@ function openFile(element){
 	var parent = $(element).parent().parent();
 	var file = $('.fileUrl',parent).html();
 
-	window.location='./PHP/action.php?action=openFile&file='+file;
+	window.location='./php/action.php?action=openFile&file='+file;
 }
 
 function focusFile(element){

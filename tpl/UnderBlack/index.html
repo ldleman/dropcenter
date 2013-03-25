@@ -33,7 +33,7 @@
 		
 		<li>
 			<ul>
-				<li><figure class="avatar" id="avatar"><img src="../../PHP/action.php?action=openFile&file={$value->avatar}"/></figure></li>
+				<li><figure class="avatar" id="avatar"><img src="../../php/action.php?action=openFile&file={$value->avatar}"/></figure></li>
 				<li><span>{function="t('Login')"}: {$value->login}</span></li>
 				<li><span>{function="t('Rang')"}: {$value->rank}</span></li>
 				<li><span> <a href="mailto: {$value->mail}">{$value->mail}</a></span></li>
@@ -60,7 +60,7 @@
 			<input type="submit" name="Connect">
 		</form>
 		{else}
-			<figure class="avatar"><img src="../../PHP/action.php?action=openFile&file={$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
+			<figure class="avatar"><img src="../../php/action.php?action=openFile&file={$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
 		{/if}
 		</div>
 
