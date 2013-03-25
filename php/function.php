@@ -44,7 +44,7 @@ function scanFolder($folder){
 				$fileArray['shortname'] =utf8_encode(short($file,NAME_LIMIT,get_extension($file)));
 				$fileArray['extension'] =get_extension($file);
 				$fileArray['url'] = utf8_encode(str_replace('../','',$folder).$file);
-				$fileArray['absoluteUrl'] = $root.'/php/action.php?action=openFile&file=../'.$fileArray['url'];
+				$fileArray['absoluteUrl'] = $root.'php/action.php?action=openFile&file=../'.$fileArray['url'];
 				$fileArray['size'] = getSize($folder.$file);
 				$fileArray['published'] = isPublished($folder.$file);
 				$mtime = filemtime ($folder.$file);
