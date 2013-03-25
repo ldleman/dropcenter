@@ -4,7 +4,6 @@ require_once('php/rain.tpl.class.php');
 require_once('php/config.php');
 require_once('php/function.php');
 
-
 //Instanciation du template
 $tpl = new RainTPL();
 
@@ -13,10 +12,7 @@ raintpl::configure("base_url", null );
 raintpl::configure("tpl_dir", './tpl/'.DEFAULT_THEME.'/' );
 raintpl::configure("cache_dir", "./tpl/tmp/" );
 
-
 $user = null;
-
-
 
 $tpl->assign('DC_TITLE',DC_TITLE);//Titre du dropCenter
 $tpl->assign('DC_DESCRIPTION',DC_DESCRIPTION);//description du dropCenter
@@ -39,7 +35,6 @@ $tpl->assign('DISPLAY_DOTFILES',DISPLAY_DOTFILES);//Affiche ou non les dossiers/
 $tpl->assign('DISPLAY_UPDATE',DISPLAY_UPDATE);//Activer la vérification des mises-à-jour
 $tpl->assign('DISPLAY_AVATAR_FOLDER',DISPLAY_AVATAR_FOLDER);//Afficher le dossier des avatars
 
-
 $tpl->assign('DCFOLDER',DCFOLDER); //fichier contenant les données d'évènements
 $tpl->assign('LANGFOLDER',LANGFOLDER); //dossier contenant les fichiers données de traductions
 $tpl->assign('EVENTFILE',EVENTFILE); //fichier contenant les données d'évènements
@@ -55,8 +50,6 @@ $tpl->assign('DC_NAME',DC_NAME);//Nom du programme
 $tpl->assign('DC_VERSION_NUMBER',DC_VERSION_NUMBER);//Nom du programme
 $tpl->assign('DC_WEBSITE',DC_WEBSITE);//Site du programme
 
-
-
 if(file_exists('./'.DCFOLDER.USERFILE)){
 		$user = (isset($_SESSION['user']) && trim($_SESSION['user'])!='' && $_SESSION['user']!=null ?@unserialize($_SESSION['user']):null);
 		$user = ($user?$user:null);
@@ -67,6 +60,4 @@ if(file_exists('./'.DCFOLDER.USERFILE)){
 	header('location: install.php');
 	}
 }
-
 ?>
-
