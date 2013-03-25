@@ -1,5 +1,5 @@
-﻿<?php
-
+<?php
+//é
 require_once('config.php');
 
 function rewindPath($path){

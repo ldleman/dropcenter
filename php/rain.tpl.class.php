@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  *  RainTPL
@@ -8,7 +8,7 @@
  *
  *  @version 2.7.2
  */
-
+//é
 
 class RainTPL{
 

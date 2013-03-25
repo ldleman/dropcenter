@@ -1,4 +1,4 @@
-﻿/*
+/*
  * jQuery Iframe Transport Plugin 1.5
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -8,7 +8,7 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
-
+//é
 /*jslint unparam: true, nomen: true */
 /*global define, window, document */
 

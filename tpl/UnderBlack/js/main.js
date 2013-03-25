@@ -1,3 +1,4 @@
+//é
 var blockNewFolder = false;
 var pendingTask = false;
 $(function(){

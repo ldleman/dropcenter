@@ -1,5 +1,6 @@
 <?php
 session_start();
+header( 'content-type: text/html; charset=utf-8' );
 require_once('php/rain.tpl.class.php');
 require_once('php/config.php');
 require_once('php/function.php');

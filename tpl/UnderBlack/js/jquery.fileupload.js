@@ -1,4 +1,4 @@
-﻿/*
+/*
  * jQuery File Upload Plugin 5.16.4
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -11,7 +11,7 @@
 
 /*jslint nomen: true, unparam: true, regexp: true */
 /*global define, window, document, Blob, FormData, location */
-
+//é
 (function (factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {

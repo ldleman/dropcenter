@@ -1,4 +1,5 @@
-﻿<?php 
+<?php 
+//é
 require_once('header.php') ;
  
 
