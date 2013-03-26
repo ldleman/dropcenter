@@ -112,7 +112,7 @@ if(isset($_['action'])){
 		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
 					
 				$file = stripslashes(utf8_decode(html_entity_decode("../".$_['file'])));
-			
+
 				addPublish($file);
 				$javascript['succes'] = true;
 				$javascript['status'] =  'Fichier rendu public';
@@ -415,15 +415,22 @@ if(isset($_['action'])){
 				$tempName = makeName($_SESSION['currentFolder'],str_replace(array("\r","\n"),'',tt('Nouveau dossier (%)')));
 			}
 			
-			if(mkdir($tempName)){
-				@chmod( $_SESSION['currentFolder'].$tempName , 0755);
-				
-				$javascript['succes'] = true;
-				$javascript['tempName'] = $tempName;
-				$javascript['tempNameUrl'] = $_SESSION['currentFolder'].$tempName;
+			if(!in_array(trim($_['name']),array('/','\\',':','?','"','<','>'))){
+				if(mkdir($tempName)){
+					@chmod( $_SESSION['currentFolder'].$tempName , 0755);
+					
+					$javascript['succes'] = true;
+					$javascript['tempName'] = $tempName;
+					$javascript['tempNameUrl'] = $_SESSION['currentFolder'].$tempName;
+				}else{
+					$javascript['status'] = tt('Erreur, impossible de cr&eacute;er le dossier');
+				}
 			}else{
-				$javascript['status'] = tt('Erreur, impossible de cr&eacute;er le dossier');
+				$javascript['status'] = 'Erreur, un nom de fichier/dossier ne peux contenir les caractères suivants : /,\,:,?,",<,>';
 			}
+
+
+
 			}else{
 				$javascript['status'] = tt('Vous ne pouvez rien envoyer car vous n\'avez aucun droits d\'ajout sur le dropCenter');
 			}
