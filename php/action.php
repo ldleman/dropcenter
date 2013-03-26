@@ -112,7 +112,7 @@ if(isset($_['action'])){
 		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
 					
 				$file = stripslashes(utf8_decode(html_entity_decode("../".$_['file'])));
-
+			
 				addPublish($file);
 				$javascript['succes'] = true;
 				$javascript['status'] =  'Fichier rendu public';

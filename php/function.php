@@ -331,7 +331,7 @@ function deletePublish($file){
 	unlink('../'.DCFOLDER.PUBLISHFILE);
 	foreach($publishes as $publish){
 		if($publish!=$file){
-			file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode($publish).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
+			file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode(utf8_encode($publish)).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
 		}
 	}
 }
@@ -343,8 +343,9 @@ function deletePublish($file){
  * @param <string> file
  */
 function addPublish($file){
-	if(!isPublished($file))
-	file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode($file).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
+	if(!isPublished($file)){
+		file_put_contents('../'.DCFOLDER.PUBLISHFILE,SECURE_DELIMITER_BEGIN.json_encode(utf8_encode($file)).SECURE_DELIMITER_END."\r\n",FILE_APPEND);
+	}
 }
 
 /**
@@ -376,7 +377,7 @@ function parsePublishes($dir = '../'){
 	$publishes = array();
 	foreach($publishesLines as $publishLine){
 		if(trim($publishLine)!=''){
-			$publishes [] = json_decode(str_replace(array(SECURE_DELIMITER_BEGIN,SECURE_DELIMITER_END),'',$publishLine));
+			$publishes [] = utf8_decode(json_decode(str_replace(array(SECURE_DELIMITER_BEGIN,SECURE_DELIMITER_END),'',$publishLine)));
 		}
 	}
 	return $publishes;
