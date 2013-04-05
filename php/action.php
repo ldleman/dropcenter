@@ -471,7 +471,32 @@ if(isset($_['action'])){
 		case 'upload':
 			if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
 
-				if(strtolower($_SERVER['REQUEST_METHOD']) != 'post'){
+
+				/* PUT data comes in on the stdin stream */
+				$putdata = fopen("php://input", "r");
+
+				$pic['name'] = time();
+				$destination = (isset($_SESSION['currentFolder'])?$_SESSION['currentFolder']:'../'.UPLOAD_FOLDER).$pic['name'];
+						
+				/* Open a file for writing */
+				$fp = fopen($destination, "w");
+
+				/* Read the data 1 KB at a time
+				   and write to the file */
+				while ($data = fread($putdata, 1024))
+				  fwrite($fp, $data);
+
+				/* Close the streams */
+				fclose($fp);
+				fclose($putdata);
+
+				$javascript['status'] = tt('Fichier envoy&eacute; avec succ&egrave;s!');
+				$javascript['extension'] = get_extension($pic['name']);
+				$javascript['succes'] = true;
+				$javascript['filePath'] = getConfig('ROOT').str_replace('../','',$destination);
+				$javascript['file'] = $pic['name'];
+
+				/*if(strtolower($_SERVER['REQUEST_METHOD']) != 'post'){
 					$javascript['status'] = tt('Erreur, mauvaise m&eacute;thode http');
 				}
 
@@ -504,6 +529,9 @@ if(isset($_['action'])){
 				}else{
 				$javascript['status'] = tt('Probl&egrave;me rencontr&eacute; lors de l\'upload');
 				}
+
+			*/
+
 			}else{
 				$javascript['status'] = tt('Vous ne pouvez rien envoyer car vous n\'avez aucun droits d\'ajout sur le dropCenter');
 			}

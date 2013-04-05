@@ -107,8 +107,11 @@ $('.tooltips').poshytip({
     $('#uploadButton').fileupload({
         dataType: 'json',
         autoUpload: true,
+        maxChunkSize: 10000000,
+        multipart:false,
         dropZone : '#uploadButton',
-        maxFileSize: 5000000,
+        maxFileSize: 100000000,
+        
         sequentialUploads: true,
         add: function (e, data) {
         	createImage(data.files[0]);
