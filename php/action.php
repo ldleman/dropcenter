@@ -236,6 +236,7 @@ if(isset($_['action'])){
 				$event['result'] = true;
 				$event['file'] = $_['file'];
 				$event['type'] = 'file';
+				deletePublish('../'.$file);
 				addEvent($event);
 				$javascript['succes'] = true;
 				$javascript['status'] = tt('Fichier correctement supprime');
