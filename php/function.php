@@ -626,7 +626,7 @@ function countFiles($folder = UPLOAD_FOLDER){
  */
 function tt($key,$parameters=null,$langage=DC_LANG){
 
-	$user = (isset($_SESSION['user']) && $_SESSION['user']!=null ?unserialize($_SESSION['user']):null);
+	$user = (isset($_SESSION['user']) && $_SESSION['user']!=null ?@unserialize($_SESSION['user']):null);
 	if(isset($user->lang) && isset($user->lang)) $langage =$user->lang;
 
 
