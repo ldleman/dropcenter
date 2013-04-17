@@ -179,6 +179,7 @@ if(isset($_['action'])){
 				
 				
 				$tempDir = '../'.DCFOLDER.'temp/';
+				if(!file_exists($tempDir)) mkdir($tempDir);
 				$filesTemp = scandir($tempDir);
 				foreach($filesTemp as $file){
 					if(is_file($tempDir.$file))unlink($tempDir.$file);
@@ -212,7 +213,7 @@ if(isset($_['action'])){
 
 							deletePublish('../'.$file);
 							addPublish($folder.'/'.$fileName);
-							
+
 							$javascript['succes'] = true;
 
 							$javascript['status'] = tt('Fichier correctement deplace');
