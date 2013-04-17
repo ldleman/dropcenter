@@ -428,8 +428,8 @@ footer{
     padding:10px;
     display: block;
     width: 90px;
-    margin-top:10px;
-    margin:auto;
+
+    margin:0 auto 30px auto;
     background-color: #161616;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
@@ -468,10 +468,10 @@ footer{
 
 #dropbox .preview{
 	width:170px;
-	min-height: 90px;
-	max-height: 150px;
+	min-height: 140px;
+	max-height: 140px;
 	float:left;
-	margin: 55px 0 0 60px;
+	margin: 0 0 0 60px;
 	position: relative;
 	text-align: center;
 }
@@ -641,6 +641,12 @@ footer{
 	color:#ffffff;
 	display:none;
 }
+
+.addOptions ul{
+	margin:0;
+	padding:0;
+}
+
 #dropbox .preview .addOptions li{
 	float:left;
 	margin: 0  5px 0  5px ;
@@ -673,7 +679,6 @@ footer{
 }
 
 #dropbox .preview .addOptions .optionDropbox{
-	padding-top:15px;
 	/*background: url('../img/optionDropbox.png') no-repeat center center rgba(255,255,255,0.5);*/
 	background:url('../img/menuIcons.png') no-repeat scroll -96px 0px transparent;
 	width:20px

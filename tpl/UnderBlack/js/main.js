@@ -320,7 +320,7 @@ function generateBreadCrumb(folder){
 						'<li onclick="$(\'.directLink\',$(this).parent().parent().parent()).fadeToggle(200).select();" alt="Copier le lien direct" title="Copier le lien direct" class="optionUrl"></li>'+
 						//'<li alt="Envoyer par mail" title="Envoyer par mail" class="optionShare"></li>'+
 						//'<li alt="Editer la source" title="Editer la source" class="optionEdit"></li>'+
-						'<li onclick="zipFile(this)" alt="T&eacute;l&eacute;charger le fichier compressé" title="T&eacute;l&eacute;charger le fichier" class="optionZip"></li>'+
+						'<li onclick="zipFile(this)" alt="T&eacute;l&eacute;charger le fichier compressé" title="T&eacute;l&eacute;charger le fichier compressé" class="optionZip"></li>'+
 						'<li onclick="'+(file.published?'un':'')+'publishFile(this)" title="Public/Privé" class="optionDropbox"></li>'+
 						'</ul><div class="clear"></div></div>'+
 						'<textarea type="text" class="directLink">'+stripslashes(file.absoluteUrl)+'</textarea>'+
@@ -581,7 +581,7 @@ var  testTextBox = $(input);
 }  
 
 function getFileOption(elem){
-	$(".addOptions",$(elem).parent().parent()).fadeToggle();
+	$(".addOptions",$(elem).parent().parent()).slideToggle(200);
 }
 
 function explode(delimiter,string,limit){var emptyArray={0:''};if(arguments.length<2||typeof arguments[0]=='undefined'||typeof arguments[1]=='undefined'){return null;}
