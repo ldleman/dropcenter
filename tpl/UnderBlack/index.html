@@ -68,7 +68,7 @@
 		<!-- [UTILISATEUR] PREFERENCES -->
 		<!--***************************-->
 		
-		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}$user->login{/if}" method="POST">
+		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}{$user->login}{/if}" method="POST">
 		<section id="paramsBloc">
 				<h1>{function="t('Parametres')"}</h1>	
 				<ul>
