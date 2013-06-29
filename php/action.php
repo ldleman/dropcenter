@@ -192,7 +192,7 @@ if(isset($_['action'])){
 				if ($v_list != 0){
 					$javascript['succes'] = true;
 
-					$javascript['status'] =  str_replace('../','','./PHP/action.php?action=openFile&file='.$zipName);
+					$javascript['status'] =  str_replace('../','','./php/action.php?action=openFile&file='.$zipName);
 				}else{
 					$javascript['status'] = tt('Impossible de zipper le fichier, nom incorrect ou fichier inexistant :').$archive->errorInfo(true);
 				}
