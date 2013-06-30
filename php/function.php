@@ -490,7 +490,7 @@ function describeEvent($event,$root){
 	$describedEvent['user'] = $user;
 	$describedEvent['date'] = $event->date;
 	$describedEvent['action'] = $event->action;
-	$avatar = $root.'PHP/action.php?action=openFile&file='.$user->avatar;
+	$avatar = $root.'php/action.php?action=openFile&file='.$user->avatar;
 	switch($event->action){
 
 		case 'addEventForUpload':
