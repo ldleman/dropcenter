@@ -126,16 +126,16 @@
 		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->
 		<!--***********************************-->
 
-	{if="isset($user) && $user->rank=='admin'"}
+	{if="isset($user)"}
 <div class="menuBloc">
 	<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
 		title="{function="t("Nouveau dossier")"}"></a> <a
 		onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
-		title="{function="t("Parametres") "}"></a> <a
+		title="{function="t("Parametres") "}"></a> {if="isset($user) && $user->rank=='admin'"}<a
 		onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
 		title="{function="t("Comptes")"}"></a> <a
 		href="php/action.php?action=backup" class="backup tooltips"
-		title="{function="t("Sauvegarde")"}"></a>
+		title="{function="t("Sauvegarde")"}"></a>{/if}
 
 		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
 </div>
