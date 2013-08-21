@@ -7,7 +7,7 @@
 		<!--*********************************************-->
 		<!-- [ADMINISTRATION] CREATION D'UN UTILISATEURS -->
 		<!--*********************************************-->
-
+		{if="isset($user) && $user->rank=='admin'"}
 		<section id="usersBloc" {if="isset($_GET['openUserPanel'])"} style="display:block;"{/if}>
 		<form action="php/action.php?action=addUser" method="POST">
 		<h1>{function="t("Liste des utilisateurs")"}</h1>
@@ -47,7 +47,7 @@
 	
 		</form>
 		</section>
-
+		{/if}
 		<!--***************************-->
 		<!-- [PUBLIQUE] IDENTIFICATION -->
 		<!--***************************-->
