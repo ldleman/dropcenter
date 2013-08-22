@@ -161,13 +161,14 @@ if(isset($_['action'])){
 		break;
 		
 		case 'saveSettings':
-
-		if(file_exists('../'.DCFOLDER.USERFILE)){
-			$_['notifMail'] = (isset($_['notifMail'])?'true':'false');
-			updateUser($_['user'], $_); //@H3bus, c'est un peu bourrin ça non? :D goret vas ! :) Idleman.
-			$javascript['succes'] = true;
-			header('location: ../index.php');	
-		}	
+		if(isset($user) && ($user->rank=='admin' || ($user->rank=='user' && $user->login==$_['user']) )){
+			if(file_exists('../'.DCFOLDER.USERFILE)){
+				$_['notifMail'] = (isset($_['notifMail'])?'true':'false');
+				updateUser($_['user'], $_); //@H3bus, c'est un peu bourrin ça non? :D goret vas ! :) Idleman.
+				$javascript['succes'] = true;
+				header('location: ../index.php');	
+			}	
+		}
 		break;
 
 
