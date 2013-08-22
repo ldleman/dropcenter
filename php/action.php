@@ -415,6 +415,7 @@ if(isset($_['action'])){
 
 		case 'addFolder':
 		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
+			$_['name'] = stripslashes(utf8_decode(html_entity_decode($_['name'])));
 
 			if(isset($_['name']) && trim($_['name'])!=''  && !file_exists($_SESSION['currentFolder'].'/'.$_['name'])){
 				$tempName =$_SESSION['currentFolder'].'/'.$_['name'];
