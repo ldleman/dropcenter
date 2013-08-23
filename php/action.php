@@ -183,7 +183,14 @@ if(isset($_['action'])){
 		if(isset($user) && ($user->rank=='admin' || ($user->rank=='user' && $user->login==$_['user']) )){
 			if(file_exists('../'.DCFOLDER.USERFILE)){
 				$_['notifMail'] = (isset($_['notifMail'])?'true':'false');
-				updateUser($_['user'], $_); //@H3bus, c'est un peu bourrin ça non? :D goret vas ! :) Idleman.
+				$values = array(
+						'password'=>$_['password'],
+						'mail'=>$_['mail'],
+						'avatar'=>$_['avatar'],
+						'notifMail'=>$_['notifMail'],
+						'lang'=>$_['lang']
+					);
+				updateUser($_['user'], $values);
 				$javascript['succes'] = true;
 				header('location: ../index.php');	
 			}	

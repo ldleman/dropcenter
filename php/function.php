@@ -275,9 +275,7 @@ function updateUser($login,$values){
 	$user = get_object_vars(getUser($login));
 
 	foreach($values as $attr=>$value){
-		if ($attr != 'action' && $attr != 'user') {
 			if(!($attr == 'password' && ($value =="") || !isset($value))) $user[$attr] = ($attr=='password'?encode($value):$value);
-		}
 	}
 	deleteUser($login);
 	addUser($user,false);
