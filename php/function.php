@@ -18,6 +18,8 @@ function rewindPath($path){
 
 function scanFolder($folder){
 
+	$folder = utf8_decode($folder);
+
 	$noFolders = array(
 	$folder.'.dc',
 	$folder.'.'
@@ -26,10 +28,12 @@ function scanFolder($folder){
 	$folder = str_replace('//','/',$folder);
 	$root = getConfig('ROOT');
 
+
 	if(realpath($folder)==realpath('../'.UPLOAD_FOLDER))$noFolders []=$folder.'..';
 	$filteredFiles = array();
 
 
+	//if($folder!='../uploads/') var_dump(mb_detect_encoding($folder),$folder);
 	$files = scandir($folder);
 	$realFiles = array();
 	foreach($files as $file){

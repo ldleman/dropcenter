@@ -5,6 +5,16 @@ require_once('php/rain.tpl.class.php');
 require_once('php/config.php');
 require_once('php/function.php');
 
+mb_internal_encoding("UTF-8" );
+mb_http_output("UTF-8" );
+mb_http_input("UTF-8" );
+ 
+iconv_set_encoding("internal_encoding", "UTF-8" );
+iconv_set_encoding("output_encoding", "UTF-8" );
+iconv_set_encoding("input_encoding", "UTF-8" );
+ 
+header('Content-Type: text/html; charset=utf-8');
+
 //Instanciation du template
 $tpl = new RainTPL();
 

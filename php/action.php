@@ -1,7 +1,19 @@
 <?php
 session_start();
+
 require_once('config.php');
 require_once('function.php');
+
+
+mb_internal_encoding("UTF-8" );
+mb_http_output("UTF-8" );
+mb_http_input("UTF-8" );
+ 
+iconv_set_encoding("internal_encoding", "UTF-8" );
+iconv_set_encoding("output_encoding", "UTF-8" );
+iconv_set_encoding("input_encoding", "UTF-8" );
+ 
+header('Content-Type: text/html; charset=utf-8');
 
 $user = (isset($_SESSION['user']) && $_SESSION['user']!=null ?@unserialize($_SESSION['user']):null);
 $user = ($user?$user:null);
@@ -141,13 +153,20 @@ if(isset($_['action'])){
 		case 'getFiles':
 			if(READ_FOR_ANONYMOUS || (isset($user) && ($user->rank=='admin' || $user->rank=='user'))){
 				
-				$requiredFolder = (isset($_['folder'])?$_['folder'].'/':'../'.UPLOAD_FOLDER);
+				if(isset($_['folder'])){		
+					$_['folder'] = html_entity_decode($_['folder']);
+					$requiredFolder = $_['folder'].'/';
+				}else{
+					$requiredFolder = '../'.UPLOAD_FOLDER;
+				}
 				
 				if($requiredFolder =='//CURRENT/'){
 					$requiredFolder =$_SESSION['currentFolder'];
 				}else{
+
 					$_SESSION['currentFolder'] = $requiredFolder;
 				}
+
 				$scan = scanFolder($requiredFolder,(isset($_['keywords'])?$_['keywords']:null));
 
 				if(count($scan)==0){
@@ -418,18 +437,18 @@ if(isset($_['action'])){
 			$_['name'] = stripslashes(utf8_decode(html_entity_decode($_['name'])));
 
 			if(isset($_['name']) && trim($_['name'])!=''  && !file_exists($_SESSION['currentFolder'].'/'.$_['name'])){
-				$tempName =$_SESSION['currentFolder'].'/'.$_['name'];
+				$tempName = utf8_decode($_SESSION['currentFolder']).'/'.$_['name'];
 			}else{
-				$tempName = makeName($_SESSION['currentFolder'],str_replace(array("\r","\n"),'',tt('Nouveau dossier (%)')));
+				$tempName = makeName(utf8_decode($_SESSION['currentFolder']),str_replace(array("\r","\n"),'',tt('Nouveau dossier (%)')));
 			}
 			
 			if(!in_array(trim($_['name']),array('/','\\',':','?','"','<','>'))){
 				if(mkdir($tempName)){
-					@chmod( $_SESSION['currentFolder'].$tempName , 0755);
+					@chmod( utf8_decode($_SESSION['currentFolder']).$tempName , 0755);
 					
 					$javascript['succes'] = true;
 					$javascript['tempName'] = $tempName;
-					$javascript['tempNameUrl'] = $_SESSION['currentFolder'].$tempName;
+					$javascript['tempNameUrl'] = utf8_decode($_SESSION['currentFolder']).$tempName;
 				}else{
 					$javascript['status'] = tt('Erreur, impossible de cr&eacute;er le dossier');
 				}
@@ -495,7 +514,7 @@ if(isset($_['action'])){
 					$size = filesize($pic['tmp_name']);
 					if($size<=(MAX_SIZE*1048576)){
 						
-						$destination = (isset($_SESSION['currentFolder'])?$_SESSION['currentFolder']:'../'.UPLOAD_FOLDER).$pic['name'];
+						$destination = (isset($_SESSION['currentFolder'])?utf8_decode($_SESSION['currentFolder']):'../'.UPLOAD_FOLDER).$pic['name'];
 						
 						if(move_uploaded_file($pic['tmp_name'], $destination)){
 		
