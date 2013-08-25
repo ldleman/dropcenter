@@ -39,7 +39,7 @@ if(isset($_['action'])){
 		case 'addUser':
 			if(file_exists('../'.DCFOLDER.USERFILE)){
 				if(isset($user) && $user->rank=='admin'){
-
+					if($_['tpmToken']==$_SESSION['tpmToken']){
 					if(isset($_['login']) && isset($_['password'])){
 					//Vérifie que l'utilisateur n'existe pas déja
 					
@@ -62,7 +62,7 @@ if(isset($_['action'])){
 					}else{
 						$error = '?error='.tt('Champs obligatoires non remplis');
 					}
-
+					}
 					header('location: ../index.php'.$error);
 				}
 			}else{
@@ -181,6 +181,7 @@ if(isset($_['action'])){
 		
 		case 'saveSettings':
 		if(isset($user) && ($user->rank=='admin' || ($user->rank=='user' && $user->login==$_['user']) )){
+			if($_['tpmToken']==$_SESSION['tpmToken']){
 			if(file_exists('../'.DCFOLDER.USERFILE)){
 				$_['notifMail'] = (isset($_['notifMail'])?'true':'false');
 				$values = array(
@@ -194,6 +195,8 @@ if(isset($_['action'])){
 				$javascript['succes'] = true;
 				header('location: ../index.php');	
 			}	
+		}
+
 		}
 		break;
 
@@ -297,15 +300,17 @@ if(isset($_['action'])){
 
 		case 'deleteUser':
 			if(isset($user) && $user->rank=='admin'){
-				deleteUser($_['user']);
-				$event['user']=$user->login;
-				$event['result'] = true;
-				$event['deletedUser'] = $_['user'];
-				addEvent($event);
-				if($_['user']==$user->login){
-					header('location: ./action.php?action=logout');
-				}else{
-					header('location: ../index.php');
+				if($_['tmpToken']==$_SESSION['tpmToken']){
+					deleteUser($_['user']);
+					$event['user']=$user->login;
+					$event['result'] = true;
+					$event['deletedUser'] = $_['user'];
+					addEvent($event);
+					if($_['user']==$user->login){
+						header('location: ./action.php?action=logout');
+					}else{
+						header('location: ../index.php');
+					}
 				}
 			}
 			break;
@@ -347,6 +352,7 @@ if(isset($_['action'])){
 			if(isset($_['token'])){
 				$user = existToken($_['token']);
 				$_SESSION['user'] = (!$user?null:serialize($user));
+				$_SESSION['tpmToken'] = sha1(time().rand(0,100));
 				if(!$user){
 					header('location: ../index.php?error=Mauvais identifiant ou mot de passe');
 				}else{
@@ -356,6 +362,7 @@ if(isset($_['action'])){
 			}else{
 				$user = exist($_['login'],$_['password']);
 				$_SESSION['user'] = (!$user?null:serialize($user));
+				$_SESSION['tpmToken'] = sha1(time().rand(0,100));
 				header('location: ../index.php'.(!$user?'?error=Mauvais identifiant ou mot de passe':''));
 			}
 			

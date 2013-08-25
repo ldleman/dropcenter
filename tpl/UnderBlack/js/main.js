@@ -435,8 +435,8 @@ function addFolder(){
 }
 
 
-function deleteUser(message,id){
-	if(confirm(message))window.location="php/action.php?action=deleteUser&user="+id;
+function deleteUser(message,id,tmpToken){
+	if(confirm(message))window.location="php/action.php?action=deleteUser&user="+id+"&tmpToken="+tmpToken;
 }
 
 

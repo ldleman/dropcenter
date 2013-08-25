@@ -39,7 +39,7 @@ define('SECURE_DELIMITER_END','*/ ?>'); //
 define('LEFT_HASH','-1é&@shs--'); //
 define('RIGHT_HASH','$^^/!+£'); //
 define('DC_VERSION','2'); //Version du programme
-define('DC_NAME','Beta');//Nom du programme
+define('DC_NAME','Stable');//Nom du programme
 define('DC_VERSION_NUMBER','2');//Nom du programme
 define('DC_WEBSITE','http://projet.idleman.fr/dropcenter');//Site du programme
 ?>

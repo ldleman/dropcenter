@@ -9,7 +9,7 @@
 		<!--*********************************************-->
 		{if="isset($user) && $user->rank=='admin'"}
 		<section id="usersBloc" {if="isset($_GET['openUserPanel'])"} style="display:block;"{/if}>
-		<form action="php/action.php?action=addUser" method="POST">
+		<form action="php/action.php?action=addUser&tpmToken={$tpmToken}" method="POST">
 		<h1>{function="t("Liste des utilisateurs")"}</h1>
 		<h2 onclick="$('#userCreateBloc').fadeToggle()">(+ {function="t("Ajouter un utilisateur")"})</h2>
 
@@ -38,7 +38,7 @@
 				<li><span>{function="t('Rang')"}: {$value->rank}</span></li>
 				<li><span> <a href="mailto: {$value->mail}">{$value->mail}</a></span></li>
 				<!-- <li><a onclick="editUser('{$value->login}');">Modifier</a></li> -->
-				<li><a onclick="deleteUser('{function="t('Etes-vous sur de vouloir supprimer cet utilisateur?')"}','{$value->login}');" >{function="t('Supprimer')"}</a></li>
+				<li><a onclick="deleteUser('{function="t('Etes-vous sur de vouloir supprimer cet utilisateur?')"}','{$value->login}','{$tpmToken}');" >{function="t('Supprimer')"}</a></li>
 			</ul>
 		</li>
 		{/loop}
@@ -68,7 +68,7 @@
 		<!-- [UTILISATEUR] PREFERENCES -->
 		<!--***************************-->
 		
-		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}{$user->login}{/if}" method="POST">
+		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}{$user->login}{/if}&tpmToken={$tpmToken}" method="POST">
 		<section id="paramsBloc">
 				<h1>{function="t('Parametres')"}</h1>	
 				<ul>

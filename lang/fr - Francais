@@ -8,8 +8,8 @@ Racine du programme[::->]Racine du programme
 Creer[::->]Cr&eacute;er
 Preferences[::->]Pr&eacute;f&eacute;rences
 Profil[::->]Profil
-CopyrightFooter[::->][%%] V[%%] ([%%]) par la <a href="[%%]">DropTeam</a> cr&eacute;&eacute; avec jQuery Filedrop plugin. Sous licence [%%] - 
-% fichiers disponibles pour un poids total de %[::->]<span class="blue">[%%]</span> fichier(s) disponible(s) pour un poids total de <span class="blue">[%%]</span>
+CopyrightFooter[::->][%%] V[%%] ([%%]) par <a href="[%%]">DropTeam</a>, licence [%%] - 
+% fichiers disponibles pour un poids total de %[::->]<span class="blue">[%%]</span> fichier(s), poids total : <span class="blue">[%%]</span>
 Flux RSS[::->]Flux RSS
 Abonnez vous au flux rss pour suivre les evenements du DropCenter[::->]Abonnez-vous au flux rss pour suivre les &eacute;v&egrave;nements du DropCenter
 Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout depend de votre navigateur)</i>[::->]Droppez le fichier ici pour l'uploader. <br /><i>(Enfin tout d&eacute;pend de votre navigateur)</i>
