@@ -233,7 +233,7 @@ if(isset($_['action'])){
 			if(isset($user)){
 				$file = stripslashes(utf8_decode(html_entity_decode($_['fileUrl'])));
 				$fileName = stripslashes(utf8_decode(html_entity_decode($_['fileName'])));
-				$folder = $_['folder'];
+				$folder = utf8_decode(html_entity_decode($_['folder']));
 				if(is_dir($folder)){
 					if(is_file('../'.$file)){
 						if(@rename('../'.$file,$folder.'/'.$fileName)){
