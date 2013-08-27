@@ -476,16 +476,15 @@ if(isset($_['action'])){
 		
 		case 'addEventForUpload':
 			if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
+				$user = getUser($user->login);
+				$files = json_decode(stripslashes(html_entity_decode($_['files'])));
+
 				$event['user']=$user->login;
 				$event['result'] = true;
-				$event['files'] = $_['files'];
+				$event['files'] = $files;
 				addEvent($event);
-				
-				$user = getUser($event['user']);
 
-				if (MAIL){
-					$files = json_decode(stripslashes(html_entity_decode($event['files'])));
-					
+				if (MAIL){	
 					foreach(parseUsers('../') as $userInfos){
 						if($userInfos->notifMail=="true"){
 							$mailmembre = $userInfos->mail;
@@ -499,6 +498,8 @@ if(isset($_['action'])){
 						}
 					}
 				}
+
+
 				$javascript['succes'] = true;
 			}else{
 				$javascript['status'] = tt('Vous ne pouvez rien notifier car vous n\'avez aucun droits d\'ajout sur le dropCenter');

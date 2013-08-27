@@ -497,12 +497,12 @@ function describeEvent($event,$root){
 
 		case 'addEventForUpload':
 			$describedEvent['title'] = $event->user.' '.tt('a ajoute un ou plusieurs fichiers');
-			$files = json_decode(stripslashes(html_entity_decode($event->files)));
+			$files = $event->files;
 			$describedEvent['lien'] = $root.'#'.urlencode(count($files)).'files-added-'.date('d-m-Y-h\hi\ms\s',$event->date);
 			$describedEvent['description'] = '<img src="'.$avatar.'" align="absmiddle" border="0" /> <a href="mailto: '.$user->mail.'">'.$event->user.'</a> '.tt('a ajoute % fichier%',array(count($files),(count($files)>1?'s':''))).' : <ul>';
 			if(count($files)!=0){
 				foreach($files as $file){
-					$describedEvent['description'] .='<li><a href="'.$file[1].'">'.$file[0].'</a></li>';
+					$describedEvent['description'] .='<li><a href="'.$file->path.'">'.$file->name.'</a></li>';
 				}
 			}
 
