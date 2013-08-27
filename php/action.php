@@ -484,7 +484,7 @@ if(isset($_['action'])){
 				$event['files'] = $files;
 				addEvent($event);
 
-				if (MAIL){	
+				if (MAIL){
 					foreach(parseUsers('../') as $userInfos){
 						if($userInfos->notifMail=="true"){
 							$mailmembre = $userInfos->mail;

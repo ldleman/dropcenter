@@ -27,9 +27,9 @@ body{
 }
 .rssFeed{
 	width:65px;
-	display:block;
+	display:inline-block;
 	height:16px;
-	margin:auto;
+	margin-left:10px;
 	margin-top:6px;
 }
 
@@ -197,7 +197,7 @@ header, footer{
 }
 
 #paramsBloc li ul li{
-	background: url("../img/background_tile_2.jpg") repeat scroll 0 0 transparent;
+	box-shadow:none;
 	width:870px;
 }
 
@@ -238,7 +238,7 @@ header, footer{
 }
 
 .breadcrumb {
-	margin:10px;
+	margin:0px 10px 10px 10px;
 }
 .breadcrumb li {
 	background-color:#161616;
@@ -257,16 +257,13 @@ header, footer{
 }
 
 .loginBloc{
-	background: url("../img/background_tile_2.jpg") repeat scroll 0 0 transparent;
+	background-color: #171717;
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
-    margin: 15px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
     min-height: 35px;
     overflow: hidden;
-    padding: 10px;
-
-    max-width: 430px;
-    
+    padding: 5px;
 	float:left;
 }
 
@@ -283,14 +280,10 @@ header, footer{
 
 
 .menuBloc{
-	background: url("../img/background_tile_2.jpg") repeat scroll 0 0 transparent;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
-    margin: 15px 10px 10px 10px;
     min-height: 25px;
     overflow: hidden;
-    padding: 30px 10px 20px;
-	float:right;
+	float:left;
+	margin: 10px 0 0 10px;
 }
 
 .menuBloc a{
@@ -328,10 +321,7 @@ header, footer{
 
 
 
-.loginBloc form{
-	padding-top:12px;
-	padding-bottom:12px;
-}
+
 .loginBloc input{
 	width:70px;
 	padding:3px;
@@ -347,9 +337,9 @@ header, footer{
 
 header{
 	background:url('../img/logo.png') no-repeat center center;
-	padding:10px;
+	padding:5px;
 	position: relative;
-	height:100px;
+	height:50px;
 }
 
 header:before,
@@ -366,22 +356,22 @@ header:before,
 
 .textLogin{
 	float:left;
-	margin-top:17px;
+	margin-top:10px;
 }
 
 .avatar{
 	padding:3px;
 	background-color:#cecece;
-	width:50px;
-	height:50px;
+	width:30px;
+	height:30px;
 	box-shadow:0 2px 2px rgba(0,0,0,0.6);
 	float:left;
 	margin-right:10px;
 }
 
 .avatar img{
-	width:50px;
-	height:50px;
+	width:30px;
+	height:30px;
 }
 
 #dropbox{
@@ -389,9 +379,9 @@ header:before,
 	border-radius:3px;
 	position: relative;
 	margin:0px auto 10px;
-	min-height: 320px;
+	min-height: 500px;
 	overflow: hidden;
-	padding-bottom: 40px;
+	/*padding-bottom: 40px;*/
     width: 990px;
 	
 	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);

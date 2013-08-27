@@ -4,7 +4,46 @@
 
 		<div id="dropbox">
 		
-		<!--*********************************************-->
+
+		<!--***************************-->
+		<!-- [PUBLIQUE] IDENTIFICATION -->
+		<!--***************************-->
+
+		<div class="loginBloc">
+		{if="!isset($user) || $user==null"}
+		<form action="php/action.php?action=login" method="POST">
+			{function="t('Login')"} : <input required type="text" placeholder="{function="t('Login')"}" type="text" name="login">
+			{function="t('Password')"} : <input required type="password" placeholder="{function="t('Password')"}" type="password" name="password">
+			<input type="submit" name="Connect">
+		</form>
+		{else}
+			<figure class="avatar"><img src="../../php/action.php?action=openFile&file={$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a>
+		</section>
+
+
+		<!--***********************************-->
+		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->
+		<!--***********************************-->
+
+		
+			<div class="menuBloc">
+				<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
+					title="{function="t("Nouveau dossier")"}"></a> <a
+					onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
+					title="{function="t("Parametres") "}"></a> {if="isset($user) && $user->rank=='admin'"}<a
+					onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
+					title="{function="t("Comptes")"}"></a> <a
+					href="php/action.php?action=backup" class="backup tooltips"
+					title="{function="t("Sauvegarde")"}"></a>{/if}
+
+					<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+			</div>
+
+		{/if}
+		</div>
+		<div class="clear"></div>
+
+				<!--*********************************************-->
 		<!-- [ADMINISTRATION] CREATION D'UN UTILISATEURS -->
 		<!--*********************************************-->
 		{if="isset($user) && $user->rank=='admin'"}
@@ -48,21 +87,6 @@
 		</form>
 		</section>
 		{/if}
-		<!--***************************-->
-		<!-- [PUBLIQUE] IDENTIFICATION -->
-		<!--***************************-->
-
-		<div class="loginBloc">
-		{if="!isset($user) || $user==null"}
-		<form action="php/action.php?action=login" method="POST">
-			{function="t('Login')"} : <input required type="text" placeholder="{function="t('Login')"}" type="text" name="login">
-			{function="t('Password')"} : <input required type="password" placeholder="{function="t('Password')"}" type="password" name="password">
-			<input type="submit" name="Connect">
-		</form>
-		{else}
-			<figure class="avatar"><img src="../../php/action.php?action=openFile&file={$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a></section>
-		{/if}
-		</div>
 
 		<!--***************************-->
 		<!-- [UTILISATEUR] PREFERENCES -->
@@ -122,26 +146,6 @@
 
 
 
-		<!--***********************************-->
-		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->
-		<!--***********************************-->
-
-	{if="isset($user)"}
-<div class="menuBloc">
-	<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
-		title="{function="t("Nouveau dossier")"}"></a> <a
-		onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
-		title="{function="t("Parametres") "}"></a> {if="isset($user) && $user->rank=='admin'"}<a
-		onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
-		title="{function="t("Comptes")"}"></a> <a
-		href="php/action.php?action=backup" class="backup tooltips"
-		title="{function="t("Sauvegarde")"}"></a>{/if}
-
-		<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
-</div>
-
-	{/if}
-<div class="clear"></div>
 
 		<!--**********************-->
 		<!-- [TOUS] FIL D'ARIANNE -->
