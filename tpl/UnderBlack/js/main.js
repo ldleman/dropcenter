@@ -116,25 +116,25 @@ $('.tooltips').poshytip({
         	data.submit();
         },
         done: function (e, data) {
-    		var events = Array();
-			for(i=0;i<addedFiles.length;i++){
-				events.push([addedFiles[i]['file'],addedFiles[i]['filePath']]);
-			}
-
-			//enregistrement de l'evenement
-			$.ajax({
-				  url: "php/action.php?action=addEventForUpload",
-				  data:{files:array2json(events)}
-			});
-			pendingTask = false;
+        	console.log(data.result);
+			addedFiles.push({name:data.files[0].name,size:data.files[0].size,type:data.result.extension,path:data.result.filePath});
         },
        	stop: function (e, data) {
+       		//enregistrement de l'evenement
+			$.ajax({
+				  url: "php/action.php?action=addEventForUpload",
+				  data:{files:array2json(addedFiles)}
+			});
+			addedFiles = Array();
+			pendingTask = false;
 			//rafraichissement du bousin
 			getFiles(null,'//CURRENT');
+			
        	},
         progress: function (e, data) {
 	         var progress = parseInt(data.loaded / data.total * 100, 10);
 	        $.data(data.files[0]).find('.progress').width(progress+'%');
+	
     	}
     });
 	});
