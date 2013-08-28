@@ -241,9 +241,10 @@ if(isset($_['action'])){
 					if(is_file('../'.$file)){
 						if(@rename('../'.$file,$folder.'/'.$fileName)){
 
-							deletePublish('../'.$file);
-							addPublish($folder.'/'.$fileName);
-
+							if(isPublished('../'.$file)){
+								deletePublish('../'.$file);
+								addPublish($folder.'/'.$fileName);
+							}
 							$javascript['succes'] = true;
 
 							$javascript['status'] = tt('Fichier correctement deplace');
