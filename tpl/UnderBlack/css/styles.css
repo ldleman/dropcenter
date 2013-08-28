@@ -781,9 +781,9 @@ footer{
 
 
 #dropbox .progressHolder{
-	position: absolute;
+	position: relative;
 	background-color:#252f38;
-	height:12px;
+	height:10px;
 	width:100%;
 	left:0;
 	bottom: 0;
@@ -801,19 +801,14 @@ footer{
 	-webkit-transition:0.25s;
 	-o-transition:0.25s;
 	transition:0.25s;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 	background: #1AD8F4;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#1AD8F4), to(#001461));
-	background: -webkit-linear-gradient(#1AD8F4, #001461);
-	background: -moz-linear-gradient(#1AD8F4, #001461);
-	background: -ms-linear-gradient(#1AD8F4, #001461);
-	background: -o-linear-gradient(#1AD8F4, #001461);
-	background: linear-gradient(#1AD8F4, #001461);
-	-pie-background: linear-gradient(#1AD8F4, #001461);
-	behavior: url(/PIE.htc);
-	
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#9ECD17), to(#046000));
+	background: -webkit-linear-gradient(#9ECD17, #046000) repeat scroll 0 0 transparent;
+	background: -moz-linear-gradient(#9ECD17, #046000) repeat scroll 0 0 transparent;
+	background: -ms-linear-gradient(#9ECD17, #046000) repeat scroll 0 0 transparent;
+	background: -o-linear-gradient(#9ECD17, #046000) repeat scroll 0 0 transparent;
+	background: linear-gradient(#9ECD17, #046000) repeat scroll 0 0 transparent;
+
 }
 
 #dropbox .preview.done .progress{

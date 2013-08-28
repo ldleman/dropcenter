@@ -134,6 +134,7 @@ $('.tooltips').poshytip({
         progress: function (e, data) {
 	         var progress = parseInt(data.loaded / data.total * 100, 10);
 	        $.data(data.files[0]).find('.progress').width(progress+'%');
+	        $.data(data.files[0]).find('.progressCount').html(progress+'%');
 	
     	}
     });
@@ -150,7 +151,7 @@ $('.tooltips').poshytip({
 						'</span>'+
 						'<div class="progressHolder">'+
 							'<div class="progress"></div>'+
-						'</div>'+
+						'</div><span class="progressCount"></span>'+
 					'</div>'; 
 	
 
@@ -211,7 +212,8 @@ function generateBreadCrumb(folder){
 	return returned;
 }
 	function getFiles(keywords,folder){
-		$('#dropbox .preview,.tooltip').remove();
+
+		
 
 		
 		if(keywords==null){keywords='';}else{keywords = "&keywords="+keywords}
@@ -220,14 +222,14 @@ function generateBreadCrumb(folder){
 		url: "php/action.php?action=getFiles"+keywords+folderVar,
 		success: function(returnedValue){
 		
-		
+			
 		response = $.parseJSON(returnedValue);
 		if(response.succes){
 		
 		$('.breadcrumb').html(generateBreadCrumb(response.currentFolder));
 		
 		t= response.status;
-
+		$('#dropbox .preview,.tooltip').remove();
 		for(i=0;i<t.length;i++){
    			addFile(t[i]);
 		}
