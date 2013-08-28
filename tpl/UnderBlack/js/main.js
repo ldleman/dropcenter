@@ -5,7 +5,7 @@ $(function(){
 
 
 	$(document).ajaxStop(function() {
-		$('.preloader').hide();
+		$('.preloader').fadeOut(200);
 	});
 	$(document).ajaxStart(function() {
   		$('.preloader').show();
@@ -305,9 +305,8 @@ function generateBreadCrumb(folder){
 
 							'<img width="48px" height="48px"  src="'+ext+'"/>'+
 							'<ul>'+
-								'<li>Taille: '+file.size+'</li>'+
-								'<li>Maj : '+file.mtimeDate+'</li>'+
-								'<li>Heure: '+file.mtimeHour+'</li>'+
+								'<li>'+file.size+'</li>'+
+								'<li>'+file.mtimeDate+' '+file.mtimeHour+'</li>'+
 							
 							'</ul>'+
 
@@ -420,11 +419,12 @@ function addFolder(){
   data:{name:$('input[name="folderName"]').val()},
   success: function(response){
 	var response = $.parseJSON(response);
-	if(response.succes==true){
+	if(response.succes){
 		getFiles(null,'//CURRENT');
-
+		$('.folderNameBloc').fadeOut(150);
+		$('.folderNameBloc input').val('');
 	}else{
-		tell(response.status,0);
+		tell(response.status,3000);
 	}
   }
 });
@@ -450,6 +450,7 @@ function tell(message,time){
         timeout: time,
         sticky: fix
 	};
+	message = '<i style="height: 20px; width: 20px; display: block; float: left; margin-right: 5px;" class="icon-ok"></i>'+message;
 	TINYPOP.show(message,options);
 }
 

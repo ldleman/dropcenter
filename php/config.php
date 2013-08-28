@@ -3,7 +3,7 @@
 
 define('DC_TITLE','DropCenter');//Titre du dropCenter
 define('DC_DESCRIPTION','File drop center kiss n\'fun');//description du dropCenter
-define('DC_LOGO','');//logo central du dropCenter (Si rien n'est mis, le logo par défaut apparaît)
+define('DC_LOGO','img/logo.png');//logo central du dropCenter (Si rien n'est mis, le logo par défaut apparaît)
 define('DC_LICENCE','CC BY NC SA');//License de votre dropCenter
 define('UPLOAD_FOLDER','uploads/');//chemin vers le dossier d'upload (ne pas oublier de mettre les droits d'écriture sur ce dossier)
 define('NAME_LIMIT',25);//Nombre maximal de caractères affichés pour les fichiers
@@ -40,6 +40,6 @@ define('LEFT_HASH','-1é&@shs--'); //
 define('RIGHT_HASH','$^^/!+£'); //
 define('DC_VERSION','2'); //Version du programme
 define('DC_NAME','Stable');//Nom du programme
-define('DC_VERSION_NUMBER','2');//Nom du programme
+define('DC_VERSION_NUMBER','2.0.0');//Nom du programme
 define('DC_WEBSITE','http://projet.idleman.fr/dropcenter');//Site du programme
 ?>

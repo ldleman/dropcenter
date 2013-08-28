@@ -10,6 +10,7 @@
 		<!--***************************-->
 
 		<div class="loginBloc">
+		<img src="{#DC_LOGO#}" class="logo left">
 		{if="!isset($user) || $user==null"}
 		<form action="php/action.php?action=login" method="POST">
 			{function="t('Login')"} : <input required type="text" placeholder="{function="t('Login')"}" type="text" name="login">
@@ -17,33 +18,29 @@
 			<input type="submit" name="Connect">
 		</form>
 		{else}
-			<figure class="avatar"><img src="../../php/action.php?action=openFile&file={$user->avatar}"/></figure><section class="textLogin">{function="tt("Connecte en tant que %",array($user->login))"} - <a href="php/action.php?action=logout">{function="tt("Deconnexion")"}</a>
-		</section>
+			
+			<div class="menuIcon">
+				<span onclick="$('.folderNameBloc').fadeToggle(150);" title="{function="t("Nouveau dossier")"}" class="tooltips">
+				<i class="icon-folder"></i></span><span><i onclick="$('#paramsBloc').fadeToggle()" title="{function="t("Parametres") "}" class="icon-setting tooltips"></i></span><!--<span><i onclick="window.location='php/action.php?action=backup';" class="icon-backup tooltips" title="{function="t("Sauvegarde")"}"></i></span>--><span><i onclick="$('#usersBloc').fadeToggle()" title="{function="t("Comptes")"}" class="icon-user tooltips"></i></span><span><i onclick="window.location='php/action.php?action=logout';" class="icon-cross tooltips" title="<figure class='avatar'><img src='php/action.php?action=openFile&file={$user->avatar}'/></figure>{function="t('Deconnexion')"}<br/>{$user->login}"></i></span>
+			</div>
 
+
+
+<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		</section>
+<div class="preloader"> Chargement en cours...</div>
 
 		<!--***********************************-->
 		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->
 		<!--***********************************-->
 
 		
-			<div class="menuBloc">
-				<a onclick="$('.folderNameBloc').fadeToggle(200);" class="newFolder tooltips"
-					title="{function="t("Nouveau dossier")"}"></a> <a
-					onclick="$('#paramsBloc').fadeToggle()" class="preferences tooltips"
-					title="{function="t("Parametres") "}"></a> {if="isset($user) && $user->rank=='admin'"}<a
-					onclick="$('#usersBloc').fadeToggle()" class="member tooltips"
-					title="{function="t("Comptes")"}"></a> <a
-					href="php/action.php?action=backup" class="backup tooltips"
-					title="{function="t("Sauvegarde")"}"></a>{/if}
-
-					<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
-			</div>
 
 		{/if}
 		</div>
 		<div class="clear"></div>
 
-				<!--*********************************************-->
+		<!--*********************************************-->
 		<!-- [ADMINISTRATION] CREATION D'UN UTILISATEURS -->
 		<!--*********************************************-->
 		{if="isset($user) && $user->rank=='admin'"}

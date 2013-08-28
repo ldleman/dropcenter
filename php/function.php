@@ -604,7 +604,8 @@ function countFiles($folder = UPLOAD_FOLDER){
 	$files = scanDir($folder);
 
 	foreach($files as $file){
-		if($file!='.' && $file!='..'){
+
+		if($file!='.' && $file!='..' && $folder.'/'.$file!='uploads//.dc' && $folder.'/'.$file!='uploads//avatars'&& $folder.'/'.$file!='uploads//.htaccess'){
 			if(is_dir($folder.'/'.$file)){
 				$fileInfos = array_merge($fileInfos,countFiles($folder.'/'.$file));
 

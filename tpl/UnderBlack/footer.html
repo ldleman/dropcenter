@@ -21,7 +21,7 @@
 	{if="isset($user)"}
 	<a class="rssFeed tooltips" target="_blank"
 		href="php/action.php?action=login&token={function="getToken($user)"}" alt="<?php t("Flux RSS");?>"
-		title="{function="t("Abonnez vous au flux rss pour suivre les evenements du DropCenter")"}"><figure></figure>{function="t("Flux RSS")"}
+		title="{function="t("Abonnez vous au flux rss pour suivre les evenements du DropCenter")"}"><i class="icon-rss"></i>{function="t("Flux RSS")"}
 	</a>
 	{/if}
 

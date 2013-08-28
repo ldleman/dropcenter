@@ -450,28 +450,31 @@ if(isset($_['action'])){
 		if(isset($user) && ($user->rank=='admin' || $user->rank=='user')){
 			$_['name'] = stripslashes(utf8_decode(html_entity_decode($_['name'])));
 
-			if(isset($_['name']) && trim($_['name'])!=''  && !file_exists($_SESSION['currentFolder'].'/'.$_['name'])){
-				$tempName = utf8_decode($_SESSION['currentFolder']).'/'.$_['name'];
-			}else{
+			$tempName = utf8_decode($_SESSION['currentFolder']).'/'.$_['name'];
+			if(!isset($_['name']) || trim($_['name'])==''){
 				$tempName = makeName(utf8_decode($_SESSION['currentFolder']),str_replace(array("\r","\n"),'',tt('Nouveau dossier (%)')));
 			}
 			
-			if(!in_array(trim($_['name']),array('/','\\',':','?','"','<','>'))){
-				if(mkdir($tempName)){
-					@chmod( utf8_decode($_SESSION['currentFolder']).$tempName , 0755);
-					
-					$javascript['succes'] = true;
-					$javascript['tempName'] = $tempName;
-					$javascript['tempNameUrl'] = utf8_decode($_SESSION['currentFolder']).$tempName;
+			if(!file_exists($tempName)){
+				if(!in_array(trim($_['name']),array('/','\\',':','?','"','<','>'))){
+					if(mkdir($tempName)){
+						@chmod( utf8_decode($_SESSION['currentFolder']).$tempName , 0755);
+						
+						$javascript['succes'] = true;
+						$javascript['tempName'] = $tempName;
+						$javascript['tempNameUrl'] = utf8_decode($_SESSION['currentFolder']).$tempName;
+					}else{
+						$javascript['status'] = tt('Erreur, impossible de cr&eacute;er le dossier');
+					}
 				}else{
-					$javascript['status'] = tt('Erreur, impossible de cr&eacute;er le dossier');
+					$javascript['status'] = 'Erreur, un nom de fichier/dossier ne peux contenir les caractères suivants : /,\,:,?,",<,>';
 				}
 			}else{
-				$javascript['status'] = 'Erreur, un nom de fichier/dossier ne peux contenir les caractères suivants : /,\,:,?,",<,>';
+					$javascript['status'] = 'Erreur, un dossier de ce nom existe déjà!';
 			}
-			}else{
-				$javascript['status'] = tt('Vous ne pouvez rien envoyer car vous n\'avez aucun droits d\'ajout sur le dropCenter');
-			}
+		}else{
+			$javascript['status'] = tt('Vous ne pouvez rien envoyer car vous n\'avez aucun droits d\'ajout sur le dropCenter');
+		}
 		break;
 		
 		case 'addEventForUpload':

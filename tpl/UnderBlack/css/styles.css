@@ -18,19 +18,14 @@ body{
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
 }
 
-.rssFeed figure{
-	background:url('../img/menuIcons.png') no-repeat scroll 0 0 transparent;
-	background-position:-80px 0px;
-	width:16px;
-	height:16px;
-	float:left;
-}
+
 .rssFeed{
 	width:65px;
 	display:inline-block;
 	height:16px;
 	margin-left:10px;
 	margin-top:6px;
+	color:#cecece;
 }
 
 .fileOption,.blue,a,a:visited {
@@ -49,15 +44,15 @@ header, footer{
 
 .folderNameBloc{
 	display:none;
+	float:left;
 }
 
 .blackControl{
 	background-color: #0F0F0F;
     border: medium none;
-    box-shadow: 0 0 2px #000000;
     color: #FFFFFF;
     font-size: 10px;
-    margin: 7px 3px 3px;
+    margin: 3px 3px 3px;
     padding: 3px;
 }
 
@@ -102,19 +97,18 @@ header, footer{
 
 .preloader{
 	
-	background: url('../img/preloader.gif') #222222  no-repeat 10px center;
-    clear: both;
+	background: url("../img/preloader.gif") no-repeat scroll 10px center transparent;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
     display: none;
-    font-size: 10px;
+    float: left;
+    font-size: 11px;
     height: 13px;
-    margin: auto;
+    margin: 0 0 0 5px;
     min-width: 15px;
-    padding: 10px;
-    padding-left:35px;
-    width: 120px;
-    margin :auto;
-    margin-top:80px;
-    border-radius: 5px;
+    padding: 7px 7px 7px 35px;
+    width: 140px;
+    opacity:0.5;
 }
 
 #userCreateBloc input,#userCreateBloc select,#initProgram input, #paramsBloc input, #paramsBloc select{
@@ -174,9 +168,6 @@ header, footer{
 }
 
 #paramsBloc{
-	background: url("../img/background_tile_2.jpg") repeat scroll 0 0 transparent;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
     margin: 15px 10px 10px 10px;
     min-height: 20px;
     overflow: hidden;
@@ -238,32 +229,43 @@ header, footer{
 }
 
 .breadcrumb {
-	margin:0px 10px 10px 10px;
+	margin:0px 10px 0px 10px;
+	padding:0px;
 }
 .breadcrumb li {
 	background-color:#161616;
-	border-radius: 5px;
+	border-radius: 0 5px 5px 5px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
     float: left;
-    margin: 2px;
+    margin-left: 2px;
     max-width: 430px;
     min-height: 15px;
     overflow: hidden;
-    padding: 10px;
+    padding: 5px;
 	cursor:pointer;
 }
 .breadcrumb li:hover {
 	background-color:#1C1C1C;
 }
 
+.loginBloc .logo{
+	margin-right: 15px;
+}
+.loginBloc span[class^="icon"]{
+	font-size:20px;
+	color:#cecece;
+	cursor:pointer;
+	text-shadow: 1px 1px 1px #000000;
+}
+
 .loginBloc{
 	background-color: #171717;
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
-    margin: 10px 10px 10px 10px;
-    min-height: 35px;
+    margin: 10px;
     overflow: hidden;
-    padding: 5px;
+    padding: 10px;
+    width:950px;
 	float:left;
 }
 
@@ -277,6 +279,95 @@ header, footer{
     width: 550px;
     text-align:center;
 }
+
+.menuIcon span{
+	display:block;
+	float:left;
+	background: #2d2d2d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2d2d2d 0%, #1b1b1b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d2d2d), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2d2d2d 0%,#1b1b1b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+	
+	border-right:1px solid #0f0f0f;
+	border-left:1px solid #292929;
+	border-top:1px solid #0f0f0f;
+	border-bottom:1px solid #0f0f0f;
+	padding:3px;
+	margin:0px;
+	cursor:pointer;
+}
+
+.menuIcon span:last-child{
+	border-radius:0 3px 3px 0;
+}
+.menuIcon span:first-child{
+	border-radius:3px 0 0 3px;
+	border-left:1px solid #0f0f0f;
+}
+.menuIcon span.active,.menuIcon span:hover{
+	background: #0a0a0a; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0a0a0a 0%, #141414 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0a0a0a), color-stop(100%,#141414)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0a0a0a 0%,#141414 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0a0a0a 0%,#141414 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0a0a0a 0%,#141414 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0a0a0a 0%,#141414 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0a0a', endColorstr='#141414',GradientType=0 ); /* IE6-9 */
+	border-left:1px solid #0f0f0f;
+}
+
+.menuIcon span i{
+	width:20px;
+	height:20px;
+	display:block;
+	opacity:0.4;
+}
+.menuIcon span:hover i{
+	opacity:0.7;
+}
+
+i.icon-folder{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-210px -154px
+}
+i.icon-user{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-239px -122px
+}
+
+i.icon-setting{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-300px -92px;
+}
+i.icon-backup{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-207px -151px;
+}
+
+i.icon-cross{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-301px -155px;
+}
+
+i.icon-ok{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-0px -122px;
+}
+
+i.icon-rss{
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-268px -126px;
+	width:20px;
+	height:20px;
+	display:block;
+	float:left;
+	opacity:0.4;
+}
+
 
 
 .menuBloc{
@@ -322,27 +413,21 @@ header, footer{
 
 
 
-.loginBloc input{
-	width:70px;
-	padding:3px;
-	margin:3px;
-	margin-top:7px;
-	font-size:10px;
-	color:#ffffff;
+.loginBloc input,.loginBloc button{
+	padding:5px;
+	margin:0 0 0 5px;
+	font-size:15px;
+	color:#cecece;
 	background-color:#0F0F0F;
-	box-shadow:0 0 2px #000;
+	border-radius:3px;
 	border:none;
 }
-
-
-header{
-	background:url('../img/logo.png') no-repeat center center;
-	padding:5px;
-	position: relative;
-	height:50px;
+.loginBloc button{
+	font-size:13px;
 }
 
-header:before,
+
+
 #dropbox:before{
 	display: block;
 	content:'';
@@ -351,7 +436,6 @@ header:before,
 	position: absolute;
 	top:0;
 	left:0;
-	/*box-shadow:0 2px 2px rgba(0,0,0,0.4);*/
 }
 
 .textLogin{
@@ -378,12 +462,10 @@ header:before,
 	background:url('../img/background_tile_3.jpg');
 	border-radius:3px;
 	position: relative;
-	margin:0px auto 10px;
-	min-height: 500px;
-	overflow: hidden;
-	/*padding-bottom: 40px;*/
-    width: 990px;
+	margin:15px auto 10px;
 	
+	overflow: hidden;
+    width: 990px;
 	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);
 }
 
@@ -832,7 +914,37 @@ div#dropZone div,div#dropZone input{
 }
 
 
+.left{
+	float:left;
+}
 
 
 
-body >div.popwrap{position:fixed;padding:10px}.top-right{top:0;right:0}.popup{width:200px;min-height:50px;-moz-border-radius:7px;-webkit-border-radius:7px;background-color:#161616;padding:3px 5px 10px 10px;display:block;margin-bottom:5px}.close{float:right;cursor:pointer;color:#EFEFEF;font:bold 12px Tahoma,Arial,Helvetica,sans-serif}.poptext{clear:both;font:12px Lucida Grande,Lucida Sans Unicode,Geneva,Verdana,sans-serif;word-wrap:break-word;color:#FEFEFE;line-height:120%}
+
+body >div.popwrap{position:fixed;padding:10px}.top-right{top:0;right:0}
+.popup{
+	border-radius:5px;
+	width:200px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	background-color:#161616;
+	padding:10px;
+	display:block;
+	margin-bottom:5px
+}
+.close{
+	display:none;
+	float:right;
+	cursor:pointer;
+	color:#EFEFEF;
+	font:bold 12px Tahoma,Arial,Helvetica,sans-serif
+	background:url('../img/icons.png') no-repeat scroll 0 0 transparent;
+	background-position:-301px -155px;
+	width:20px;
+	height:20px;
+}
+
+
+
+
+.poptext{clear:both;font:12px Lucida Grande,Lucida Sans Unicode,Geneva,Verdana,sans-serif;word-wrap:break-word;color:#FEFEFE;line-height:120%}
