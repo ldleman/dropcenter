@@ -485,6 +485,11 @@ if(isset($_['action'])){
 
 				$event['user']=$user->login;
 				$event['result'] = true;
+
+				foreach($files as $key=>$file){
+					$file->path = str_replace(getConfig('ROOT').UPLOAD_FOLDER,getConfig('ROOT').'php/action.php?action=openFile&file=',$file->path);
+					$files[$key] = $file;
+				}
 				$event['files'] = $files;
 				addEvent($event);
 
@@ -495,7 +500,7 @@ if(isset($_['action'])){
 							$messageMail ='';
 							$messageMail .='<img src="'.getConfig('ROOT').AVATARFOLDER.$user->login . '.jpg'.'" align="absmiddle" border="0" />&nbsp;<a href="mailto: '.$user->mail.'">'.$event['user'].'</a> '.tt('a ajoute % fichier%',array(count($files),(count($files)>1?'s':''))).' : <ul>';
 							foreach($files as $file){
-								$messageMail .='<li><a href="'.$file->path.'">'.$file->name.'</a> | '.round($file->size/1024,2).'Mo | '.$file->type.'</li>';
+								$messageMail .='<li><a href="'.$file->path.'">'.$file->name.'</a> | '.convertSize($file->size).' | '.$file->type.'</li>';
 							}
 							$messageMail .= '</ul>';
 							@mail ($mailmembre . ',', 'DropCenter: '.mb_encode_mimeheader(tt('Ajout d\'un ou plusieurs fichiers par').' '.$event['user']), $messageMail.'<br/>'.tt('Ceci est un message automatique du').' '.'<a href="'.getConfig('ROOT').'">Dropcenter</a>, '.tt('ne pas repondre').'.','Content-type: text/html; charset=UTF-8');

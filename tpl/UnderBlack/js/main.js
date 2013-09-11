@@ -116,7 +116,6 @@ $('.tooltips').poshytip({
         	data.submit();
         },
         done: function (e, data) {
-        	console.log(data.result);
 			addedFiles.push({name:data.files[0].name,size:data.files[0].size,type:data.result.extension,path:data.result.filePath});
         },
        	stop: function (e, data) {
@@ -476,21 +475,21 @@ function focusFile(element){
 
 
 
-function deleteFile(element){
-
-	var parent = $(element).parent().parent();
-	var file =$('.fileUrl',parent).html();
-	 file = file;
-		$.ajax({
-  url: "php/action.php?action=deleteFiles",
-  data:{file:file},
-  success: function(response){
-  var response = $.parseJSON(response);
-  	tell(response.status);
-	if(response.succes)$(element).parent().parent().fadeOut(300);
-	
-  }
-});
+	function deleteFile(element){
+		if(confirm('Etes vous sûr de vouloir supprimer cet élement?')){
+			var parent = $(element).parent().parent();
+			var file =$('.fileUrl',parent).html();
+			 file = file;
+				$.ajax({
+				  url: "php/action.php?action=deleteFiles",
+				  data:{file:file},
+					success: function(response){
+						var response = $.parseJSON(response);
+					  	tell(response.status);
+						if(response.succes)$(element).parent().parent().fadeOut(300);
+					}
+				});
+		}
 	}
 
 	function searchFiles(){
