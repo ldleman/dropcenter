@@ -9,7 +9,10 @@ table tr td{
 
 
 
-<?php $currentLang = (isset($_GET['edit'])?$_GET['edit']:false); ?>
+<?php 
+
+$_ = array_map('htmlentities',array_merge($_POST,$_GET));
+$currentLang = (isset($_['edit'])?$_['edit']:false); ?>
 
 <form action="#" method="POST">
 <table cellspadding="0" cellspacing="0" style="width:100%;">
@@ -69,20 +72,20 @@ foreach($template as $line){
 </form>
 
 <?php
-	if(isset($_POST['Generer'])){
-		foreach($_POST as $key=>$value){
+	if(isset($_['Generer'])){
+		foreach($_ as $key=>$value){
 			if(substr($key, 0,3)=="key"){
 				$key = substr($key, 3);
 				$lines[] = $refTab[$key].'[::->]'.$value;
 			}
 		}
-		file_put_contents($_POST['lang'], implode("\n",$lines));
+		file_put_contents($_['lang'], implode("\n",$lines));
 	}
 
 
-	if(isset($_POST['Generer2'])){
+	if(isset($_['Generer2'])){
 
-		$allLines = explode("\n",$_POST['all']);
+		$allLines = explode("\n",$_['all']);
 
 		foreach($allLines as $key=>$value){
 			
@@ -90,7 +93,7 @@ foreach($template as $line){
 			
 		}
 		
-		file_put_contents($_POST['lang'], implode("\n",$lines));
+		file_put_contents($_['lang'], implode("\n",$lines));
 	}
 
 
