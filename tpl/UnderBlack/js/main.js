@@ -212,9 +212,7 @@ function generateBreadCrumb(folder){
 }
 	function getFiles(keywords,folder){
 
-		
-
-		
+		if(!pendingTask){
 		if(keywords==null){keywords='';}else{keywords = "&keywords="+keywords}
 		if(folder==null){folderVar='';}else{folderVar = "&folder="+folder}
 		$.ajax({
@@ -276,7 +274,9 @@ function generateBreadCrumb(folder){
    	}
   }
 });
-	
+	}else{
+		alert('Des fichiers sont encore en téléchargement, veuillez patienter');
+	}
 
 	}
 	
