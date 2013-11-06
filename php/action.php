@@ -101,19 +101,29 @@ if(isset($_['action'])){
 
 				){
 
-				
-				header('Content-Description: File Transfer');
-	    		header('Content-Type: application/octet-stream');
-	    		header('Content-Disposition: attachment; filename='.str_replace(' ','-',basename($file)));
-	    		header('Content-Transfer-Encoding: binary');
-	    		header('Expires: 0');
-	   	 		header('Cache-Control: must-revalidate');
-	    		header('Pragma: public');
-	    		//header('Content-Length: ' . $file);
-	    		ob_clean();
-	    		flush();
-				readfile($file);
-				exit();
+				$ext = explode('.',basename($file));
+				$ext = strtolower($ext[count($ext)-1]);
+				switch($ext){
+					case 'url':
+						$content = file($file);
+						echo "<script language='javascript'>window.open('".substr(trim($content[1]),4)."','_blank');</script>"; 
+						exit();
+					break;
+					default:
+						header('Content-Description: File Transfer');
+			    		header('Content-Type: application/octet-stream');
+			    		header('Content-Disposition: attachment; filename='.str_replace(' ','-',basename($file)));
+			    		header('Content-Transfer-Encoding: binary');
+			    		header('Expires: 0');
+			   	 		header('Cache-Control: must-revalidate');
+			    		header('Pragma: public');
+			    		//header('Content-Length: ' . $file);
+			    		ob_clean();
+			    		flush();
+						readfile($file);
+						exit();
+					break;
+				}
 			}else{
 				exit('Fichier priv&eacute;, acc&egrave;s interdit');
 			}

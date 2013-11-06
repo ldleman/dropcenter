@@ -1,0 +1,56 @@
+<!--é-->
+		<!--***************-->
+		<!-- [TOUS] FOOTER -->
+		<!--***************-->
+
+<footer> 
+{function="t( "CopyrightFooter", array(DC_TITLE,DC_VERSION,DC_NAME,DC_WEBSITE,DC_LICENCE) )"}
+
+ 	{function="t('% fichiers disponibles pour un poids total de %',array($fileNumber,convertSize($totalSize)))"}
+	</span>
+
+	{if="isset($user)"} 
+		{function="t(' - Taille maximale par fichier : %.',array (convertSize(getUploadSize())))"}
+	{/if}
+
+
+	
+	{if="$FORTUNE"}<br/><br/>{function="chuckQuote()"}<br/><br/>{/if}
+	
+
+	{if="isset($user)"}
+	<a class="rssFeed tooltips" target="_blank"
+		href="php/action.php?action=login&token={function="getToken($user)"}" alt="<?php t("Flux RSS");?>"
+		title="{function="t("Abonnez vous au flux rss pour suivre les evenements du DropCenter")"}"><i class="icon-rss"></i>{function="t("Flux RSS")"}
+	</a>
+	{/if}
+
+</footer>
+
+
+		<!--*******************-->
+		<!-- [TOUS] JAVASCRIPT -->
+		<!--*******************-->
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.1.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.0.0.js"></script>
+
+<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+
+<script type="text/javascript" src="js/jquery.poshytip.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/tinypop.min.js"></script>
+<span id="scriptRoot" class="hidden">{function="getConfig('ROOT')"} </span>
+{if="isset($user) && $user->rank=='admin' && $DISPLAY_UPDATE"}
+<script type="text/javascript" src="http://dropCenter.fr/wp-content/maj/maj.php"></script>
+{/if}
+
+{if="isset($error)"}
+			<script type="text/javascript">  TINYPOP.show("{$error}", {position: 'top-right',timeout: 3000,sticky: false});</script>
+{/if}
+
+</body>
+</html>

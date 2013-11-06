@@ -1,0 +1,54 @@
+{include="header"}
+<!--é-->
+
+		<!--*******************************-->
+		<!-- [ADMINISTRATION] INSTALLATION -->
+		<!--*******************************-->
+
+<form action="php/action.php?action=addUser" method="POST">
+	<section id="initProgram">
+		<h1>
+		{function="t("Installation du programme")"}
+		</h1>
+		<p>
+		{function="t("Aucun administrateur n'est defini, merci de remplir les informations ci dessous.")"}
+		</p>
+		<section>
+			<ul>
+
+				{if="!isset($tests['error'])"}
+				<li><figure class="avatar">
+						<img src="./img/{$AVATAR_DEFAULT}" />
+					</figure></li>
+				<li><span>{function="t("Login")"}: <input  placeholder="{function="t("Login")"}"required type="text"
+						name="login" /> </span></li>
+				<li><span>{function="t("Password")"}: <input placeholder="{function="t("Password")"}" required type="password"
+						name="password" /><input type="hidden" name="rank" value="admin" />
+				</span></li>
+				<li><span>{function="t("Mail")"}: <input placeholder="{function="t("Mail")"}" pattern="[^ @]*@[^ @]*" required
+						type="email" name="mail" /> </span></li>
+				<li><span> {function="t("Racine du programme")"}: <input pattern="https?://.+"
+						required type="url"
+						value="{$presumedRoot}"
+						name="root" /> </span></li>
+				<li><input type="submit" value="{function="t("Creer")"}"></li>
+				{/if}
+
+				{if="$testsCount!=0"}
+					{loop="tests"}
+						
+
+						<li>{$key} : <ul>
+						{loop="value"}
+						<li class="requireBloc {$key}"><span>{$value2}</span></li>
+
+					{/loop}
+					</ul></li>{/loop}
+				{/if}
+
+			</ul>
+		</section>
+	</section>
+</form>
+	
+{include="footer"}

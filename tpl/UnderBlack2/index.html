@@ -1,0 +1,178 @@
+{include="header"}
+<!--é-->
+	
+
+		<div id="dropbox">
+		
+
+		<!--***************************-->
+		<!-- [PUBLIQUE] IDENTIFICATION -->
+		<!--***************************-->
+
+		<div class="loginBloc">
+		<img src="{#DC_LOGO#}" class="logo left">
+		{if="!isset($user) || $user==null"}
+		<form action="php/action.php?action=login" method="POST">
+			{function="t('Login')"} : <input required type="text" placeholder="{function="t('Login')"}" type="text" name="login">
+			{function="t('Password')"} : <input required type="password" placeholder="{function="t('Password')"}" type="password" name="password">
+			<input type="submit" name="Connect">
+		</form>
+		{else}
+			
+			<div class="menuIcon">
+				<span onclick="$('.folderNameBloc').fadeToggle(150);" title="{function="t("Nouveau dossier")"}" class="tooltips">
+				<i class="icon-folder"></i></span><span><i onclick="$('#paramsBloc').fadeToggle()" title="{function="t("Parametres") "}" class="icon-setting tooltips"></i></span><!--<span><i onclick="window.location='php/action.php?action=backup';" class="icon-backup tooltips" title="{function="t("Sauvegarde")"}"></i></span>--><span><i onclick="$('#usersBloc').fadeToggle()" title="{function="t("Comptes")"}" class="icon-user tooltips"></i></span><span><i onclick="window.location='php/action.php?action=logout';" class="icon-cross tooltips" title="<figure class='avatar'><img src='php/action.php?action=openFile&file={$user->avatar}'/></figure>{function="t('Deconnexion')"}<br/>{$user->login}"></i></span>
+			</div>
+
+
+
+<div class="folderNameBloc"><input name="folderName" placeholder="{function="t('Nom du dossier')"}" class="blackControl" type="text"/><button class="blackControl pointer" onclick="addFolder();">Ok</button></div>
+		</section>
+
+
+
+		<!--**********************-->
+		<!-- [TOUS] FIL D'ARIANNE -->
+		<!--**********************-->
+
+<ul class="breadcrumb"></ul>
+
+<div class="preloader"> Chargement en cours...</div>
+<div class="clear"></div>
+
+		<!--***********************************-->
+		<!-- [ADMINISTRATION/UTILISATEUR] MENU -->
+		<!--***********************************-->
+
+
+		{/if}
+		</div>
+		<div class="clear"></div>
+
+		<!--*********************************************-->
+		<!-- [ADMINISTRATION] CREATION D'UN UTILISATEURS -->
+		<!--*********************************************-->
+		{if="isset($user) && $user->rank=='admin'"}
+		<section id="usersBloc" {if="isset($_GET['openUserPanel'])"} style="display:block;"{/if}>
+		<form action="php/action.php?action=addUser&tpmToken={$tpmToken}" method="POST">
+		<h1>{function="t("Liste des utilisateurs")"}</h1>
+		<h2 onclick="$('#userCreateBloc').fadeToggle()">(+ {function="t("Ajouter un utilisateur")"})</h2>
+
+		<ul>
+		<li id="userCreateBloc" {if="isset($_GET['openUserPanel'])"}style="display:block;"{/if}>
+			<ul>
+				<li><figure class="avatar"><img src="img/{$AVATAR_DEFAULT}"/></figure></li>
+				<li><span>{function="t('Login')"}: <input required type="text" placeholder="{function="t("Login")"}" type="text" name="login"/></span></li>
+				<li><span>{function="t("Password")"}: <input required type="password" placeholder="{function="t('Password')"}" type="password" name="password"/></span></li>
+				<li><span>{function="t("Rang")"}: <select name="rank"><option value="user">{function="t('Utilisateur')"}</option><option value="admin">{function="t('Administrateur')"}</option></select></span></li>
+				<li><span><{function="t('Mail')"}: <input required pattern="[^ @]*@[^ @]*" placeholder="{function="t("Mail")"}" type="text" name="mail"/></span></li>
+				<li><input type="submit" value="Ajouter"></li>
+			</ul>
+		</li>
+
+		<!--*****************************************-->
+		<!-- [ADMINISTRATION] LISTE DES UTILISATEURS -->
+		<!--*****************************************-->
+
+		{loop="userList"}
+		
+		<li>
+			<ul>
+				<li><figure class="avatar" id="avatar"><img src="../../php/action.php?action=openFile&file={$value->avatar}"/></figure></li>
+				<li><span>{function="t('Login')"}: {$value->login}</span></li>
+				<li><span>{function="t('Rang')"}: {$value->rank}</span></li>
+				<li><span> <a href="mailto: {$value->mail}">{$value->mail}</a></span></li>
+				<!-- <li><a onclick="editUser('{$value->login}');">Modifier</a></li> -->
+				<li><a onclick="deleteUser('{function="t('Etes-vous sur de vouloir supprimer cet utilisateur?')"}','{$value->login}','{$tpmToken}');" >{function="t('Supprimer')"}</a></li>
+			</ul>
+		</li>
+		{/loop}
+		
+		</ul>
+	
+		</form>
+		</section>
+		{/if}
+
+		<!--***************************-->
+		<!-- [UTILISATEUR] PREFERENCES -->
+		<!--***************************-->
+		
+		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}{$user->login}{/if}&tpmToken={$tpmToken}" method="POST">
+		<section id="paramsBloc">
+				<h1>{function="t('Parametres')"}</h1>	
+				<ul>
+					<li>{function="t('Profil')"}
+						<ul>
+							<li><span>{function="t('Password')"} : </span><input placeholder="{function="t('Password')"}" type="password" name="password"></li>
+							<li><span>{function="t('Mail')"} : </span><input required pattern="[^ @]*@[^ @]*" placeholder="{function="t('Mail')"}" value="{$user->mail}" type="text" name="mail"></li>
+							<li><span>{function="t('Avatar')"} : </span><input placeholder="{function="t('Avatar')"}" value="{$user->avatar}" type="text" name="avatar"></li>
+						</ul>
+					</li>
+					<li>{function="t('Preferences')"}
+						<ul>
+							<li>
+								<span>{function="t('Notification par mail ?')"} :</span>
+								<input type="checkbox" name="notifMail"
+									{if="$user->notifMail == 'true'"} 
+									checked
+									{/if}
+								> 
+
+								{if="$user->notifMail=='true'"} 
+									{function="t('On')"} 
+								{else} 
+									{function="t('Off')"} 
+								{/if}
+							</li>
+							<li><span>{function="t('Langue')"} :</span>
+
+
+							<select name="lang">
+							  	{loop="dir"}
+							  		
+							  		{if="is_file($DIR_LANG.''.$value)"}
+										{if="strpos($DIR_LANG.''.$value, '.')===false"}
+							  				<option {if="$user->lang==$value"}selected="selected"{/if}>{function="utf8_encode($value)"}</option>
+							  			{/if}
+							  		{/if}
+							  	{/loop}
+							  	?>
+							 </select>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<input type="submit" value="{function="t("Valider")"}">
+					</li>
+				</ul>
+		
+		</section>
+			</form>
+
+
+
+
+
+
+		<!--*********************-->
+		<!-- [TOUS] ZONE DE DROP -->
+		<!--*********************-->
+{if="isset($user)"}
+<div class="fileBloc tooltips" title="Faites glisser des fichiers sur la zone ou cliquez sur celle ci pour envoyer des fichiers">
+<div id="dropZone">
+<input id="uploadButton" type="file" size="1" name="files[]" data-url="./php/action.php?action=upload" multiple>
+</div>
+<div class="clear"></div>
+</div>
+{/if}
+
+</div>
+			</ul>
+		</section>
+	</section>
+</form>
+		
+
+
+{include="footer"}
