@@ -88,7 +88,7 @@
 		<!--***************************-->
 		<!-- [UTILISATEUR] PREFERENCES -->
 		<!--***************************-->
-		
+		{if="isset($user)"}
 		<form action="php/action.php?action=saveSettings&user={if="isset($user)"}{$user->login}{/if}&tpmToken={$tpmToken}" method="POST">
 		<section id="paramsBloc">
 				<h1>{function="t('Parametres')"}</h1>	
@@ -140,7 +140,7 @@
 		
 		</section>
 			</form>
-
+			{/if}
 
 
 
