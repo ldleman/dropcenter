@@ -42,4 +42,6 @@ define('DC_VERSION','2'); //Version du programme
 define('DC_NAME','Stable');//Nom du programme
 define('DC_VERSION_NUMBER','2.0.0');//Nom du programme
 define('DC_WEBSITE','http://projet.idleman.fr/dropcenter');//Site du programme
+
+date_default_timezone_set('Europe/Paris');
 ?>
