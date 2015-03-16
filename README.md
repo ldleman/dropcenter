@@ -28,7 +28,7 @@ INSTALLATION
 
 - Décompressez l'archive de dropCenter
 - Envoyez le tout sur votre ftp
-- Autorisez l'écriture sur le répertoire /uploads (chmod 775)
+- Autorisez l'écriture sur le répertoire /uploads et le répertoire /tpl (chmod 775) 
 - Entrez l'adresse du dropCenter dans votre naviguateur, à la première connexion, le login et le mot de passe souhaité pour l'administrateur seront demandés.
 - Le script est installé !!
 - Vous pouvez télécharger le programme bureautique DropNews en addition du dropcenter pour être informé par notification sur votre bureau de tous les nouveaux évènements du dropcenter. (voir le site officiel : http://projet.idleman.fr/dropcenter)
