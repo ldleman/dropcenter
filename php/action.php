@@ -559,7 +559,7 @@ try {
 				break;
 		}
 	}
-	http_response_code(200);
+	//http_response_code(200);
 } catch(\Exception $e) {
 	http_response_code(500);
 	//TODO log error 
