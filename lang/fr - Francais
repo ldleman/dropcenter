@@ -93,3 +93,4 @@ Le dossier de stockage des donnees "%" est accessible en ecriture[::->]Le dossie
 Champs obligatoires non remplis[::->]Champs obligatoires non remplis
  - Taille maximale par fichier : %.[::->] - Taille maximale par fichier : <span class="blue">[%%]</span>.
 Erreur, un nom de dossier ne peux contenir les caracteres suivants[::->]Erreur, un nom de fichier/dossier ne peux contenir les caractères suivants : /,\,:,?,",<,>
+une erreur est arrivee : [::->]une erreur est arrivee : 

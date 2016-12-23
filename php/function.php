@@ -54,13 +54,17 @@ function scanFolder($folder){
 				$mtime = filemtime ($folder.$file);
 				$fileArray['mtimeDate'] = date('d/m/Y',$mtime);
 				$fileArray['mtimeHour'] = date('h\hi\m',$mtime);
+
+				if(PREVIEW_IMAGE_ENABLED === true) {
+					$source = str_replace(UPLOAD_FOLDER, '', $fileArray['url']);
+					$fileArray['previewPath'] = resizeImage($source, PREVIEW_WIDTH, PREVIEW_HEIGHT);
+				}
 				$realFiles[]=$fileArray;
+
 				unset($fileArray);
 			}
 		}else{
 			if(!in_array($folder.$file, $noFolders) && ( !DISPLAY_AVATAR_FOLDER && realpath($folder.$file)!=realpath('../'.AVATARFOLDER)) ){
-
-				
 				$fileArray['type'] = 'folder';
 				$fileArray['name'] = utf8_encode($file);
 				$fileArray['shortname'] =utf8_encode(short($file,NAME_LIMIT,get_extension($file)));
@@ -81,7 +85,57 @@ function scanFolder($folder){
 	return $realFiles;
 }
 
+/**
+* Resize an image and keep the proportions
+* @author Allison Beckwith <allison@planetargon.com>
+* @param string $filename
+* @param integer $max_width
+* @param integer $max_height
+* @return image
+*/
+function resizeImage($filename, $max_width, $max_height)
+{
+	$source = '../' . UPLOAD_FOLDER . $filename; 
+	if(@exif_imagetype($source) === IMAGETYPE_JPEG) {
+		$dest = '../' . CACHE_FOLDER . $filename;
+		if(!file_exists($dest)) {
+			$destDir = explode('/', $dest); 
+			array_pop($destDir);
+			$destDir = implode('/', $destDir);
+			if(!file_exists($destDir)) {
+				mkdir($destDir , 0775, true);
+			}
 
+			list($orig_width, $orig_height) = getimagesize($source);
+
+			$width = $orig_width;
+			$height = $orig_height;
+
+			# taller
+			if ($height > $max_height) {
+				$width = ($max_height / $height) * $width;
+				$height = $max_height;
+			}
+
+			# wider
+			if ($width > $max_width) {
+				$height = ($max_width / $width) * $height;
+				$width = $max_width;
+			}
+
+			$image_p = imagecreatetruecolor($width, $height);
+
+			$image = imagecreatefromjpeg($source);
+
+			imagecopyresampled($image_p, $image, 0, 0, 0, 0, 
+											$width, $height, $orig_width, $orig_height);
+
+			imagejpeg($image_p, $dest);
+		}
+		return $dest;
+	}
+	return false;
+}
 
 
 /**
