@@ -593,6 +593,8 @@ footer{
 
 #dropbox .imageHolder:hover  img{
 	margin-left:5px;
+	max-width: 130px;
+	max-height: 130px;
 }
 
 
@@ -680,6 +682,7 @@ footer{
 #dropbox .imageHolder:hover,#dropbox .folderHolder:hover{
 	background-color:#151516;
 	box-shadow: 0 0 2px #000000;
+	z-index: 99;
 }
 
 
