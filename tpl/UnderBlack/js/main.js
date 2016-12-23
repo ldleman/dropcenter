@@ -168,11 +168,14 @@ $('.tooltips').poshytip({
 		extension = extension[extension.length-1];
 		}
 		fileName.html(file.name);
-			if(imageExtension[extension]!=null){
+			if(file.previewPath) {
+				ext = file.previewPath;
+			} else if(imageExtension[extension]!=null){
 				ext = imageExtensionRoot+imageExtension[extension] ;
 			}else{
 				ext = imageExtensionRoot+'unknown.png';
 			}
+			console.log(ext);
 			image.attr('src',ext);
 		preview.appendTo($("#dropbox"));	
 		$.data(file,preview);
@@ -272,7 +275,13 @@ function generateBreadCrumb(folder){
 
 
    	}
-  }
+  },
+   error : function(data) {
+		response = $.parseJSON(data.responseText);
+		console.error(response);
+		alert(response.status);
+	   //console.log(data);
+   }
 });
 	}else{
 		alert('Des fichiers sont encore en téléchargement, veuillez patienter');
@@ -282,8 +291,14 @@ function generateBreadCrumb(folder){
 	
 
 	function addFile(file){
-			if(imageExtension[file.extension]!=null){
-				ext = imageExtensionRoot+imageExtension[file.extension] ;
+		var imgWidth = "48px;";
+		var imgHeight = "48px;";
+			if(file.previewPath) {
+				ext = file.previewPath;
+				imgWidth = "auto;";
+				imgHeight = "auto;";		
+			} else if(imageExtension[file.extension]!=null){
+				ext = imageExtensionRoot+imageExtension[file.extension];		
 			}else{
 				ext = imageExtensionRoot+'unknown.png';
 			}
@@ -304,7 +319,7 @@ function generateBreadCrumb(folder){
 							
 							'<div onclick="focusFile(this)"  ondblclick="openFile(this)">'+
 
-							'<img width="48px" height="48px"  src="'+ext+'"/>'+
+							'<img width="' + imgWidth + '" height="' + imgHeight + '"  src="'+ext+'"/>'+
 							'<ul>'+
 								'<li>'+file.size+'</li>'+
 								'<li>'+file.mtimeDate+' '+file.mtimeHour+'</li>'+
