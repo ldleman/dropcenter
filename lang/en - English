@@ -94,3 +94,4 @@ Le dossier de stockage des donnees "%" est accessible en ecriture[::->]The data 
 Champs obligatoires non remplis[::->]Main fields are empty
  - Taille maximale par fichier : %.[::->] - Max size per file : <span class="blue">[%%]</span>.
 Erreur, un nom de dossier ne peux contenir les caracteres suivants[::->]Error, file/folder's name can't contain follow characters : /,\,:,?,",<,>
+une erreur est arrivee : [::->]an error occured: 

@@ -38,6 +38,12 @@ define('SECURE_DELIMITER_BEGIN','<?php /*'); //
 define('SECURE_DELIMITER_END','*/ ?>'); //
 define('LEFT_HASH','-1é&@shs--'); //
 define('RIGHT_HASH','$^^/!+£'); //
+
+define('PREVIEW_IMAGE_ENABLED', true);//Activer les previews image
+define('CACHE_FOLDER', 'cache/');//path vers le cache des images
+define('PREVIEW_WIDTH', 200);//Width max 
+define('PREVIEW_HEIGHT', 200);//height max 
+
 define('DC_VERSION','2'); //Version du programme
 define('DC_NAME','Stable');//Nom du programme
 define('DC_VERSION_NUMBER','2.0.0');//Nom du programme
